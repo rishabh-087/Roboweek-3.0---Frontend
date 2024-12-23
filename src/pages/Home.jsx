@@ -1,43 +1,28 @@
 import { motion } from 'framer-motion';
-
+import Button from '../components/Button';
 const Home = () => {
+
+  const theme = {
+    themeOfEvent: "Rise of the Machines"
+  }
+  
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center bg-gradient-to-r from-primary to-secondary text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h1 
-            className="text-4xl md:text-6xl font-bold mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            Welcome to RoboWeek 3.0
-          </motion.h1>
-          <motion.p 
-            className="text-xl md:text-2xl mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-           
-Rise of the Machines
-          </motion.p>
-          <motion.button 
-            className="bg-white text-primary px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-100 transition-colors"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            Register Now
-          </motion.button>
+      <section className="relative h-screen flex flex-col gap-20 pb-8 items-center justify-center text-white">
+        <h1 className="text-[200px] font-bold mb-4" style={{
+          WebkitTextStroke: '2px #22d3ee',
+          color: 'transparent'
+        }}>RoboWeek 3.0</h1> 
+        <div className="flex justify-center">
+          <Button text="Register Now" textSize="text-4xl" iconLink={<i className="ri-arrow-right-line"></i>} />
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 z-1000">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">Why Join RoboWeek 3.0?</h2>
+          <h2 className="relative z-1000 text-3xl font-bold text-center mb-12 text-cyan-400">Why Join RoboWeek 3.0?</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
@@ -55,14 +40,15 @@ Rise of the Machines
             ].map((feature, index) => (
               <motion.div
                 key={index}
-                className="p-6 bg-gray-50 rounded-lg"
+                className="backdrop-blur-lg bg-black/20 p-8 rounded-xl border border-cyan-500 shadow-lg hover:border-cyan-500 transition-all duration-300"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
+                whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
                 viewport={{ once: true }}
               >
-                <h3 className="text-xl font-semibold mb-4">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
+                <h3 className="text-xl font-semibold mb-4 text-cyan-400">{feature.title}</h3>
+                <p className="text-gray-300">{feature.description}</p>
               </motion.div>
             ))}
           </div>
@@ -70,29 +56,44 @@ Rise of the Machines
       </section>
 
       {/* Timeline Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">Event Timeline</h2>
-          <div className="space-y-8">
+          <h2 className="relative z-1000 text-3xl font-bold text-center mb-12 text-cyan-400">Event Timeline</h2>
+          <div className="relative">
+            {/* Vertical line */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-cyan-400/30"></div>
+            
             {[
               { date: "Feb 21", event: "Registration Opens" },
-              { date: "Mar 1", event: "Team Formation Deadline" },
+              { date: "Mar 1", event: "Team Formation Deadline" }, 
               { date: "Mar 28", event: "Events Begins" },
-              {date: "Mar 29", event: "Day 2"},
+              { date: "Mar 29", event: "Day 2"},
               { date: "Mar 29", event: "Final Day" }
             ].map((item, index) => (
               <motion.div
                 key={index}
-                className="flex items-center space-x-4"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                className={`flex items-center mb-12 ${index % 2 === 0 ? 'flex-row-reverse' : ''}`}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
                 viewport={{ once: true }}
               >
-                <div className="w-24 font-bold text-primary">{item.date}</div>
-                <div className="flex-1 p-4 bg-white rounded-lg shadow-sm">
-                  {item.event}
+                <div className={`w-5/12 ${index % 2 === 0 ? 'pl-8' : 'pr-8 text-right'}`}>
+                  <div className="backdrop-blur-lg bg-black/20 p-6 rounded-xl border border-cyan-500 shadow-lg hover:border-cyan-400 transition-all duration-300">
+                    <h3 className="text-xl font-bold text-cyan-400 mb-2">{item.date}</h3>
+                    <p className="text-gray-300">{item.event}</p>
+                  </div>
                 </div>
+                
+                <div className="w-2/12 flex justify-center">
+                  <motion.div 
+                    className="w-6 h-6 bg-cyan-400 rounded-full border-4 border-black relative z-10"
+                    whileHover={{ scale: 1.2 }}
+                    transition={{ duration: 0.2 }}
+                  />
+                </div>
+                
+                <div className="w-5/12" />
               </motion.div>
             ))}
           </div>

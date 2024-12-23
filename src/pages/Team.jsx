@@ -9,36 +9,36 @@ const Team = () => {
       bio: "Robotics enthusiast with 10+ years of experience in organizing tech events."
     },
     {
-      name: "Ashish Ranjan",
+      name: "Ashish Ranjan", 
       role: "Technical Lead",
       image: "https://i.pravatar.cc/300?img=2",
       bio: "AI researcher and robotics engineer specializing in autonomous systems."
     },
     {
       name: "Ritwiz Singh",
-      role: "Operations Manager",
+      role: "Operations Manager", 
       image: "https://i.pravatar.cc/300?img=1",
       bio: "Expert in event management and community building."
     },
     {
       name: "Nitya",
       role: "Sponsorship Coordinator",
-      image: "https://i.pravatar.cc/300?img=4",
+      image: "https://i.pravatar.cc/300?img=4", 
       bio: "Experienced in building partnerships with tech industry leaders."
     }
   ];
 
   return (
-    <div className="min-h-screen py-20">
+    <div className="min-h-screen py-20 z-1000">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-16 backdrop-blur-lg bg-black/10 p-8 rounded-2xl border border-cyan-500/50"
         >
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Our Team</h1>
-          <p className="text-xl text-gray-600">Meet the people behind RoboHack</p>
+          <h1 className="text-6xl font-bold text-white mb-4">Our <span className="text-cyan-400">Team</span></h1>
+          <p className="text-xl text-gray-300">Meet the minds behind RoboWeek 3.0</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -49,7 +49,7 @@ const Team = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className="bg-white rounded-lg shadow-lg overflow-hidden"
+              className="backdrop-blur-lg bg-black/10 rounded-2xl overflow-hidden border border-cyan-500/50 hover:bg-white/20 transition-all duration-300"
             >
               <img
                 src={member.image}
@@ -57,9 +57,9 @@ const Team = () => {
                 className="w-full h-64 object-cover"
               />
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{member.name}</h3>
-                <div className="text-primary font-semibold mb-4">{member.role}</div>
-                <p className="text-gray-600">{member.bio}</p>
+                <h3 className="text-xl font-bold text-white mb-2">{member.name}</h3>
+                <div className="text-cyan-400 font-semibold mb-4">{member.role}</div>
+                <p className="text-gray-300">{member.bio}</p>
               </div>
             </motion.div>
           ))}
@@ -70,15 +70,15 @@ const Team = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="mt-20 bg-gray-50 rounded-lg p-8"
+          className="mt-20 backdrop-blur-lg bg-black/10 rounded-2xl p-8 border border-cyan-500/50"
         >
-          <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">Join Our Team</h2>
-          <p className="text-center text-gray-600 mb-8">
+          <h2 className="text-2xl font-bold text-white mb-6 text-center">Join Our Team</h2>
+          <p className="text-center text-gray-300 mb-8">
             We're always looking for passionate individuals to join our team. 
             If you're interested in helping organize future events, get in touch!
           </p>
           <div className="text-center">
-            <button className="bg-primary text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-secondary transition-colors">
+            <button className="bg-gradient-to-r from-cyan-400/80 to-cyan-500/80 backdrop-blur-lg text-white px-8 py-3 rounded-full text-lg font-semibold hover:from-cyan-400/90 hover:to-cyan-500/90 transition-all duration-300 border border-cyan-400/50">
               Contact Us
             </button>
           </div>

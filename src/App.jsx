@@ -6,13 +6,15 @@ import About from './pages/About';
 import Events from './pages/Events';
 import Team from './pages/Team';
 import Sponsors from './pages/Sponsors';
+import FloatingShape from './components/FloatingShape';
 
 function App() {
   return (
-    <Router>
-      <div className="min-h-screen flex flex-col">
+    <Router className="">
+      <FloatingShape />
+      <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-950 via-gray-900 to-black ">
         <Navbar />
-        <main className="flex-grow">
+        <main className="flex-grow ">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />

@@ -6,67 +6,48 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navigation = [
-    { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
-    { name: 'Events', href: '/events' },
-    { name: 'Team', href: '/team' },
-    { name: 'Sponsors', href: '/sponsors' },
+    { name: 'Home', href: '/', icon: 'ri-home-line' },
+    { name: 'About', href: '/about', icon: 'ri-information-line' },
+    { name: 'Events', href: '/events', icon: 'ri-calendar-event-line' },
+    { name: 'Team', href: '/team', icon: 'ri-team-line' },
+    { name: 'Sponsors', href: '/sponsors', icon: 'ri-money-dollar-circle-line' },
   ];
 
   return (
-    <nav className="bg-white shadow-lg">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
-          <div className="flex items-center">
-            <Link to="/" className="flex-shrink-0 flex items-center">
-              <span className="text-2xl font-bold text-primary">RoboWeek 3.0</span>
-            </Link>
-          </div>
-          
-          <div className="hidden sm:flex sm:items-center">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                to={item.href}
-                className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-primary hover:bg-gray-50"
-              >
-                {item.name}
-              </Link>
-            ))}
-          </div>
+    <nav className={`fixed left-6 top-1/2 -translate-y-1/2 z-50 ${isOpen ? 'w-64' : 'w-20'} transition-all duration-300`}>
+      <div className="backdrop-blur-lg bg-black/20 border border-cyan-500/30 rounded-2xl p-4">
+        <div className="flex flex-col items-center gap-3">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="w-12 h-12 flex items-center justify-center rounded-xl text-gray-300 hover:text-cyan-400 hover:bg-cyan-500/10 transition-all duration-300"
+          >
+            {isOpen ? (
+              <XMarkIcon className="h-8 w-8" />
+            ) : (
+              <Bars3Icon className="h-8 w-8" />
+            )}
+          </button>
 
-          <div className="sm:hidden flex items-center">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-primary hover:bg-gray-50"
+          {navigation.map((item) => (
+            <Link
+              key={item.name}
+              to={item.href}
+              className={`w-full flex items-center gap-4 px-4 py-3 rounded-xl text-gray-300 hover:text-cyan-400 hover:bg-cyan-500/10 transition-all duration-300 ${
+                !isOpen && 'justify-center'
+              } group relative`}
             >
+              <i className={`${item.icon} text-2xl`}></i>
               {isOpen ? (
-                <XMarkIcon className="block h-6 w-6" />
+                <span className="text-base font-medium">{item.name}</span>
               ) : (
-                <Bars3Icon className="block h-6 w-6" />
+                <span className="absolute left-full ml-3 px-3 py-2 bg-black/80 text-cyan-400 text-base rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
+                  {item.name}
+                </span>
               )}
-            </button>
-          </div>
+            </Link>
+          ))}
         </div>
       </div>
-
-      {/* Mobile menu */}
-      {isOpen && (
-        <div className="sm:hidden">
-          <div className="pt-2 pb-3 space-y-1">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                to={item.href}
-                className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50"
-                onClick={() => setIsOpen(false)}
-              >
-                {item.name}
-              </Link>
-            ))}
-          </div>
-        </div>
-      )}
     </nav>
   );
 };
