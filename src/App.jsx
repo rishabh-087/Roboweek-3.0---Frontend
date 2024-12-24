@@ -7,7 +7,8 @@ import Events from './pages/Events';
 import Team from './pages/Team';
 import Sponsors from './pages/Sponsors';
 import FloatingShape from './components/FloatingShape';
-
+import Login from './components/Login';
+import Login2 from './components/Login2';
 function App() {
   return (
     <Router className="">
@@ -21,6 +22,8 @@ function App() {
             <Route path="/events" element={<Events />} />
             <Route path="/team" element={<Team />} />
             <Route path="/sponsors" element={<Sponsors />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/login2" element={<Login2 />} />
           </Routes>
         </main>
         <Footer />

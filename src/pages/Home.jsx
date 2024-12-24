@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import Button from '../components/Button';
+import { Link } from 'react-router-dom';
 const Home = () => {
 
   const theme = {
@@ -13,9 +14,12 @@ const Home = () => {
         <h1 className="text-[200px] font-bold mb-4" style={{
           WebkitTextStroke: '2px #22d3ee',
           color: 'transparent'
-        }}>RoboWeek 3.0</h1> 
+        }}>RoboWeek 3.0</h1>
+        <h2 className="text-3xl text-cyan-400">Conducted by Robotics Society NIT Hamirpur</h2>
         <div className="flex justify-center">
-          <Button text="Register Now" textSize="text-4xl" iconLink={<i className="ri-arrow-right-line"></i>} />
+          <Link to="/login">
+            <Button text="Register Now" textSize="text-4xl" iconLink={<i className="ri-arrow-right-line"></i>} />
+          </Link>
         </div>
       </section>
 

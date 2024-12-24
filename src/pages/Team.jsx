@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import Button from '../components/Button';
 
 const Team = () => {
   const teamMembers = [
@@ -78,9 +79,7 @@ const Team = () => {
             If you're interested in helping organize future events, get in touch!
           </p>
           <div className="text-center">
-            <button className="bg-gradient-to-r from-cyan-400/80 to-cyan-500/80 backdrop-blur-lg text-white px-8 py-3 rounded-full text-lg font-semibold hover:from-cyan-400/90 hover:to-cyan-500/90 transition-all duration-300 border border-cyan-400/50">
-              Contact Us
-            </button>
+            <Button text={"Contact Us"} textSize="text-2xl" iconLink={<i className="ri-mail-line text-3xl"></i>} />
           </div>
         </motion.div>
       </div>
