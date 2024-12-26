@@ -1,8 +1,9 @@
 import React from 'react';
 
-const Button = ({ text, textSize = 'text-lg' , iconLink}) => {
+const Button = ({ text, textSize = 'text-lg', iconLink, onClick }) => {
   return (
     <button
+      onClick={onClick}
       className="relative p-1 text-white font-semibold rounded-full 
                  bg-gradient-to-b from-cyan-400/30 to-cyan-400/10
                  hover:from-cyan-400/40 hover:to-cyan-400/20

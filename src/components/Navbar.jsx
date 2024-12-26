@@ -1,9 +1,18 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import Button from './Button';
+import { useAuth } from '../context/AuthContext';
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { user, logout } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate('/');
+  };
 
   const navigation = [
     { name: 'Home', href: '/', icon: 'ri-home-line' },
@@ -15,10 +24,37 @@ const Navbar = () => {
 
   return (
     <>
+      {user && (
+        <div className="fixed top-6 left-6 z-50">
+          <div className="backdrop-blur-lg bg-black/20 border border-cyan-500/30 rounded-xl px-6 py-3">
+            <span className="text-cyan-400 font-semibold">
+              <i className="ri-user-line mr-2"></i>
+              {user.name}
+            </span>
+          </div>
+        </div>
+      )}
+
       <div className="fixed top-6 right-6 z-50">
-        <Link to="/login">
-          <Button text={"Login"} textSize="text-2xl" iconLink={<i className="ri-login-box-line text-3xl"></i>} />
-        </Link>
+        {user ? (
+          <div className="flex items-center gap-4">
+            <div onClick={handleLogout}>
+              <Button 
+                text="Logout" 
+                textSize="text-2xl" 
+                iconLink={<i className="ri-logout-box-line text-3xl"></i>} 
+              />
+            </div>
+          </div>
+        ) : (
+          <Link to="/login">
+            <Button 
+              text="Login" 
+              textSize="text-2xl" 
+              iconLink={<i className="ri-login-box-line text-3xl"></i>} 
+            />
+          </Link>
+        )}
       </div>
 
       <nav className={`fixed left-6 top-1/2 -translate-y-1/2 z-50 ${isOpen ? 'w-64' : 'w-20'} transition-all duration-300`}>
