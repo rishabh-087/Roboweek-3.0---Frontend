@@ -35,7 +35,7 @@ const Navbar = () => {
         </div>
       )}
 
-      <div className="hidden lg:fixed top-6 right-6 z-50 ">
+      <div className="hidden lg:flex lg:fixed top-6 right-6 z-50">
         {user ? (
           <div className="flex items-center gap-4">
             <div onClick={handleLogout}>

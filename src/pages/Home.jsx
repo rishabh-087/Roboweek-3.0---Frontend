@@ -15,7 +15,7 @@ const Home = () => {
           WebkitTextStroke: '2px #22d3ee',
           color: 'transparent'
         }}>RoboWeek 3.0</h1>
-        <h2 className="lg:text-3xl text-xl text-cyan-400">Conducted by Robotics Society NIT Hamirpur</h2>
+        <h2 className="lg:text-3xl text-xl text-cyan-400 text-center">Conducted by Robotics Society NIT Hamirpur</h2>
         <div className="flex justify-center">
           <Link to="/login">
             <Button text="Register Now" textSize="text-4xl" iconLink={<i className="ri-arrow-right-line"></i>} />
