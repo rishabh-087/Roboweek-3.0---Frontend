@@ -55,7 +55,7 @@ const Team = () => {
               <img
                 src={member.ProfilePicture}
                 alt={member.Name}
-                className="w-full h-64 object-cover"
+                className="w-full h-64 object-contain object-center"
               />
               <div className="p-6">
                 <h3 className="text-xl font-bold text-white mb-2">{member.Name}</h3>
