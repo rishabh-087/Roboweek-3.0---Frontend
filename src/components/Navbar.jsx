@@ -47,7 +47,7 @@ const Navbar = () => {
             </div>
           </div>
         ) : (
-          <Link to="/login">
+          <Link to="/login" aria-label="Login">
             <Button 
               text="Login" 
               textSize="text-2xl" 
@@ -57,12 +57,14 @@ const Navbar = () => {
         )}
       </div>
 
-      <nav className={`fixed left-6 top-1/2 -translate-y-1/2 z-50 ${isOpen ? 'w-64' : 'w-20'} transition-all duration-300`}>
+      <nav className={`fixed left-6 top-1/2 -translate-y-1/2 z-50 ${isOpen ? 'w-64' : 'w-20'} transition-all duration-300`} aria-label="Main Navigation">
         <div className="backdrop-blur-lg bg-black/20 border border-cyan-500/30 rounded-2xl p-4">
           <div className="flex flex-col items-center gap-3">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="w-12 h-12 flex items-center justify-center rounded-xl text-gray-300 hover:text-cyan-400 hover:bg-cyan-500/10 transition-all duration-300"
+              aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
+              aria-expanded={isOpen ? 'true' : 'false'}
             >
               {isOpen ? (
                 <XMarkIcon className="h-8 w-8" />
@@ -78,6 +80,7 @@ const Navbar = () => {
                 className={`w-full flex items-center gap-4 px-4 py-3 rounded-xl text-gray-300 hover:text-cyan-400 hover:bg-cyan-500/10 transition-all duration-300 ${
                   !isOpen && 'justify-center'
                 } group relative`}
+                aria-label={`Go to ${item.name}`}
               >
                 <i className={`${item.icon} text-2xl`}></i>
                 {isOpen ? (

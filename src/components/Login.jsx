@@ -46,49 +46,65 @@ const Login = () => {
   return (
     <div className='min-h-screen flex items-center justify-center relative z-1000'>
       <div className="z-100 p-10 border border-cyan-500/30 rounded-xl bg-black/20 backdrop-blur-lg w-full max-w-md">
-        <h1 className='text-center text-cyan-500 font-bold mb-10 text-4xl'>Login</h1>
+        <h1 className='text-center text-cyan-500 font-bold mb-10 text-4xl' id="login-heading">Login</h1>
         
         {error && (
-          <div className="mb-4 p-3 bg-red-500/20 border border-red-500/50 rounded-lg text-red-400 text-center">
+          <div
+            className="mb-4 p-3 bg-red-500/20 border border-red-500/50 rounded-lg text-red-400 text-center"
+            role="alert" // Ensures screen readers announce the error message
+            aria-live="assertive" // Alerts screen readers immediately to changes in the error message
+          >
             {error}
           </div>
         )}
 
-        <form onSubmit={handleSubmit} className='flex flex-col gap-5 z-100'>
+        <form onSubmit={handleSubmit} className='flex flex-col gap-5 z-100' aria-labelledby="login-heading">
           <div>
-            <h1 className='text-white text-lg mb-2'>Name</h1>
+            <label htmlFor="name" className='text-white text-lg mb-2'>Name</label>
             <input
+              id="name"
               name="name"
               type="text"
               value={formData.name}
               onChange={handleChange}
               className='w-full text-gray-300 p-3 relative z-100 bg-black/20 backdrop-blur-xl rounded-sm border border-cyan-500/30'
               placeholder="Enter your name"
+              required
+              aria-describedby="name-helper" // Links to helper text if needed
             />
+            <small id="name-helper" className="text-gray-400">Your full name.</small>
           </div>
 
           <div>
-            <h1 className='text-white text-lg mb-2'>Email</h1>
+            <label htmlFor="email" className='text-white text-lg mb-2'>Email</label>
             <input
+              id="email"
               name="email"
               type="email"
               value={formData.email}
               onChange={handleChange}
               className='w-full text-gray-300 p-3 relative z-100 bg-black/20 backdrop-blur-xl rounded-sm border border-cyan-500/30'
               placeholder="Enter your email"
+              required
+              aria-describedby="email-helper"
             />
+            <small id="email-helper" className="text-gray-400">Your email address for login.</small>
           </div>
 
           <div>
-            <h1 className='text-white text-lg mb-2'>Password</h1>
+            <label htmlFor="password" className='text-white text-lg mb-2'>Password</label>
             <input
+              id="password"
               name="password"
               type="password"
               value={formData.password}
               onChange={handleChange}
               className='w-full text-gray-300 p-3 relative z-100 bg-black/20 backdrop-blur-xl rounded-sm border border-cyan-500/30'
               placeholder="Enter your password"
+              required
+              aria-describedby="password-helper"
             />
+            <small id="password-helper" className="text-gray-400">Your account password.</small>
           </div>
 
           <div className="flex items-center justify-center w-full h-1/2 mt-4">
