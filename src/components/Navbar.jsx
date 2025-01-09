@@ -35,7 +35,7 @@ const Navbar = () => {
         </div>
       )}
 
-      <div className="fixed top-6 right-6 z-50">
+      <div className="hidden lg:flex lg:fixed top-6 right-6 z-50">
         {user ? (
           <div className="flex items-center gap-4">
             <div onClick={handleLogout}>
@@ -95,6 +95,16 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
+
+      {/* Responsive Navbar for smaller screens */}
+      <div className="md:hidden fixed bottom-0 left-0 right-0 bg-black/20 border-t border-cyan-500/30 p-4 flex justify-around z-50">
+        {navigation.map((item) => (
+          <Link key={item.name} to={item.href} className="flex flex-col items-center text-gray-300 hover:text-cyan-400">
+            <i className={`${item.icon} text-2xl`}></i>
+            <span className="text-sm">{item.name}</span>
+          </Link>
+        ))}
+      </div>
     </>
   );
 };

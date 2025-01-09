@@ -10,12 +10,12 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-screen flex flex-col gap-20 pb-8 items-center justify-center text-white">
-        <h1 className="text-[200px] font-bold mb-4" style={{
+      <section className="relative w-[100%] h-screen flex flex-col gap-20 pb-8 items-center justify-center text-white">
+        <h1 className="lg:text-[200px] text-[80px] text-center   font-bold mb-4 " style={{
           WebkitTextStroke: '2px #22d3ee',
           color: 'transparent'
         }}>RoboWeek 3.0</h1>
-        <h2 className="text-3xl text-cyan-400">Conducted by Robotics Society NIT Hamirpur</h2>
+        <h2 className="lg:text-3xl text-xl text-cyan-400 text-center">Conducted by Robotics Society NIT Hamirpur</h2>
         <div className="flex justify-center">
           <Link to="/login">
             <Button text="Register Now" textSize="text-4xl" iconLink={<i className="ri-arrow-right-line"></i>} />
