@@ -14,7 +14,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 function App() {
   return (
     <AuthProvider>
-      <Router>
+      <Router className="">
         <FloatingShape />
         <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-950 via-gray-900 to-black">
           <Navbar />
