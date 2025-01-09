@@ -42,17 +42,7 @@ You can view the live demo of the **RoboWeek 3.0 Website** [here](https://robowe
     ```
 5. Open the app in your browser at `http://localhost:3000`.
 
-## Contributing
+## Project Structure
 
-We welcome contributions! Please fork the repository, make your changes, and submit a pull request.
+Here’s the structure of the project:
 
-### Contributors
-
-- **Areen Sharma** ([@AreenSharma](https://github.com/AreenSharma))
-- **Ashish Nith** ([@AshishNith](https://github.com/AshishNith))
-- **Punitha Narasegowda** ([@PunithaNarasegowda](https://github.com/PunithaNarasegowda))
-- **Sarthak** ([@Sarthak1970](https://github.com/Sarthak1970))
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
