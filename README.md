@@ -45,6 +45,7 @@ You can view the live demo of the **RoboWeek 3.0 Website** [here](https://robowe
 ## Project Structure
 
 Here’s the structure of the project:
+```
 /Roboweek-3.0---Frontend
 ├── public/
 │   ├── favicon.ico
@@ -73,5 +74,6 @@ Here’s the structure of the project:
 ├── tailwind.config.js
 ├── vite.config.js
 └── README.md
+```
 
 
