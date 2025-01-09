@@ -76,4 +76,15 @@ Here’s the structure of the project:
 └── README.md
 ```
 
+## Contributors
+
+- **[Areen Sharma](https://github.com/AreenSharma)** - Contributor
+- **[Ashish Nith](https://github.com/AshishNith)** - Contributor
+- **[Punitha Narasegowda](https://github.com/PunithaNarasegowda)** - Contributor
+- **[Sarthak](https://github.com/Sarthak1970)** - Contributor
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
 
