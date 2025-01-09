@@ -45,5 +45,33 @@ You can view the live demo of the **RoboWeek 3.0 Website** [here](https://robowe
 ## Project Structure
 
 Here’s the structure of the project:
-/Roboweek-3.0---Frontend ├── /node_modules # Contains all project dependencies ├── /public # Public files (favicon, index.html) ├── /src # Main source files │ ├── /assets # Image and static assets │ ├── /components # Reusable UI components │ ├── /context # Context API for state management │ ├── /pages # Different pages of the website │ ├── /services # Utility functions, API calls │ ├── App.jsx # Main App component │ └── index.jsx # Entry point for React app ├── /package.json # Project metadata and dependencies ├── /package-lock.json # Automatically generated file that describes the exact dependency tree ├── /tailwind.config.js # Tailwind CSS configuration ├── /vite.config.js # Vite configuration for fast builds └── /README.md # Project documentation
+/Roboweek-3.0---Frontend
+├── public/
+│   ├── favicon.ico
+│   └── index.html
+├── src/
+│   ├── components/
+│   │   ├── GoogleSignInButton.tsx
+│   │   ├── Login.jsx
+│   │   ├── Navbar.jsx
+│   │   ├── NoSignup.jsx
+│   │   ├── Rough.jsx
+│   │   └── Signup.jsx
+│   ├── context/
+│   │   └── AuthContext.jsx
+│   ├── pages/
+│   │   ├── Home.jsx
+│   │   └── Team.jsx
+│   ├── services/
+│   │   ├── auth.ts
+│   ├── assets/
+│   │   ├── react.svg
+│   └── App.jsx
+├── node_modules/
+├── package.json
+├── package-lock.json
+├── tailwind.config.js
+├── vite.config.js
+└── README.md
+
 
