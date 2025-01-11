@@ -7,7 +7,7 @@ import About from './pages/About';
 import Events from './pages/Events';
 import Team from './pages/Team';
 import Sponsors from './pages/Sponsors';
-// import FloatingShape from './components/FloatingShape';
+import FloatingShape from './components/FloatingShape';
 import Login from './components/Login';
 // import ProtectedRoute from './components/ProtectedRoute';
 
@@ -16,7 +16,7 @@ function App() {
   return (
     <AuthProvider>
       <Router>
-        {/* <FloatingShape /> */}
+        <FloatingShape />
         <div className=" flex flex-col bg-gradient-to-br from-gray-950 via-gray-900 to-black">
           <Navbar />
           <main className="w-screen min-h-screen flex-grow">
