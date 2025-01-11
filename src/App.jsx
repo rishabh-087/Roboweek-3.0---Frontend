@@ -15,7 +15,7 @@ import Login from './components/Login';
 function App() {
   return (
     <AuthProvider>
-      <Router>
+      <Router className="">
         <FloatingShape />
         <div className=" flex flex-col bg-gradient-to-br from-gray-950 via-gray-900 to-black">
           <Navbar />

@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion';
 import Button from '../components/Button';
 import { Link } from 'react-router-dom';
-// import Timer from '../components/Timer';
 import CountdownTimer from '../components/Timer';
+import Conference from '../components/Conference';
+
 const Home = () => {
 
   const theme = {
@@ -13,7 +14,7 @@ const Home = () => {
     <div className="min-h-screen overflow-x-hidden">
       {/* Hero Section */}
       <section className="relative w-[100%] h-screen flex flex-col gap-8 pb-8 items-center justify-center text-white">
-        <h1 className="lg:text-[150px] text-[80px] text-center   font-bold mt-8 leading-tight" style={{
+        <h1 className="lg:text-[150px] text-[80px] text-center font-bold mt-8 leading-tight" style={{
           WebkitTextStroke: '2px #22d3ee',
           color: 'transparent'
         }}>RoboWeek 3.0</h1>
@@ -31,7 +32,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="relative z-1000 text-2xl font-bold text-center mb-12 text-cyan-400">Why Join RoboWeek 3.0?</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
+            {[ 
               {
                 title: "Learn & Innovate",
                 description: "Get hands-on experience with cutting-edge robotics technology"
@@ -70,7 +71,7 @@ const Home = () => {
             {/* Vertical line */}
             <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-cyan-400/30"></div>
 
-            {[
+            {[ 
               { date: "Feb 21", event: "Registration Opens", details: "Start signing up for the event." },
               { date: "Mar 1", event: "Team Formation Deadline", details: "Form your teams and submit." },
               { date: "Mar 28", event: "Events Begin", details: "Kick-off of the RoboWeek activities." },
@@ -107,6 +108,9 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Conference Section */}
+      <Conference />
     </div>
   );
 };
