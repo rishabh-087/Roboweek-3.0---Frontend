@@ -8,7 +8,7 @@ const FloatingShape = () => {
         <div className="shape"></div>
         <div className="shape"></div>
         <div className="shape"></div>
-        <div className="shape"></div>
+        {/* <div className="shape"></div> */}
         <div className="shape"></div>
       </div>
     </div>

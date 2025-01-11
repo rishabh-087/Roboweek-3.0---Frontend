@@ -39,26 +39,26 @@ const Navbar = () => {
         {user ? (
           <div className="flex items-center gap-4">
             <div onClick={handleLogout}>
-              <Button 
-                text="Logout" 
-                textSize="text-2xl" 
-                iconLink={<i className="ri-logout-box-line text-3xl"></i>} 
+              <Button
+                text="Logout"
+                textSize="text-2xl"
+                iconLink={<i className="ri-logout-box-line text-3xl"></i>}
               />
             </div>
           </div>
         ) : (
-          <Link to="/login" aria-label="Login">
-            <Button 
-              text="Login" 
-              textSize="text-2xl" 
-              iconLink={<i className="ri-login-box-line text-3xl"></i>} 
+          <Link to="/login">
+            <Button
+              text="Login"
+              textSize="text-2xl"
+              iconLink={<i className="ri-login-box-line text-3xl"></i>}
             />
           </Link>
         )}
       </div>
 
-      <nav className={`fixed left-6 top-1/2 -translate-y-1/2 z-50 ${isOpen ? 'w-64' : 'w-20'} transition-all duration-300`} aria-label="Main Navigation">
-        <div className="backdrop-blur-lg bg-black/20 border border-cyan-500/30 rounded-2xl ">
+      <nav className={`hidden md:flex fixed left-6 top-1/2 -translate-y-1/2 z-50 ${isOpen ? 'w-64' : 'w-20'} transition-all duration-300`}>
+        <div className="backdrop-blur-lg bg-black/20 border border-cyan-500/30 rounded-2xl">
           <div className="flex flex-col items-center gap-3">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -77,10 +77,8 @@ const Navbar = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className={`w-full flex items-center gap-4 px-4 py-3 rounded-xl text-gray-300 hover:text-cyan-400 hover:bg-cyan-500/10 transition-all duration-300 ${
-                  !isOpen && 'justify-center'
-                } group relative`}
-                aria-label={`Go to ${item.name}`}
+                className={`w-full flex items-center gap-4 px-4 py-3 rounded-xl text-gray-300 hover:text-cyan-400 hover:bg-cyan-500/10 transition-all duration-300 ${!isOpen && 'justify-center'
+                  } group relative`}
               >
                 <i className={`${item.icon} text-2xl`}></i>
                 {isOpen ? (
