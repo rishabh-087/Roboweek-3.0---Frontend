@@ -58,7 +58,7 @@ const Navbar = () => {
       </div>
 
       <nav className={`fixed left-6 top-1/2 -translate-y-1/2 z-50 ${isOpen ? 'w-64' : 'w-20'} transition-all duration-300`} aria-label="Main Navigation">
-        <div className="backdrop-blur-lg bg-black/20 border border-cyan-500/30 rounded-2xl p-4">
+        <div className="backdrop-blur-lg bg-black/20 border border-cyan-500/30 rounded-2xl ">
           <div className="flex flex-col items-center gap-3">
             <button
               onClick={() => setIsOpen(!isOpen)}
