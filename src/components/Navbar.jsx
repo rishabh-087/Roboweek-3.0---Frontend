@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import Button from './Button';
 import { useAuth } from '../context/AuthContext';
+import logo from '../assets/logo.png'; // Fixed logo import
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,6 +25,10 @@ const Navbar = () => {
 
   return (
     <>
+      <div className="fixed top-6 left-6 z-50 rounded-2xl border-[5px] border-[#105C6B] shadow-md shadow-cyan-500  overflow-hidden">
+        <img src={logo} alt="Logo" className="h-12 w-auto " /> 
+      </div>
+      
       {user && (
         <div className="fixed top-6 left-6 z-50">
           <div className="backdrop-blur-lg bg-black/20 border border-cyan-500/30 rounded-xl px-6 py-3">

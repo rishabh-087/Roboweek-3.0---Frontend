@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion';
 import Button from '../components/Button';
 import { Link } from 'react-router-dom';
-// import Timer from '../components/Timer';
 import CountdownTimer from '../components/Timer';
+import About from './About';
+import Sponsors from './Sponsors';
 const Home = () => {
 
   const theme = {
@@ -12,13 +13,13 @@ const Home = () => {
   return (
     <div className="min-h-screen overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative w-[100%] h-screen flex flex-col gap-8 pb-8 items-center justify-center text-white">
-        <h1 className="lg:text-[150px] text-[80px] text-center   font-bold mt-8 leading-tight" style={{
+      <section className="relative w-[100%] h-screen flex flex-col gap-5 pb-8 items-center justify-center text-white">
+        <h1 className="lg:text-[150px] text-[80px] text-center   font-bold  leading-tight" style={{
           WebkitTextStroke: '2px #22d3ee',
           color: 'transparent'
         }}>RoboWeek 3.0</h1>
-        <CountdownTimer />
         <h2 className="lg:text-3xl text-lg text-cyan-400 text-center">Conducted by Robotics Society NIT Hamirpur</h2>
+        <CountdownTimer />
         <div className="flex justify-center">
           <Link to="/login">
             <Button text="Register Now" textSize="text-2xl" iconLink={<i className="ri-arrow-right-line"></i>} />
@@ -62,10 +63,12 @@ const Home = () => {
         </div>
       </section>
 
+      <About />   
+
       {/* Timeline Section */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="relative z-1000 text-2xl font-bold text-center mb-10 text-cyan-400">Event Timeline</h2>
+          <h2 className="relative z-1000 text-2xl font-bold text-center mb-10 text-cyan-400">Unleash the Future: Event Timeline</h2>
           <div className="relative">
             {/* Vertical line */}
             <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-cyan-400/30"></div>
@@ -107,6 +110,8 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      <Sponsors />
     </div>
   );
 };

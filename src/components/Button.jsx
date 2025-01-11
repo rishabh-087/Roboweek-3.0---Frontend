@@ -11,7 +11,7 @@ const Button = ({ text, textSize = 'text-lg', iconLink, onClick }) => {
                  transition-all duration-300 shadow-lg shadow-cyan-500/20
                  hover:shadow-cyan-500/40 hover:shadow-md"
     >
-      <div className={`flex items-center gap-2 p-5 bg-black/30 rounded-full backdrop-blur-md ${textSize}`}>
+      <div className={`flex items-center gap-2 px-5 py-3 bg-black/30 rounded-full backdrop-blur-md ${textSize}`}>
         {text} {iconLink}
         <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1/2 h-1 bg-gradient-to-r from-cyan-400 to-cyan-500 rounded-full opacity-0 transition-all duration-300 group-hover:opacity-100"></div>
       </div>
