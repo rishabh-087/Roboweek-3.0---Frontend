@@ -20,7 +20,7 @@ A modern, responsive website built with React and Vite for RoboWeek 3.0 - a robo
 
 ## Demo
 
-You can view the live demo of the **RoboWeek 3.0 Website** [here](https://roboweek-3-0.vercel.app/).
+You can view the live demo of the **RoboWeek 3.0 Website** [here](https://roboweek-3-0-frontend-e2mc.vercel.app/).
 
 ## Installation
 
