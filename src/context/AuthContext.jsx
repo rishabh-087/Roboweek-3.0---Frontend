@@ -1,5 +1,5 @@
 import { createContext, useState, useContext } from 'react';
-import axios from 'axios'; // Make sure to install axios
+import axios from 'axios'; 
 
 const AuthContext = createContext(null);
 
@@ -11,7 +11,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (userData) => {
     try {
-      const response = await axios.post('/api/login', userData); // Replace with your API endpoint
+      const response = await axios.post('/api/login', userData); // replace this with API endpoint
       setUser(response.data.user);
       localStorage.setItem('user', JSON.stringify(response.data.user));
     } catch (error) {
@@ -21,7 +21,7 @@ export const AuthProvider = ({ children }) => {
 
   const signup = async (userData, password) => {
     try {
-      const response = await axios.post('/api/signup', { ...userData, password }); // Replace with your API endpoint
+      const response = await axios.post('/api/signup', { ...userData, password }); // replace this with API endpoint
       setUser(response.data.user);
       localStorage.setItem('user', JSON.stringify(response.data.user));
     } catch (error) {

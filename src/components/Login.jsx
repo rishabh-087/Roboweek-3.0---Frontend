@@ -56,7 +56,7 @@ const Login = () => {
     <div className='min-h-screen flex items-center justify-center relative z-1000'>
       <div className="z-100 p-10 border border-cyan-500/30 rounded-xl bg-black/20 backdrop-blur-lg w-full max-w-md">
         <h1 className='text-center text-cyan-500 font-bold mb-10 text-4xl'>{isSignup ? 'Sign Up' : 'Login'}</h1>
-        
+
         {error && (
           <div className="mb-4 p-3 bg-red-500/20 border border-red-500/50 rounded-lg text-red-400 text-center">
             {error}

@@ -35,7 +35,7 @@ const Signup = () => {
           {errors.lastName && <span className="text-red-500">Last name is required</span>}
         </div>
         <input type="submit" disabled={isSubmitting} value={isSubmitting ? 'Submitting' : 'Submit' } className="border border-white cursor-pointer" />
-      </form>
+      </form>         
     </div>
   );
 };
