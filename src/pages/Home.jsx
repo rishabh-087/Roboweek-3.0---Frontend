@@ -10,7 +10,7 @@ const Home = () => {
   }
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-hidden">
       {/* Hero Section */}
       <section className="relative w-[100%] h-screen flex flex-col gap-8 pb-8 items-center justify-center text-white">
         <h1 className="lg:text-[150px] text-[80px] text-center   font-bold mt-8 leading-tight" style={{

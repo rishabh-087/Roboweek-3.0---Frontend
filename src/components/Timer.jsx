@@ -31,10 +31,10 @@ const CountdownTimer = () => {
     return (
         <div className='flex flex-col items-center justify-center p-5'>
             <div className="relative z-10 backdrop-blur-lg bg-black/20 p-4 rounded-xl border border-cyan-500 shadow-lg hover:border-cyan-500 transition-all duration-300">
-                <h1 className='relative z-10 text-center mb-4 text-4xl font-bold text-cyan-500'>
+                <h1 className='relative z-10 text-center mb-4 lg:text-4xl text-2xl font-bold text-cyan-500'>
                     <i className="ri-timer-flash-line"></i> Countdown to Event <i className="ri-timer-flash-line"></i>
                 </h1>
-                <div className='text-5xl font-extrabold text-white'>
+                <div className='lg:text-5xl text-xl text-center font-extrabold text-white'>
                     {timeLeft.days !== undefined ? (
                         <>
                             <span>{timeLeft.days}</span> <span className='text-lg'>Days</span> :
