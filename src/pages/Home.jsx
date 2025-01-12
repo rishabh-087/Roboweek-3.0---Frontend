@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import CountdownTimer from '../components/Timer';
 import About from './About';
 import Sponsors from './Sponsors';
+import Conference from '../components/Conference';
+
 const Home = () => {
 
   const theme = {
@@ -32,7 +34,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="relative z-1000 text-2xl font-bold text-center mb-12 text-cyan-400">Why Join RoboWeek 3.0?</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
+            {[ 
               {
                 title: "Learn & Innovate",
                 description: "Get hands-on experience with cutting-edge robotics technology"
@@ -73,7 +75,7 @@ const Home = () => {
             {/* Vertical line */}
             <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-cyan-400/30"></div>
 
-            {[
+            {[ 
               { date: "Feb 21", event: "Registration Opens", details: "Start signing up for the event." },
               { date: "Mar 1", event: "Team Formation Deadline", details: "Form your teams and submit." },
               { date: "Mar 28", event: "Events Begin", details: "Kick-off of the RoboWeek activities." },
@@ -112,6 +114,8 @@ const Home = () => {
       </section>
 
       <Sponsors />
+      {/* Conference Section */}
+      <Conference />
     </div>
   );
 };

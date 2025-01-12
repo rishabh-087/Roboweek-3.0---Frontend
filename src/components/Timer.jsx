@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 
 const CountdownTimer = () => {
-    const calculateTimeLeft = () => {
-        const eventDate = new Date('2025-03-15T00:00:00'); // Set your event date here
+    const calculateTimeLeft = useCallback(() => {
+        const eventDate = new Date('2025-03-15T00:00:00');
         const now = new Date();
         const difference = eventDate - now;
 
@@ -16,7 +16,7 @@ const CountdownTimer = () => {
             };
         }
         return timeLeft;
-    };
+    }, []);
 
     const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
@@ -26,14 +26,14 @@ const CountdownTimer = () => {
         }, 1000);
 
         return () => clearInterval(timer);
-    }, []);
+    }, [calculateTimeLeft]);
 
     return (
-        <div className='flex flex-col items-center justify-center p-5'>
+        <section className='flex flex-col items-center justify-center p-5'>
             <div className="relative z-10 backdrop-blur-lg bg-black/20 p-4 rounded-xl border border-cyan-500 shadow-lg hover:border-cyan-500 transition-all duration-300">
-                <h1 className='relative z-10 text-center mb-4 lg:text-4xl text-2xl font-bold text-cyan-500'>
-                    <i className="ri-timer-flash-line"></i> Countdown to Event <i className="ri-timer-flash-line"></i>
-                </h1>
+                <h2 className='relative z-10 text-center mb-4 lg:text-4xl text-2xl font-bold text-cyan-500'>
+                    <i className="ri-timer-flash-line" aria-hidden="true"></i> Countdown to Event <i className="ri-timer-flash-line" aria-hidden="true"></i>
+                </h2>
                 <div className='lg:text-5xl text-xl text-center font-extrabold text-white'>
                     {timeLeft.days !== undefined ? (
                         <>
@@ -47,7 +47,7 @@ const CountdownTimer = () => {
                     )}
                 </div>
             </div>
-        </div>
+        </section>
     );
 }
 
