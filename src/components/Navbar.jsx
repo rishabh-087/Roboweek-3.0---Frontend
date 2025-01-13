@@ -26,9 +26,9 @@ const Navbar = () => {
   return (
     <>
       <div className="fixed top-6 left-6 z-50 rounded-2xl border-[5px] border-[#105C6B] shadow-md shadow-cyan-500  overflow-hidden">
-        <img src={logo} alt="Logo" className="h-12 w-auto " /> 
+        <img src={logo} alt="Logo" className="h-12 w-auto " />
       </div>
-      
+
       {user && (
         <div className="fixed top-6 left-6 z-50">
           <div className="backdrop-blur-lg bg-black/20 border border-cyan-500/30 rounded-xl px-6 py-3">
@@ -62,10 +62,9 @@ const Navbar = () => {
         )}
       </div>
 
-      <nav 
-        className={`hidden md:flex fixed left-6 top-1/2 -translate-y-1/2 z-50 ${
-          isOpen ? 'w-64' : 'w-20'
-        } transition-all duration-500 ease-in-out hover:shadow-lg hover:shadow-cyan-500/10`}
+      <nav
+        className={`hidden md:flex fixed left-6 top-1/2 -translate-y-1/2 z-50 ${isOpen ? 'w-64' : 'w-20'
+          } transition-all duration-500 ease-in-out hover:shadow-lg hover:shadow-cyan-500/10`}
         onMouseEnter={() => setIsOpen(true)}
         onMouseLeave={() => setIsOpen(false)}
       >

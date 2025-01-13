@@ -9,6 +9,7 @@ import Team from './pages/Team';
 import Sponsors from './pages/Sponsors';
 import FloatingShape from './components/FloatingShape';
 import Login from './components/Login';
+import ConferencePage from './pages/ConferencePage';
 // import ProtectedRoute from './components/ProtectedRoute';
 
 
@@ -17,7 +18,7 @@ function App() {
     <AuthProvider>
       <Router className="">
         <FloatingShape />
-        <div className=" flex flex-col bg-gradient-to-br from-gray-950 via-gray-900 to-black">
+        <div id='main-container' className=" flex flex-col bg-gradient-to-br from-gray-950 via-gray-900 to-black">
           <Navbar />
           <main className="w-screen min-h-screen flex-grow">
             <Routes>
@@ -31,6 +32,7 @@ function App() {
               <Route path="/team" element={<Team />} />
               <Route path="/sponsors" element={<Sponsors />} />
               <Route path="/login" element={<Login />} />
+              <Route path="/conference" element={<ConferencePage />} />
             </Routes>
           </main>
           <Footer />
