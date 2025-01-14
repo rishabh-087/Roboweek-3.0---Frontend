@@ -26,9 +26,9 @@ body {
   background-repeat: no-repeat;
 } */
 
-/* #backGround{
+#backGround{
   background-image: url('./assets/background3.webp');
   background-size: cover;
     opacity: 0.2;
 
-} */
+}
