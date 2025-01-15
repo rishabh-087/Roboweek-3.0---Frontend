@@ -6,7 +6,7 @@ const Button = ({ text, textSize = 'text-lg', iconLink, onClick, ariaLabel }) =>
       onClick={onClick}
       aria-label={ariaLabel || text}
       className="relative p-1 text-white font-semibold rounded-full 
-                 bg-gradient-to-b from-pink-400/30 to-pink-400/10
+                 bg-gradient-to-b from-pink-400/50 to-pink-400/20
                  hover:from-pink-400/40 hover:to-pink-400/20
                  backdrop-blur-lg border border-pink-400/30
                  transition-all duration-300 shadow-lg shadow-pink-500/20
