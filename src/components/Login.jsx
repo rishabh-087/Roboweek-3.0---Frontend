@@ -54,8 +54,8 @@ const Login = () => {
 
   return (
     <div className='min-h-screen flex items-center justify-center relative z-1000'>
-      <div className="z-100 p-10 border border-cyan-500/30 rounded-xl bg-black/20 backdrop-blur-lg w-full max-w-md">
-        <h1 className='text-center text-cyan-500 font-bold mb-10 text-4xl'>{isSignup ? 'Sign Up' : 'Login'}</h1>
+      <div className="z-100 p-10 border border-pink-500/30 rounded-xl bg-black/20 backdrop-blur-lg w-full max-w-md">
+        <h1 className='text-center text-pink-500 font-bold mb-10 text-4xl'>{isSignup ? 'Sign Up' : 'Login'}</h1>
 
         {error && (
           <div className="mb-4 p-3 bg-red-500/20 border border-red-500/50 rounded-lg text-red-400 text-center">
@@ -72,7 +72,7 @@ const Login = () => {
                 type="text"
                 value={formData.name}
                 onChange={handleChange}
-                className='w-full text-gray-300 p-3 relative z-100 bg-black/20 backdrop-blur-xl rounded-sm border border-cyan-500/30'
+                className='w-full text-gray-300 p-3 relative z-100 bg-black/20 backdrop-blur-xl rounded-sm border border-pink-500/30'
                 placeholder="Enter your name"
               />
             </div>
@@ -85,7 +85,7 @@ const Login = () => {
               type="email"
               value={formData.email}
               onChange={handleChange}
-              className='w-full text-gray-300 p-3 relative z-100 bg-black/20 backdrop-blur-xl rounded-sm border border-cyan-500/30'
+              className='w-full text-gray-300 p-3 relative z-100 bg-black/20 backdrop-blur-xl rounded-sm border border-pink-500/30'
               placeholder="Enter your email"
             />
           </div>
@@ -97,7 +97,7 @@ const Login = () => {
               type="password"
               value={formData.password}
               onChange={handleChange}
-              className='w-full text-gray-300 p-3 relative z-100 bg-black/20 backdrop-blur-xl rounded-sm border border-cyan-500/30'
+              className='w-full text-gray-300 p-3 relative z-100 bg-black/20 backdrop-blur-xl rounded-sm border border-pink-500/30'
               placeholder="Enter your password"
             />
           </div>
@@ -114,7 +114,7 @@ const Login = () => {
         <div className="flex items-center justify-center mt-4">
           <button
             onClick={handleGoogleSignIn}
-            className="flex items-center justify-center w-full p-3 bg-black/20 text-cyan-500 rounded-lg border border-cyan-500/30 hover:bg-cyan-500/20 transition duration-200"
+            className="flex items-center justify-center w-full p-3 bg-black/20 text-pink-500 rounded-lg border border-pink-500/30 hover:bg-pink-500/20 transition duration-200"
           >
             <i className="ri-google-fill text-2xl"></i>
             <span className="ml-2 text-lg">Sign in with Google</span>
@@ -127,7 +127,7 @@ const Login = () => {
               {isSignup ? 'Already have an account?' : 'New here?'}
             </span>
             <button
-              className="ml-2 text-cyan-500 underline hover:text-cyan-400 transition duration-200"
+              className="ml-2 text-pink-500 underline hover:text-pink-400 transition duration-200"
               onClick={() => setIsSignup(!isSignup)}
             >
               {isSignup ? 'Already have an account?' : 'Create an account'}

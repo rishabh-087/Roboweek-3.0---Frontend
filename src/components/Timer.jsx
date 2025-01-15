@@ -29,26 +29,63 @@ const CountdownTimer = () => {
     }, [calculateTimeLeft]);
 
     return (
-        <section className='flex flex-col items-center justify-center p-5'>
-            <div className="relative z-10 backdrop-blur-lg bg-black/20 p-4 rounded-xl border border-cyan-500 shadow-lg hover:border-cyan-500 transition-all duration-300">
-                <h2 className='relative z-10 text-center mb-4 lg:text-4xl text-2xl font-bold text-cyan-500'>
-                    <i className="ri-timer-flash-line" aria-hidden="true"></i> Countdown to Event <i className="ri-timer-flash-line" aria-hidden="true"></i>
+        <section className='relative flex flex-col items-center justify-center bg-transparent'>
+            <div className="relative z-10 backdrop-blur-sm bg-black/30 p-8 rounded-2xl border border-white/20 shadow-2xl">
+                <h2 className='text-center mb-8 text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500'>
+                    TIME REMAINING
                 </h2>
-                <div className='lg:text-5xl text-xl text-center font-extrabold text-white'>
+                <div className='flex gap-4 justify-center items-center'>
                     {timeLeft.days !== undefined ? (
                         <>
-                            <span>{timeLeft.days}</span> <span className='text-lg'>Days</span> :
-                            <span> {timeLeft.hours}</span> <span className='text-lg'>Hours</span> :
-                            <span> {timeLeft.minutes}</span> <span className='text-lg'>Mins</span> :
-                            <span> {timeLeft.seconds}</span> <span className='text-lg'>Secs</span>
+                            <DigitWheel value={String(timeLeft.days).padStart(2, '0')} label="DAYS" />
+                            <div className="text-4xl text-white">:</div>
+                            <DigitWheel value={String(timeLeft.hours).padStart(2, '0')} label="HRS" />
+                            <div className="text-4xl text-white">:</div>
+                            <DigitWheel value={String(timeLeft.minutes).padStart(2, '0')} label="MIN" />
+                            <div className="text-4xl text-white">:</div>
+                            <DigitWheel value={String(timeLeft.seconds).padStart(2, '0')} label="SEC" />
                         </>
                     ) : (
-                        <span className='text-lg'>Event has started!</span>
+                        <div className='text-white text-2xl font-bold animate-bounce'>
+                            GAME STARTED
+                        </div>
                     )}
                 </div>
             </div>
         </section>
     );
 }
+
+const DigitWheel = ({ value, label }) => (
+    <div className="flex flex-col items-center">
+        <div className="flex gap-1">
+            {value.split('').map((digit, index) => (
+                <div key={index} className="relative w-12 h-16 bg-gradient-to-b from-purple-900 to-pink-700 rounded-lg overflow-hidden">
+                    <div className="absolute inset-0 flex items-center justify-center">
+                        <div 
+                            className="flex flex-col transition-transform duration-500"
+                            style={{ transform: `translateY(-${(digit * 10)-45}%)` }}
+                        >
+                            {[0,1,2,3,4,5,6,7,8,9].map((num) => (
+                                <div 
+                                    key={num}
+                                    className="h-16 w-12 flex items-center justify-center text-3xl font-mono text-white"
+                                >
+                                    {num}
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                    {/* Overlay effects */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-transparent pointer-events-none"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent pointer-events-none"></div>
+                </div>
+            ))}
+        </div>
+        <div className="text-white text-sm font-bold mt-2">
+            {label}
+        </div>
+    </div>
+);
 
 export default CountdownTimer;

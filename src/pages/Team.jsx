@@ -36,9 +36,9 @@ const Team = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16 backdrop-blur-lg bg-black/10 p-8 rounded-2xl border border-cyan-500/50"
+          className="text-center mb-16 backdrop-blur-lg bg-black/10 p-8 rounded-2xl border border-pink-500/50"
         >
-          <h1 className="text-6xl font-bold text-white mb-4">Our <span className="text-cyan-400">Team</span></h1>
+          <h1 className="text-6xl font-bold text-white mb-4">Our <span className="text-pink-400">Team</span></h1>
           <p className="text-xl text-gray-300">Meet the minds behind RoboWeek 3.0</p>
         </motion.div>
 
@@ -50,7 +50,7 @@ const Team = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className="backdrop-blur-lg bg-black/10 rounded-2xl overflow-hidden border border-cyan-500/50 hover:bg-white/20 transition-all duration-300"
+              className="backdrop-blur-lg bg-black/10 rounded-2xl overflow-hidden border border-pink-500/50 hover:bg-white/20 transition-all duration-300"
             >
               <img
                 src={member.ProfilePicture}
@@ -59,12 +59,12 @@ const Team = () => {
               />
               <div className="p-6">
                 <h3 className="text-xl font-bold text-white mb-2">{member.Name}</h3>
-                <div className="text-cyan-400 font-semibold mb-4">{member.Post}</div>
+                <div className="text-pink-400 font-semibold mb-4">{member.Post}</div>
                 <p className="text-gray-300">{member.TechStack}</p>
                 <div className="flex justify-between mt-4">
                   <a
                     href={member.Github}
-                    className="text-cyan-400 hover:text-white"
+                    className="text-pink-400 hover:text-white"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -72,7 +72,7 @@ const Team = () => {
                   </a>
                   <a
                     href={member.LinkedIn}
-                    className="text-cyan-400 hover:text-white"
+                    className="text-pink-400 hover:text-white"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -80,7 +80,7 @@ const Team = () => {
                   </a>
                   <a
                     href={member.Instagram}
-                    className="text-cyan-400 hover:text-white"
+                    className="text-pink-400 hover:text-white"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -97,7 +97,7 @@ const Team = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="mt-20 backdrop-blur-lg bg-black/10 rounded-2xl p-8 border border-cyan-500/50"
+          className="mt-20 backdrop-blur-lg bg-black/10 rounded-2xl p-8 border border-pink-500/50"
         >
           <h2 className="text-2xl font-bold text-white mb-6 text-center">Join Our Team</h2>
           <p className="text-center text-gray-300 mb-8">

@@ -17,8 +17,8 @@ function App() {
   return (
     <AuthProvider>
       <Router className="">
-        <FloatingShape />
-        <div id='main-container' className=" flex flex-col bg-gradient-to-br from-gray-950 via-gray-900 to-black">
+        {/* <FloatingShape /> */}
+        <div id='main-container' className=" flex flex-col bg-black">
           <Navbar />
           <main className="w-screen min-h-screen flex-grow">
             <Routes>
