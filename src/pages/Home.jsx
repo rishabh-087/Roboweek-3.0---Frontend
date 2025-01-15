@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import CountdownTimer from '../components/Timer';
 import About from './About';
 import Sponsors from './Sponsors';
-import Conference from '../components/Conference';
+// import Conference from '../components/Conference';
 
 const Home = () => {
 
