@@ -5,6 +5,7 @@ import CountdownTimer from '../components/Timer';
 import About from './About';
 import Sponsors from './Sponsors';
 // import Conference from '../components/Conference';
+import logo from '../assets/logo1-removebg-preview.png';
 
 const Home = () => {
 
@@ -18,7 +19,7 @@ const Home = () => {
         <section className='w-screen min-h-screen flex flex-col justify-center items-center '>
         <div className='flex flex-col justify-center items-center space-y-8 gap-205'>
           {/* <h1>RoboWeek 3.0</h1> */}
-          <img className='w-[100%] mt-[-10px] relative z-[100] bg-transparent' src="src\assets\logo1-removebg-preview.png" alt="" />
+          <img className='w-[100%] mt-[-10px] relative z-[100] bg-transparent' src={logo} alt="" />
             {/* <h2 className='text-pink-500 text-2xl leading-tighter font-bold '>Survive the Game: Outwit, Outcode, Outlast!</h2> */}
             <CountdownTimer />
           </div>
