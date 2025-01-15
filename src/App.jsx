@@ -17,7 +17,7 @@ function App() {
   return (
     <AuthProvider>
       <Router className="">
-        {/* <FloatingShape /> */}
+        <FloatingShape /> 
         <div id='main-container' className=" flex flex-col bg-black">
           <Navbar />
           <main className="w-screen min-h-screen flex-grow">
