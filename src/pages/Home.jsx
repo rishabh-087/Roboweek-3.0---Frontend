@@ -19,7 +19,7 @@ const Home = () => {
         <section className='w-screen min-h-screen flex flex-col justify-center items-center '>
         <div className='flex flex-col justify-center items-center space-y-8 gap-205'>
           {/* <h1>RoboWeek 3.0</h1> */}
-          <img className='lg:w-[100%] w-[80%] mt-[-10px] relative z-[100] bg-transparent border border-green-500 ' src={logo} alt="" />
+          <img className='lg:w-[100%] w-[80%] mt-[-10px] relative z-[100] bg-transparent ' src={logo} alt="" />
             {/* <h2 className='text-pink-500 text-2xl leading-tighter font-bold '>Survive the Game: Outwit, Outcode, Outlast!</h2> */}
             <CountdownTimer />
           </div>
