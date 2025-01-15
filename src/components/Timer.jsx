@@ -29,7 +29,7 @@ const CountdownTimer = () => {
     }, [calculateTimeLeft]);
 
     return (
-        <section className='relative flex flex-col items-center justify-center bg-transparent'>
+        <section className='relative flex flex-col items-center justify-center bg-transparent w-[100%] h-[100%]'>
             <div className="relative z-10 backdrop-blur-sm bg-black/30 p-8 rounded-2xl border border-white/20 shadow-2xl">
                 <h2 className='text-center mb-8 text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500'>
                     TIME REMAINING
@@ -60,7 +60,7 @@ const DigitWheel = ({ value, label }) => (
     <div className="flex flex-col items-center">
         <div className="flex gap-1">
             {value.split('').map((digit, index) => (
-                <div key={index} className="relative w-12 h-16 bg-gradient-to-b from-purple-900 to-pink-700 rounded-lg overflow-hidden">
+                <div key={index} className="relative lg:w-12 w-[90%] h-16 bg-gradient-to-b from-purple-900 to-pink-700 rounded-lg overflow-hidden">
                     <div className="absolute inset-0 flex items-center justify-center">
                         <div 
                             className="flex flex-col transition-transform duration-500"
