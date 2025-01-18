@@ -7,6 +7,7 @@ import Sponsors from './Sponsors';
 // import Conference from '../components/Conference';
 import logo from '../assets/logo1-removebg-preview.png';
 
+
 const Home = () => {
 
   const theme = {
@@ -15,6 +16,7 @@ const Home = () => {
 
   return (
     <div className="min-h-screen">
+
       {/* Hero Section */}
         <section className='w-screen min-h-screen flex flex-col justify-center items-center '>
         <div className='flex flex-col justify-center items-center space-y-8 gap-205'>

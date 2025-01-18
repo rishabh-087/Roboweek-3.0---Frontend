@@ -64,7 +64,7 @@ const DigitWheel = ({ value, label }) => (
                     <div className="absolute inset-0 flex items-center justify-center">
                         <div 
                             className="flex flex-col transition-transform duration-500"
-                            style={{ transform: `translateY(-${((digit+1) * 10)}%)` }}
+                            style={{ transform: `translateY(-${((digit)*10)}%)` }}
                         >
                             {[0,1,2,3,4,5,6,7,8,9].map((num) => (
                                 <div 

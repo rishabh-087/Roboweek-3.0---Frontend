@@ -56,8 +56,8 @@ const Navbar = () => {
           <Link to="/login">
             <Button
               text="Login"
-              textSize="text-2xl"
-              iconLink={<i className="ri-login-box-line text-3xl"></i>}
+              textSize="text-xl"
+              iconLink={<i className="ri-login-box-line text-xl"></i>}
             />
           </Link>
         )}
@@ -93,7 +93,7 @@ const Navbar = () => {
                   hover:text-pink-400 hover:bg-pink-500/10 hover:scale-105
                   ${!isOpen && 'justify-center'} group relative`}
               >
-                <i className={`${item.icon} text-2xl transition-transform duration-500 ease-in-out group-hover:scale-110`}></i>
+                <i className={`${item.icon} text-2xl transition-transform px-[3px] duration-500 ease-in-out group-hover:scale-110`}></i>
                 {isOpen ? (
                   <span className="text-base font-medium transition-opacity duration-500 ease-in-out">
                     {item.name}
