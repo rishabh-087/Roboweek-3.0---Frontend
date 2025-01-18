@@ -1,31 +1,19 @@
 import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { useEffect,useState } from 'react';
 import axios from 'axios';
 import Button from '../components/Button';
-import MembersCard from '../components/MembersCard';
 
 const Team = () => {
-  const [teamMembers, setTeamMembers] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [teamMembers,setTeamMembers]=useState([]);
+  const [loading,setLoading]=useState(true);
 
   useEffect(() => {
+    console.log("Making API Request");
     const fetchTeamData = async () => {
       try {
         const response = await axios.get('http://localhost:8000/users');
-        // Transform the data to match MembersCard expected format
-        const formattedMembers = response.data.map(member => ({
-          name: member.Name,
-          position: member.Post,
-          image: member.ProfilePicture,
-          bio: member.TechStack,
-          skills: member.TechStack.split(',').map(skill => skill.trim()),
-          socialLinks: {
-            github: member.Github,
-            linkedin: member.LinkedIn,
-            instagram: member.Instagram
-          }
-        }));
-        setTeamMembers(formattedMembers);
+        console.log(response.data); // Check the structure of the response in the console
+        setTeamMembers(response.data); // Update the state with fetched data
       } catch (err) {
         console.log(err);
       } finally {
@@ -35,9 +23,11 @@ const Team = () => {
     fetchTeamData();
   }, []);
 
-  if (loading) {
-    return <div>Loading...</div>;
+
+  if(loading){
+    return <div>Loading...</div>
   }
+
 
   return (
     <div className="min-h-screen py-20 z-1000">
@@ -52,7 +42,55 @@ const Team = () => {
           <p className="text-xl text-gray-300">Meet the minds behind RoboWeek 3.0</p>
         </motion.div>
 
-        <MembersCard members={teamMembers} />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {teamMembers.map((member, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              viewport={{ once: true }}
+              className="backdrop-blur-lg bg-black/10 rounded-2xl overflow-hidden border border-pink-500/50 hover:bg-white/20 transition-all duration-300"
+            >
+              <img
+                src={member.ProfilePicture}
+                alt={member.Name}
+                className="w-full h-64 object-contain object-center"
+              />
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-white mb-2">{member.Name}</h3>
+                <div className="text-pink-400 font-semibold mb-4">{member.Post}</div>
+                <p className="text-gray-300">{member.TechStack}</p>
+                <div className="flex justify-between mt-4">
+                  <a
+                    href={member.Github}
+                    className="text-pink-400 hover:text-white"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    GitHub
+                  </a>
+                  <a
+                    href={member.LinkedIn}
+                    className="text-pink-400 hover:text-white"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    LinkedIn
+                  </a>
+                  <a
+                    href={member.Instagram}
+                    className="text-pink-400 hover:text-white"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Instagram
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
