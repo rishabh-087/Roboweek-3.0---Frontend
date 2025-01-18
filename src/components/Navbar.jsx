@@ -3,7 +3,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import Button from './Button';
 import { useAuth } from '../context/AuthContext';
-import logo from '../assets/logo.png'; // Fixed logo import
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,10 +25,6 @@ const Navbar = () => {
 
   return (
     <>
-      {/* <div className="fixed top-6 left-6 z-50 rounded-2xl border-[5px] border-pink-500/50 shadow-md shadow-pink-500  overflow-hidden">
-        <img src={logo} alt="Logo" className="h-12 w-auto " />
-      </div> */}
-
       {user && (
         <div className="fixed top-6 left-6 z-50">
           <div className="backdrop-blur-lg bg-black/20 border border-pink-500/30 rounded-xl px-6 py-3">
@@ -64,8 +59,7 @@ const Navbar = () => {
       </div>
 
       <nav
-        className={`hidden md:flex fixed left-6 top-1/2 -translate-y-1/2 z-50 ${isOpen ? 'w-64' : 'w-20'
-          } transition-all duration-500 ease-in-out hover:shadow-lg hover:shadow-pink-500/10`}
+        className={`hidden md:flex fixed left-6 top-1/2 -translate-y-1/2 z-50 ${isOpen ? 'w-64' : 'w-12'} transition-all duration-500 ease-in-out hover:shadow-lg hover:shadow-pink-500/10`}
         onMouseEnter={() => setIsOpen(true)}
         onMouseLeave={() => setIsOpen(false)}
       >
@@ -112,7 +106,6 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* Responsive Navbar for smaller screens */}
       <div className="md:hidden fixed bottom-0 left-0 right-0 bg-black/20 border-t border-pink-500/30 p-4 flex justify-around z-50">
         {navigation.map((item) => (
           <Link key={item.name} to={item.href} className="flex flex-col items-center text-gray-300 hover:text-pink-400 transition-colors duration-300">
