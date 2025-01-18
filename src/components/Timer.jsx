@@ -29,9 +29,9 @@ const CountdownTimer = () => {
     }, [calculateTimeLeft]);
 
     return (
-        <section className='relative flex flex-col items-center justify-center bg-transparent w-full h-full p-4'>
-            <div className="relative z-10 backdrop-blur-sm bg-black/30 p-4 md:p-8 rounded-2xl border border-white/20 shadow-2xl">
-                <h2 className='text-center mb-4 md:mb-8 text-2xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500'>
+        <section className='relative flex flex-col items-center justify-center bg-transparent w-[100%] h-[100%]'>
+            <div className="relative z-10 backdrop-blur-sm bg-black/30 p-8 rounded-2xl border border-white/20 shadow-2xl">
+                <h2 className='text-center mb-8 text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500'>
                     TIME REMAINING
                 </h2>
                 <div className='flex gap-2 md:gap-4 justify-center items-center'>
