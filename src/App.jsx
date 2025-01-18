@@ -3,14 +3,14 @@ import { AuthProvider } from './context/AuthContext';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
-import About from './pages/About';
+import About from './pages/AboutUs';
 import Events from './pages/Events';
 import Team from './pages/Team';
 import Sponsors from './pages/Sponsors';
 import FloatingShape from './components/FloatingShape';
 import Login from './components/Login';
 import ConferencePage from './pages/ConferencePage';
-// import ProtectedRoute from './components/ProtectedRoute';
+
 
 
 function App() {

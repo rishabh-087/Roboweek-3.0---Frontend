@@ -12,8 +12,8 @@ const Team = () => {
     const fetchTeamData = async () => {
       try {
         const response = await axios.get('http://localhost:8000/users');
-        console.log(response.data); // Check the structure of the response in the console
-        setTeamMembers(response.data); // Update the state with fetched data
+        console.log(response.data);
+        setTeamMembers(response.data); 
       } catch (err) {
         console.log(err);
       } finally {

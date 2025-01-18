@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import Button from '../components/Button';
 import { Link } from 'react-router-dom';
 import CountdownTimer from '../components/Timer';
-import About from './About';
+import About from './AboutUs';
 import Sponsors from './Sponsors';
 // import Conference from '../components/Conference';
 import logo from '../assets/logo1-removebg-preview.png';
