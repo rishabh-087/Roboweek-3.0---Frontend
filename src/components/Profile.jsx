@@ -1,25 +1,30 @@
 import { useAuth } from '../context/AuthContext';
 import { motion } from 'framer-motion';
 import Button from './Button';
+import { useEffect, useState } from 'react';
 
 const Profile = () => {
   const { user, logout } = useAuth();
 
-  // Mock data for registered events - in a real app, this would come from your backend
-  const registeredEvents = [
-    {
-      name: "RoboRace",
-      date: "Feb 21-27, 2024",
-      status: "Registered",
-      teamName: "Team Alpha"
-    },
-    {
-      name: "Drone Workshop",
-      date: "Mar 1, 2024",
-      status: "Pending",
-      teamName: "Solo Participant"
+  // Create random data for registered events
+  const generateRandomEvents = () => {
+    const events = [];
+    for (let i = 0; i < 5; i++) {
+      events.push({
+        name: `Event ${i + 1}`,
+        date: new Date(Date.now() + i * 86400000).toLocaleDateString(), // Next 5 days
+        teamName: `Team ${i + 1}`,
+        status: i % 2 === 0 ? 'Registered' : 'Pending', // Alternate status
+        teamData: {
+          teamLeader: `Leader ${i + 1}`,
+          members: [`Member ${i + 1}A`, `Member ${i + 1}B`, `Member ${i + 1}C`],
+        },
+      });
     }
-  ];
+    return events;
+  };
+
+  const [registeredEvents, setRegisteredEvents] = useState(generateRandomEvents());
 
   return (
     <div className="min-h-screen py-20">
@@ -40,32 +45,36 @@ const Profile = () => {
               </div>
             </div>
           </div>
-          <h1 className="text-4xl font-bold text-white mt-4">{user?.name}</h1>
-          <p className="text-gray-400 mt-2">{user?.email}</p>
+          <h1 className="text-4xl font-bold text-white mt-4">{user?.name || 'Guest'}</h1>
+          <p className="text-gray-400 mt-2">{user?.email || 'guest@example.com'}</p>
         </motion.div>
 
         {/* Profile Details */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="flex flex-col md:flex-row gap-8">
           {/* Personal Information */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="backdrop-blur-lg bg-black/20 rounded-xl p-6 border border-pink-500/30"
+            className="backdrop-blur-lg bg-black/20 rounded-xl p-6 border border-pink-500/30 flex-1"
           >
             <h2 className="text-2xl font-bold text-pink-400 mb-4">Personal Information</h2>
             <div className="space-y-4">
               <div>
                 <label className="text-gray-400">Name</label>
-                <p className="text-white">{user?.name}</p>
+                <p className="text-white">{user?.name || 'Guest'}</p>
               </div>
               <div>
                 <label className="text-gray-400">Email</label>
-                <p className="text-white">{user?.email}</p>
+                <p className="text-white">{user?.email || 'guest@example.com'}</p>
               </div>
               <div>
                 <label className="text-gray-400">Member Since</label>
-                <p className="text-white">{new Date().toLocaleDateString()}</p>
+                <p className="text-white">
+                  {user?.createdAt 
+                    ? new Date(user.createdAt).toLocaleDateString()
+                    : 'N/A'}
+                </p>
               </div>
             </div>
           </motion.div>
@@ -75,7 +84,7 @@ const Profile = () => {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="backdrop-blur-lg bg-black/20 rounded-xl p-6 border border-pink-500/30"
+            className="backdrop-blur-lg bg-black/20 rounded-xl p-6 border border-pink-500/30 flex-1"
           >
             <h2 className="text-2xl font-bold text-pink-400 mb-4">Registered Events</h2>
             <div className="space-y-4">
@@ -95,6 +104,10 @@ const Profile = () => {
                     }`}>
                       {event.status}
                     </span>
+                  </div>
+                  <div className="mt-2">
+                    <p className="text-gray-400 text-sm">Team Leader: {event.teamData.teamLeader}</p>
+                    <p className="text-gray-400 text-sm">Members: {event.teamData.members.join(', ')}</p>
                   </div>
                 </div>
               ))}
