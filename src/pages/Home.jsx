@@ -26,7 +26,7 @@ const Home = () => {
             <CountdownTimer />
           </div>
           <div className='mt-5'>
-            <Link to="/login">
+            <Link to="/sign">
           <Button text="Register Now" textSize="text-2xl" iconLink={<i className="ri-arrow-right-line"></i>} />
             </Link>
           </div>
