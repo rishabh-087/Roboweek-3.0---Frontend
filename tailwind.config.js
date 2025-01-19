@@ -11,6 +11,9 @@ export default {
         secondary: "#1e40af",
         accent: "#60a5fa",
       },
+      fontFamily: {
+        squidFont: ['GameOfSquids', 'sans-serif'],
+      },
     },
   },
   plugins: [],

@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'GameOfSquids';
+  src: url('/assets/fonts/GameOfSquids.ttf') format('truetype');
+}
+
 :root {
   --background-color: #010038;
   --color-1: #293A80;

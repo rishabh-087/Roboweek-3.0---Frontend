@@ -28,7 +28,7 @@ const Profile = () => {
 
   return (
     <div className="min-h-screen py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="realtive z-[1000] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Profile Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -36,7 +36,7 @@ const Profile = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <div className="relative inline-block">
+          <div className="relative  inline-block">
             <div className="w-32 h-32 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 p-1">
               <div className="w-full h-full rounded-full bg-black flex items-center justify-center">
                 <span className="text-4xl text-pink-400">
@@ -68,14 +68,14 @@ const Profile = () => {
                 <label className="text-gray-400">Email</label>
                 <p className="text-white">{user?.email || 'guest@example.com'}</p>
               </div>
-              <div>
+              {/* <div>
                 <label className="text-gray-400">Member Since</label>
                 <p className="text-white">
                   {user?.createdAt 
                     ? new Date(user.createdAt).toLocaleDateString()
                     : 'N/A'}
-                </p>
-              </div>
+                </p> 
+              </div>*/}
             </div>
           </motion.div>
 

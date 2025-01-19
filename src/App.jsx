@@ -4,7 +4,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/AboutUs';
-import Events from './pages/Events';
+// import Events from './pages/Events';
 import Team from './pages/Team';
 import Sponsors from './pages/Sponsors';
 import FloatingShape from './components/FloatingShape';
@@ -34,11 +34,11 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/events" element={
                 // <ProtectedRoute>
-                  <Events />
+                  <EventsPage />
                 // </ProtectedRoute>
               } />
               <Route path="/team" element={<Team />} />
-              <Route path="/events2" element={<EventsPage />} />
+              {/* <Route path="/events2" element={<EventsPage />} /> */}
               <Route path="/sponsors" element={<Sponsors />} />
               <Route path="/login" element={<Login />} />
               <Route path="/sign" element={<Signup />} />

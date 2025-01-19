@@ -5,8 +5,8 @@ import CountdownTimer from '../components/Timer';
 import About from './AboutUs';
 import Sponsors from './Sponsors';
 // import Conference from '../components/Conference';
-import logo from '../assets/logo1-removebg-preview.png';
-
+import logo from '../assets/Heading.png';
+import squidFont from '../../public/assets/fonts/GameOfSquids.ttf'; // Assuming you have a CSS file to apply the font
 
 const Home = () => {
 
@@ -18,10 +18,10 @@ const Home = () => {
     <div className="min-h-screen">
 
       {/* Hero Section */}
-        <section className='w-screen min-h-screen flex flex-col justify-center items-center '>
+        <section className='w-screen lg:min-h-screen min-h-[70vh] flex flex-col justify-center items-center '>
         <div className='flex flex-col justify-center items-center space-y-8 gap-205'>
-          {/* <h1>RoboWeek 3.0</h1> */}
-          <img className='lg:w-[100%] w-[80%] mt-[-10px] relative z-[100] bg-transparent ' src={logo} alt="" />
+          <h1 className='relative z-[100] text-white/80 font-squidFont lg:text-[8vw] lg:leading-[8vw] leading-[14vw] text-[14vw] text-center '>RoboWeek<br />3.0</h1>
+          {/* <img className='lg:w-[100%] w-[80%] mt-[-10px] relative z-[100] bg-transparent ' src={logo} alt="" /> */}
             {/* <h2 className='text-pink-500 text-2xl leading-tighter font-bold '>Survive the Game: Outwit, Outcode, Outlast!</h2> */}
             <CountdownTimer />
           </div>

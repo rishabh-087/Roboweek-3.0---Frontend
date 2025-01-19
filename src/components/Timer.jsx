@@ -29,12 +29,12 @@ const CountdownTimer = () => {
     }, [calculateTimeLeft]);
 
     return (
-        <section className='relative flex flex-col items-center justify-center bg-transparent w-[100%] h-[100%]'>
-            <div className="relative z-10 backdrop-blur-sm bg-black/30 p-8 rounded-2xl border border-white/20 shadow-2xl">
-                <h2 className='text-center mb-8 text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500'>
+        <section className='relative flex flex-col items-center justify-center bg-transparent w-full h-full'>
+            <div className="relative z-10 backdrop-blur-sm bg-black/30 p-6 sm:p-8 rounded-2xl border border-white/20 shadow-2xl">
+                <h2 className='text-center mb-6 text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500'>
                     TIME REMAINING
                 </h2>
-                <div className='flex gap-2 md:gap-4 justify-center items-center'>
+                <div className='flex gap-2 md:gap-4 justify-center items-center flex-wrap'>
                     {timeLeft.days !== undefined ? (
                         <>
                             <DigitWheel value={String(timeLeft.days).padStart(2, '0')} label="DAYS" />
@@ -62,20 +62,15 @@ const DigitWheel = ({ value, label }) => (
             {value.split('').map((digit, index) => (
                 <div 
                     key={index} 
-                    className="relative w-8 md:w-12 h-12 md:h-16 bg-gradient-to-b from-purple-900 to-pink-700 rounded-lg overflow-hidden"
+                    className="relative w-10 sm:w-12 h-12 sm:h-16 bg-gradient-to-b from-purple-900 to-pink-700 rounded-lg overflow-hidden"
                 >
-                        {/* this is just to check the digits  */}
-                        {/* <p className='text-white'>{ digit }</p> */}
                     <div className="absolute inset-0 flex justify-center ">
-                        <div 
-                            className="flex flex-col  translate-y-4 "
-                        >
+                        <div className="flex flex-col translate-y-4">
                             {[0,1,2,3,4,5,6,7,8,9].map((num) => (
                                 <div 
                                     key={num}
-                                    className="h-12 md:h-16 w-8 md:w-12 flex items-center justify-center text-xl md:text-4xl font-mono text-white transition-all duration-300 ease-in-out will-change-transform"
-                            style={{ transform: `translateY(-${parseInt((digit+1)*10)}%)` }}
-
+                                    className="h-12 sm:h-16 w-10 sm:w-12 flex items-center justify-center text-xl sm:text-4xl font-mono text-white transition-all duration-300 ease-in-out will-change-transform"
+                                    style={{ transform: `translateY(-${parseInt((digit+1)*10)}%)` }}
                                 >
                                     {num}
                                 </div>
@@ -87,7 +82,7 @@ const DigitWheel = ({ value, label }) => (
                 </div>
             ))}
         </div>
-        <div className="text-white text-xs md:text-sm font-bold mt-2">
+        <div className="text-white text-xs sm:text-sm font-bold mt-2">
             {label}
         </div>
     </div>

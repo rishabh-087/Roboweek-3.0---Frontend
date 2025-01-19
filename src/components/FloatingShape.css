@@ -73,7 +73,7 @@
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            bottom: 35%;
+            top: 5%;
             right: 35%;
             animation: float 25s infinite;
             background: radial-gradient(
