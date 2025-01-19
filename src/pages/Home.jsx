@@ -7,6 +7,7 @@ import Sponsors from './Sponsors';
 // import Conference from '../components/Conference';
 import logo from '../assets/Heading.png';
 import squidFont from '../../public/assets/fonts/GameOfSquids.ttf'; // Assuming you have a CSS file to apply the font
+import Prizes from '../components/Prizes';
 
 const Home = () => {
 
@@ -30,10 +31,11 @@ const Home = () => {
           </div>
         </section>
 
+
         {/* Features Section */}
       <section className="py-20 z-1000">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="relative z-1000 text-3xl font-bold text-center mb-12 text-pink-400 font-squidFont">Why Join RoboWeek 3.0?</h2>
+          <h2 className="relative z-1000 text-3xl font-bold text-center mb-12 text-pink-400 font-squidFont"><span className='text-white'>Why Join</span> RoboWeek 3.0?</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[ 
               {
@@ -77,11 +79,11 @@ const Home = () => {
             <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-pink-400/30"></div>
 
             {[ 
-              { date: "Feb 21", event: "Registration Opens", details: "Start signing up for the event." },
-              { date: "Mar 1", event: "Team Formation Deadline", details: "Form your teams and submit." },
-              { date: "Mar 28", event: "Events Begin", details: "Kick-off of the RoboWeek activities." },
-              { date: "Mar 29", event: "Day 2", details: "Continuation of events and competitions." },
-              { date: "Mar 30", event: "Final Day", details: "Wrap-up and prize distribution." }
+              { event: "Registration Opens", date: "--/--/----" },
+              { event: "Team Formation Deadline", date: "--/--/----" },
+              { event: "Events Begin", date: "--/--/----" },
+              { event: "Day 2", date: "--/--/----" },
+              { event: "Final Day", date: "--/--/----" }
             ].map((item, index) => (
               <motion.div
                 key={index}
@@ -93,9 +95,7 @@ const Home = () => {
               >
                 <div className={`w-full md:w-5/12 ${index % 2 === 0 ? 'md:pl-6' : 'md:pr-6 text-right'}`}>
                   <div className="backdrop-blur-lg bg-black/40 p-6 rounded-xl border border-pink-500 shadow-lg hover:border-pink-400 transition-all duration-300">
-                    <h3 className="text-lg font-bold text-pink-400 mb-1 font-squidFont">{item.date}</h3>
-                    <p className="text-gray-300">{item.event}</p>
-                    <p className="text-gray-400 text-sm">{item.details}</p>
+                    <p className="text-gray-300">{item.event} : {item.date}</p>
                   </div>
                 </div>
 

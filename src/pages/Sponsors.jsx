@@ -72,16 +72,7 @@ const Sponsors = () => {
                   className="backdrop-blur-lg bg-black/30 group relative overflow-hidden rounded-xl p-4 border border-pink-500/20 h-36 flex items-center justify-center"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-pink-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  <img
-                    src={sponsor.logo}
-                    alt={sponsor.name}
-                    className="w-full h-auto filter brightness-0 invert opacity-80 group-hover:opacity-100 transition-opacity duration-300"
-                  />
-                  <div
-                    className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  >
-                    <p className="text-pink-400 text-center font-medium text-sm">{sponsor.name}</p>
-                  </div>
+                  <p className="text-gray-300">Will be updated soon</p>
                 </motion.div>
               ))}
             </div>

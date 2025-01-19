@@ -198,17 +198,7 @@
         "LinkedIn":"https:\/\/www.linkedin.com\/in\/fictech\/",
         "ProfilePicture":"https://res.cloudinary.com/dosnuagvu/image/upload/v1736085886/143938643_-_Ashish_Ranjan_mm4qba.png"
     },
-    {
-        "Timestamp":1735852513118,
-        "Email Address":"nimish.saxena335@gmail.com",
-        "Name":"Nimish Saxena",
-        "Post":"Executive",
-        "Techstack":"Graphic Designer (Figma,Canva) , IOT , App Development",
-        "Github":"https:\/\/github.com\/Neeemis",
-        "Instagram":"https:\/\/www.instagram.com\/nimishh.music\/profilecard\/?igsh=d2FscnowdTNtMmJp",
-        "LinkedIn":"https:\/\/www.linkedin.com\/in\/nimish-saxena-3433a52b5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
-        "ProfilePicture":"https://res.cloudinary.com/dosnuagvu/image/upload/v1736085896/IMG_9252_-_NIMISH_SAXENA_fb8g30.jpg"
-    },
+   
     {
         "Timestamp":1735854902159,
         "Email Address":"vaibhavshukla.2344@gmail.com",
@@ -230,6 +220,17 @@
         "Instagram":"https:\/\/www.instagram.com\/__sarthak2910\/",
         "LinkedIn":"https:\/\/www.linkedin.com\/in\/sarthak-katiyar-598159293\/",
         "ProfilePicture":"https://res.cloudinary.com/dosnuagvu/image/upload/v1735836993/IMG20241013075654_dycmi3.jpg"
+    },
+    {
+        "Timestamp":1735852513118,
+        "Email Address":"nimish.saxena335@gmail.com",
+        "Name":"Nimish Saxena",
+        "Post":"Executive",
+        "Techstack":"Graphic Designer (Figma,Canva) , IOT , App Development",
+        "Github":"https:\/\/github.com\/Neeemis",
+        "Instagram":"https:\/\/www.instagram.com\/nimishh.music\/profilecard\/?igsh=d2FscnowdTNtMmJp",
+        "LinkedIn":"https:\/\/www.linkedin.com\/in\/nimish-saxena-3433a52b5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+        "ProfilePicture":"https://res.cloudinary.com/dosnuagvu/image/upload/v1736085896/IMG_9252_-_NIMISH_SAXENA_fb8g30.jpg"
     },
     {
         "Timestamp":1735394062975,
@@ -302,7 +303,7 @@
         "Email Address":"23bec007@nith.ac.in",
         "Name":"Akshat Sharma",
         "Post":"Executive",
-        "Techstack":"C\/C++,Microcontroller programming and Hardware Integration",
+        "Techstack":"C\/C++,Microcontroller programming,Hardware Integration",
         "Github":"https:\/\/github.com\/Akshat-Sharma-007",
         "Instagram":"https:\/\/www.instagram.com\/akshat_shxrma_\/",
         "LinkedIn":"https:\/\/www.linkedin.com\/in\/akshat-sharma-2308382ab\/",
