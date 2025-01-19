@@ -1,43 +1,149 @@
-import { useForm } from "react-hook-form";
-import { useState } from "react";
+import { useState, useEffect } from 'react';
+import { useNavigate, useSearchParams } from 'react-router-dom';
+import Button from './Button';
+import { useAuth } from '../context/AuthContext';
+import { signInWithGoogle, handleGoogleCallback } from '../services/auth';
 
-const Signup = () => {
-  
-  const {
-    register,
-    handleSubmit,
-    formState: { errors, isSubmitting },
-  } = useForm();
+const SignUp = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    password: ''
+  });
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
+  const { SignUp } = useAuth();
+  const [searchParams] = useSearchParams();
 
-  const onSubmit = async (data) => {
-    await new Promise((resolve) => setTimeout(resolve, 5000));
-    console.log("Form is being submitted");
-    console.log('firstName :', data.firstName);
-    console.log('middleName :', data.middleName);
-    console.log('lastName :', data.lastName);
+  useEffect(() => {
+    const code = searchParams.get('code');
+    if (code) {
+      handleGoogleCallback(code)
+        .then((response) => {
+          SignUp(response.user);
+          navigate('/events');
+        })
+        .catch((error) => {
+          console.error('Google callback error:', error);
+          setError('Failed to complete Google sign-in');
+        });
+    }
+  }, [searchParams, SignUp, navigate]);
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError('');
+
+    if (!formData.name || !formData.email || !formData.password) {
+      setError('Please fill in all fields');
+      return;
+    }
+
+    try {
+      const userData = {
+        name: formData.name,
+        email: formData.email,
+      };
+
+      SignUp(userData);
+      navigate('/events');
+    } catch (err) {
+      setError('Invalid credentials');
+    }
+  };
+
+  const handleGoogleSignIn = async () => {
+    try {
+      await signInWithGoogle();
+    } catch (error) {
+      console.error('Google sign-in error:', error);
+      setError('Failed to initiate Google sign-in');
+    }
   };
 
   return (
-    <div className="relative z-[1000] w-screen h-screen flex items-center justify-center text-gray-400">
-      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-5 p-5 border border-white">
-        <div className="flex gap-2">
-          <label htmlFor="firstName">First Name</label>
-          <input type="text" {...register("firstName", { required: true })} />
-          {errors.firstName && <span className="text-red-500">First name is required</span>}
+    <div className='min-h-screen flex items-center justify-center relative z-1000'>
+      <div className="z-100 p-10 border border-pink-500/30 rounded-xl bg-black/20 backdrop-blur-lg w-full max-w-md">
+        <h1 className='text-center text-pink-500 font-bold mb-10 text-4xl'>SignUp</h1>
+        
+        {error && (
+          <div className="mb-4 p-3 bg-red-500/20 border border-red-500/50 rounded-lg text-red-400 text-center">
+            {error}
+          </div>
+        )}
+
+        <form onSubmit={handleSubmit} className='flex flex-col gap-5 z-100'>
+          <div>
+            <h1 className='text-white text-lg mb-2'>Name</h1>
+            <input
+              name="name"
+              type="text"
+              value={formData.name}
+              onChange={handleChange}
+              className='w-full text-gray-300 p-3 relative z-100 bg-black/20 backdrop-blur-xl rounded-sm border border-pink-500/30'
+              placeholder="Enter your name"
+            />
+          </div>
+
+          <div>
+            <h1 className='text-white text-lg mb-2'>Email</h1>
+            <input
+              name="email"
+              type="email"
+              value={formData.email}
+              onChange={handleChange}
+              className='w-full text-gray-300 p-3 relative z-100 bg-black/20 backdrop-blur-xl rounded-sm border border-pink-500/30'
+              placeholder="Enter your email"
+            />
+          </div>
+
+          <div>
+            <h1 className='text-white text-lg mb-2'>Password</h1>
+            <input
+              name="password"
+              type="password"
+              value={formData.password}
+              onChange={handleChange}
+              className='w-full text-gray-300 p-3 relative z-100 bg-black/20 backdrop-blur-xl rounded-sm border border-pink-500/30'
+              placeholder="Enter your password"
+            />
+          </div>
+
+          <div className="flex items-center justify-center w-full mt-4">
+            <Button
+              onClick={handleSubmit}
+              type="submit"
+              text='SignUp'
+              textSize='text-2xl'
+              iconLink={<i className="ri-SignUp-box-line text-3xl"></i>}
+            />
+          </div>
+        </form>
+
+        <div className="flex items-center gap-4 w-full my-6">
+          <div className="flex-1 h-px bg-pink-500/30"></div>
+          <span className="text-gray-400">or</span>
+          <div className="flex-1 h-px bg-pink-500/30"></div>
         </div>
-        <div className="flex gap-2">
-          <label htmlFor="middleName">Middle Name</label>
-          <input type="text" {...register("middleName", { required: false, maxLength: 20 })} />
+
+        <div className="flex justify-center">
+          <Button
+            onClick={handleGoogleSignIn}
+            text="Sign in with Google"
+            textSize="text-lg"
+            iconLink={<i className="ri-google-fill text-2xl"></i>}
+          />
         </div>
-        <div className="flex gap-2">
-          <label htmlFor="lastName">Last Name</label>
-          <input type="text" {...register("lastName", { required: true })} />
-          {errors.lastName && <span className="text-red-500">Last name is required</span>}
-        </div>
-        <input type="submit" disabled={isSubmitting} value={isSubmitting ? 'Submitting' : 'Submit' } className="border border-white cursor-pointer" />
-      </form>         
+      </div>
     </div>
   );
 };
 
-export default Signup;
+export default SignUp;

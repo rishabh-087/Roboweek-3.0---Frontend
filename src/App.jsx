@@ -10,6 +10,7 @@ import Sponsors from './pages/Sponsors';
 import FloatingShape from './components/FloatingShape';
 import Login from './components/Login';
 import ConferencePage from './pages/ConferencePage';
+import Signup from './components/SignUp';
 
 
 
@@ -32,6 +33,7 @@ function App() {
               <Route path="/team" element={<Team />} />
               <Route path="/sponsors" element={<Sponsors />} />
               <Route path="/login" element={<Login />} />
+              <Route path="/sign" element={<Signup />} />
               <Route path="/conference" element={<ConferencePage />} />
             </Routes>
           </main>
