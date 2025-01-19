@@ -8,8 +8,8 @@
 
         .shape {
             position: absolute;
-            box-shadow: 0 0 80px rgba(255, 0, 130, 0.3);
-            backdrop-filter: blur(8px);
+            box-shadow: 0 0 100px rgba(255, 0, 130, 0.5); /* Increased shadow brightness */
+            backdrop-filter: blur(6px); /* Reduced blur for a sharper look */
         }
 
         .shape:nth-child(1) {
@@ -17,12 +17,12 @@
             height: 0;
             border-left: 200px solid transparent;
             border-right: 200px solid transparent;
-            border-bottom: 346px solid rgba(255, 0, 130, 0.15);
+            border-bottom: 346px solid rgba(255, 0, 130, 0.25); /* Increased opacity */
             background: none;
             top: -150px;
             right: -120px;
             animation: float 15s infinite;
-            filter: drop-shadow(0 0 20px rgba(255, 0, 130, 0.5));
+            filter: drop-shadow(0 0 30px rgba(255, 0, 130, 0.7)); /* Increased shadow brightness */
         }
 
         .shape:nth-child(2) {
@@ -34,8 +34,8 @@
             animation: float 18s infinite reverse;
             background: radial-gradient(
                 circle at center,
-                rgba(255, 0, 130, 0.4),
-                rgba(255, 0, 130, 0.1) 50%,
+                rgba(255, 0, 130, 0.6), /* Increased opacity */
+                rgba(255, 0, 130, 0.2) 50%, /* Increased opacity */
                 transparent 70%
             );
         }
@@ -49,8 +49,8 @@
             animation: float 20s infinite;
             background: linear-gradient(
                 45deg,
-                rgba(255, 0, 130, 0.3),
-                rgba(255, 0, 130, 0.05)
+                rgba(255, 0, 130, 0.5), /* Increased opacity */
+                rgba(255, 0, 130, 0.1) /* Increased opacity */
             );
         }
 
@@ -63,8 +63,8 @@
             animation: float 22s infinite reverse;
             background: radial-gradient(
                 circle at center,
-                rgba(255, 0, 130, 0.25),
-                rgba(255, 0, 130, 0.05) 50%,
+                rgba(255, 0, 130, 0.4), /* Increased opacity */
+                rgba(255, 0, 130, 0.1) 50%, /* Increased opacity */
                 transparent 70%
             );
         }
@@ -78,8 +78,8 @@
             animation: float 25s infinite;
             background: radial-gradient(
                 circle at center,
-                rgba(255, 0, 130, 0.2),
-                rgba(255, 0, 130, 0.05) 50%,
+                rgba(255, 0, 130, 0.3), /* Increased opacity */
+                rgba(255, 0, 130, 0.1) 50%, /* Increased opacity */
                 transparent 70%
             );
         }
@@ -87,22 +87,22 @@
         @keyframes float {
             0% { 
                 transform: translate(0, 0) rotate(0deg) scale(1);
-                opacity: 0.3;
+                opacity: 0.4; /* Increased opacity */
             }
             25% {
                 transform: translate(120px, -60px) rotate(90deg) scale(1.2);
-                opacity: 0.5;
+                opacity: 0.6; /* Increased opacity */
             }
             50% { 
                 transform: translate(180px, 120px) rotate(180deg) scale(1);
-                opacity: 0.6;
+                opacity: 0.7; /* Increased opacity */
             }
             75% {
                 transform: translate(-60px, 100px) rotate(270deg) scale(1.2);
-                opacity: 0.5;
+                opacity: 0.6; /* Increased opacity */
             }
             100% { 
                 transform: translate(0, 0) rotate(360deg) scale(1);
-                opacity: 0.3;
+                opacity: 0.4; /* Increased opacity */
             }
         }
