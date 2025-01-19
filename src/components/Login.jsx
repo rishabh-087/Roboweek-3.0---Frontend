@@ -70,8 +70,8 @@ const Login = () => {
 
   return (
     <div className='min-h-screen flex items-center justify-center relative z-1000'>
-      <div className="z-100 p-10 border border-cyan-500/30 rounded-xl bg-black/20 backdrop-blur-lg w-full max-w-md">
-        <h1 className='text-center text-cyan-500 font-bold mb-10 text-4xl'>Login</h1>
+      <div className="z-100 p-10 border border-pink-500/30 rounded-xl bg-black/20 backdrop-blur-lg w-full max-w-md">
+        <h1 className='text-center text-pink-500 font-bold mb-10 text-4xl'>Login</h1>
         
         {error && (
           <div className="mb-4 p-3 bg-red-500/20 border border-red-500/50 rounded-lg text-red-400 text-center">
@@ -87,7 +87,7 @@ const Login = () => {
               type="text"
               value={formData.name}
               onChange={handleChange}
-              className='w-full text-gray-300 p-3 relative z-100 bg-black/20 backdrop-blur-xl rounded-sm border border-cyan-500/30'
+              className='w-full text-gray-300 p-3 relative z-100 bg-black/20 backdrop-blur-xl rounded-sm border border-pink-500/30'
               placeholder="Enter your name"
             />
           </div>
@@ -99,7 +99,7 @@ const Login = () => {
               type="email"
               value={formData.email}
               onChange={handleChange}
-              className='w-full text-gray-300 p-3 relative z-100 bg-black/20 backdrop-blur-xl rounded-sm border border-cyan-500/30'
+              className='w-full text-gray-300 p-3 relative z-100 bg-black/20 backdrop-blur-xl rounded-sm border border-pink-500/30'
               placeholder="Enter your email"
             />
           </div>
@@ -111,7 +111,7 @@ const Login = () => {
               type="password"
               value={formData.password}
               onChange={handleChange}
-              className='w-full text-gray-300 p-3 relative z-100 bg-black/20 backdrop-blur-xl rounded-sm border border-cyan-500/30'
+              className='w-full text-gray-300 p-3 relative z-100 bg-black/20 backdrop-blur-xl rounded-sm border border-pink-500/30'
               placeholder="Enter your password"
             />
           </div>
@@ -128,9 +128,9 @@ const Login = () => {
         </form>
 
         <div className="flex items-center gap-4 w-full my-6">
-          <div className="flex-1 h-px bg-cyan-500/30"></div>
+          <div className="flex-1 h-px bg-pink-500/30"></div>
           <span className="text-gray-400">or</span>
-          <div className="flex-1 h-px bg-cyan-500/30"></div>
+          <div className="flex-1 h-px bg-pink-500/30"></div>
         </div>
 
         <div className="flex justify-center">
