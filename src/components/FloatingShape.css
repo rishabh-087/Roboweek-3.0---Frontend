@@ -8,84 +8,78 @@
 
         .shape {
             position: absolute;
-            border-radius: 30%;
-            background: linear-gradient(
-                45deg,
-                rgba(64, 224, 208, 0.5),
-                rgba(64, 224, 208, 0.05)
-            );
-            box-shadow: 
-                inset 0 0 60px rgba(64, 224, 208, 0.3),
-                0 0 60px rgba(64, 224, 208, 0.1);
+            box-shadow: 0 0 80px rgba(255, 0, 130, 0.3);
             backdrop-filter: blur(8px);
         }
 
         .shape:nth-child(1) {
-            width: 450px;
-            height: 450px;
+            width: 0;
+            height: 0;
+            border-left: 200px solid transparent;
+            border-right: 200px solid transparent;
+            border-bottom: 346px solid rgba(255, 0, 130, 0.15);
+            background: none;
             top: -150px;
             right: -120px;
             animation: float 15s infinite;
-            background: radial-gradient(
-                circle at center,
-                rgba(255, 105, 180, 0.5),
-                rgba(255, 105, 180, 0.1) 50%,
-                transparent 70%
-            );
+            filter: drop-shadow(0 0 20px rgba(255, 0, 130, 0.5));
         }
 
         .shape:nth-child(2) {
-            width: 380px;
-            height: 380px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
             bottom: -80px;
             left: -60px;
             animation: float 18s infinite reverse;
             background: radial-gradient(
                 circle at center,
-                rgba(123, 104, 238, 0.5),
-                rgba(123, 104, 238, 0.1) 50%,
+                rgba(255, 0, 130, 0.4),
+                rgba(255, 0, 130, 0.1) 50%,
                 transparent 70%
             );
         }
 
         .shape:nth-child(3) {
-            width: 400px;
-            height: 400px;
+            width: 250px;
+            height: 250px;
+            border-radius: 0;
             top: 40%;
             right: 25%;
             animation: float 20s infinite;
-            background: radial-gradient(
-                circle at center,
-                rgba(0, 191, 255, 0.3),
-                rgba(0, 191, 255, 0.05) 50%,
-                transparent 70%
+            background: linear-gradient(
+                45deg,
+                rgba(255, 0, 130, 0.3),
+                rgba(255, 0, 130, 0.05)
             );
         }
 
         .shape:nth-child(4) {
-            width: 300px;
-            height: 300px;
+            width: 200px;
+            height: 200px;
+            border-radius: 15%;
             top: 15%;
             left: 25%;
             animation: float 22s infinite reverse;
             background: radial-gradient(
                 circle at center,
-                rgba(255, 215, 0, 0.3),
-                rgba(255, 215, 0, 0.05) 50%,
+                rgba(255, 0, 130, 0.25),
+                rgba(255, 0, 130, 0.05) 50%,
                 transparent 70%
             );
         }
 
         .shape:nth-child(5) {
-            width: 250px;
-            height: 250px;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
             bottom: 35%;
             right: 35%;
             animation: float 25s infinite;
             background: radial-gradient(
                 circle at center,
-                rgba(50, 205, 50, 0.3),
-                rgba(50, 205, 50, 0.05) 50%,
+                rgba(255, 0, 130, 0.2),
+                rgba(255, 0, 130, 0.05) 50%,
                 transparent 70%
             );
         }
@@ -93,22 +87,22 @@
         @keyframes float {
             0% { 
                 transform: translate(0, 0) rotate(0deg) scale(1);
-                opacity: 0.5;
+                opacity: 0.3;
             }
             25% {
-                transform: translate(120px, -60px) rotate(90deg) scale(1.1);
-                opacity: 0.7;
+                transform: translate(120px, -60px) rotate(90deg) scale(1.2);
+                opacity: 0.5;
             }
             50% { 
                 transform: translate(180px, 120px) rotate(180deg) scale(1);
-                opacity: 0.8;
+                opacity: 0.6;
             }
             75% {
-                transform: translate(-60px, 100px) rotate(270deg) scale(1.1);
-                opacity: 0.7;
+                transform: translate(-60px, 100px) rotate(270deg) scale(1.2);
+                opacity: 0.5;
             }
             100% { 
                 transform: translate(0, 0) rotate(360deg) scale(1);
-                opacity: 0.5;
+                opacity: 0.3;
             }
         }
