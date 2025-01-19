@@ -24,7 +24,7 @@ const About = () => {
           transition={{ duration: 0.2 }}
           className="text-center mb-16 relative z-10"
         >
-          <h1 className="text-6xl font-bold text-white mb-4">
+          <h1 className="text-6xl font-bold text-white mb-4 font-squidFont">
             About <span className="text-pink-400 font-bold">RoboWeek 3.0</span>
           </h1>
         </motion.div>
@@ -39,7 +39,7 @@ const About = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="backdrop-blur-lg bg-black/20 p-8 rounded-xl border border-pink-500/100 shadow-lg hover:border-pink-500 transition-all duration-300 h-full"
           >
-            <h2 className="text-3xl font-bold text-pink-400 mb-6">Our Mission</h2>
+            <h2 className="text-3xl font-bold text-pink-400 mb-6 font-squidFont">Our Mission</h2>
             <p className="text-gray-300 leading-relaxed">{Mission}</p>
           </motion.div>
 
@@ -51,7 +51,7 @@ const About = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="backdrop-blur-lg bg-black/20 p-8 rounded-xl border border-pink-500/100 shadow-lg hover:border-pink-500 transition-all duration-300 h-full"
           >
-            <h3 className="text-2xl font-bold text-pink-400 mb-4">Key Objectives</h3>
+            <h3 className="text-2xl font-bold text-pink-400 mb-4 font-squidFont">Key Objectives</h3>
             <ul className="space-y-4">
               {objectives.map((objective, index) => (
                 <motion.li key={index} whileHover={{ x: 10 }} className="flex items-center">
@@ -72,7 +72,7 @@ const About = () => {
           viewport={{ once: true }}
           className="backdrop-blur-lg bg-black/20 rounded-xl p-8 border border-pink-500/100 shadow-lg hover:border-pink-500 transition-all duration-300"
         >
-          <h2 className="text-3xl font-bold text-pink-400 mb-6 text-center">Our Impact</h2>
+          <h2 className="text-3xl font-bold text-pink-400 mb-6 text-center font-squidFont">Our Impact</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               { number: "XXX+", label: "Participants" },

@@ -26,8 +26,8 @@ const speakers = [
 const ConferencePage = () => {
   return (
     <div className='flex flex-col items-center min-h-screen bg-black '>
-      <header className='text-center py-10'>
-        <h1 className='text-7xl font-extrabold text-white mb-4'>Roboweek 3.0<span className="text-pink-400"> Conference</span></h1>
+      <header className='text-center py-10 relative z-[100] mt-10'>
+        <h1 className='text-7xl font-extrabold text-white mb-4  '>Roboweek 3.0<span className="text-pink-400"> Conference</span></h1>
         <CountdownTimer />
         <p className='text-lg text-gray-300 mt-4 font-semibold text-center'>
           Join us for an exciting event filled with <span className="text-pink-400">knowledge</span> and <span className="text-pink-400">networking</span>!
@@ -36,7 +36,7 @@ const ConferencePage = () => {
 
       <Button text='Submit your Extract' iconLink= <i class="ri-corner-right-down-line"></i> />
 
-      <section className='mt-12'>
+      <section className='mt-12 relative z-[100]'>
         <h2 className='text-5xl font-bold text-center text-white mb-6'>Featured <span className="text-pink-400">Speakers</span></h2>
         <p className='text-lg text-center text-gray-300 mb-8'>Meet our esteemed speakers who will share their insights and expertise at the conference.</p>
 
@@ -54,7 +54,7 @@ const ConferencePage = () => {
           ))}
         </div>
       </section>
-      <section className='mt-12 text-center mb-12'>
+      <section className='relative z-[100] mt-12 text-center mb-12'>
         <h2 className='text-5xl font-bold text-white mb-6'>Engaging Workshops & Sessions</h2>
         <p className='text-lg text-gray-300 mb-8'>Join us for interactive workshops and enlightening sessions led by industry leaders.</p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">

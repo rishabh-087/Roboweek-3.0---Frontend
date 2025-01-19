@@ -38,7 +38,7 @@ const Navbar = () => {
         </div>
       )}
 
-      <div className="hidden lg:flex lg:fixed top-6 right-6 z-50">
+      {/* <div className="hidden lg:flex lg:fixed top-6 right-6 z-50">
         {user ? (
           <div className="flex items-center gap-4">
             <div onClick={handleLogout}>
@@ -57,8 +57,8 @@ const Navbar = () => {
               iconLink={<i className="ri-login-box-line text-xl"></i>}
             />
           </Link>
-        )}
-      </div>
+        )} 
+      </div> */}
 
       <nav
         className={`hidden md:flex fixed left-6 top-1/2 -translate-y-1/2 z-50 ${isOpen ? 'w-64' : 'w-12'} transition-all duration-500 ease-in-out hover:shadow-lg hover:shadow-pink-500/10`}

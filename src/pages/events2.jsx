@@ -8,7 +8,7 @@ const EventsPage = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-center"
+        className="text-center relative z-[100]"
       >
         <h1 className="text-6xl font-bold text-pink-400 mb-4">
           Events will be revealed soon!

@@ -21,8 +21,6 @@ const Home = () => {
         <section className='w-screen lg:min-h-screen min-h-[70vh] flex flex-col justify-center items-center '>
         <div className='flex flex-col justify-center items-center space-y-8 gap-205'>
           <h1 className='relative z-[100] text-white/80 font-squidFont lg:text-[8vw] lg:leading-[8vw] leading-[14vw] text-[14vw] text-center '>RoboWeek<br />3.0</h1>
-          {/* <img className='lg:w-[100%] w-[80%] mt-[-10px] relative z-[100] bg-transparent ' src={logo} alt="" /> */}
-            {/* <h2 className='text-pink-500 text-2xl leading-tighter font-bold '>Survive the Game: Outwit, Outcode, Outlast!</h2> */}
             <CountdownTimer />
           </div>
           <div className='mt-5'>
@@ -35,7 +33,7 @@ const Home = () => {
         {/* Features Section */}
       <section className="py-20 z-1000">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="relative z-1000 text-3xl font-bold text-center mb-12 text-pink-400">Why Join RoboWeek 3.0?</h2>
+          <h2 className="relative z-1000 text-3xl font-bold text-center mb-12 text-pink-400 font-squidFont">Why Join RoboWeek 3.0?</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[ 
               {
@@ -60,7 +58,7 @@ const Home = () => {
                 transition={{ duration: 0.5, delay: index * 0.2 }}
                 viewport={{ once: true }}
               >
-                <h3 className="text-lg font-semibold mb-4 text-pink-400">{feature.title}</h3>
+                <h3 className="text-lg font-semibold mb-4 text-pink-400 font-squidFont">{feature.title}</h3>
                 <p className="text-gray-300">{feature.description}</p>
               </motion.div>
             ))}
@@ -73,7 +71,7 @@ const Home = () => {
       {/* Timeline Section */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="relative z-1000 text-3xl font-bold text-center mb-10 text-pink-400">Unleash the Future: Event Timeline</h2>
+          <h2 className="relative z-1000 text-3xl font-bold text-center mb-10 text-pink-400 font-squidFont">Unleash the Future: Event Timeline</h2>
           <div className="relative">
             {/* Vertical line */}
             <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-pink-400/30"></div>
@@ -87,15 +85,15 @@ const Home = () => {
             ].map((item, index) => (
               <motion.div
                 key={index}
-                className={`flex items-center mb-10 ${index % 2 === 0 ? 'flex-row-reverse' : ''}`}
+                className={`flex flex-col md:flex-row items-center mb-12 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
                 viewport={{ once: true }}
               >
-                <div className={`w-5/12 ${index % 2 === 0 ? 'pl-6' : 'pr-6 text-right'}`}>
-                  <div className="backdrop-blur-lg bg-black/40 p-5 rounded-xl border border-pink-500 shadow-lg hover:border-pink-400 transition-all duration-300">
-                    <h3 className="text-lg font-bold text-pink-400 mb-1">{item.date}</h3>
+                <div className={`w-full md:w-5/12 ${index % 2 === 0 ? 'md:pl-6' : 'md:pr-6 text-right'}`}>
+                  <div className="backdrop-blur-lg bg-black/40 p-6 rounded-xl border border-pink-500 shadow-lg hover:border-pink-400 transition-all duration-300">
+                    <h3 className="text-lg font-bold text-pink-400 mb-1 font-squidFont">{item.date}</h3>
                     <p className="text-gray-300">{item.event}</p>
                     <p className="text-gray-400 text-sm">{item.details}</p>
                   </div>
@@ -103,13 +101,13 @@ const Home = () => {
 
                 <div className="w-2/12 flex justify-center">
                   <motion.div
-                    className="w-5 h-5 bg-pink-400 rounded-full border-4 border-black relative z-10"
+                    className="w-6 h-6 bg-pink-400 rounded-full border-4 border-black relative z-10"
                     whileHover={{ scale: 1.2 }}
                     transition={{ duration: 0.2 }}
                   />
                 </div>
 
-                <div className="w-5/12" />
+                <div className="w-full md:w-5/12" />
               </motion.div>
             ))}
           </div>
