@@ -89,7 +89,7 @@ const Events = () => {
           className="text-center mb-16 relative z-1000"
         >
           <h1 className="text-6xl font-bold text-white mb-4">Events at <span className="text-pink-400">RoboWeek 3.0</span></h1>
-          <p className="text-xl text-pink-100">Discover what's happening at RoboWeek 2024</p>
+          <p className="text-xl text-pink-100">Discover what's happening at RoboWeek 2025</p>
         </motion.div>
 
         <div className="grid gap-8">
