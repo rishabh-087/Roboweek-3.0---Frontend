@@ -11,6 +11,7 @@ import FloatingShape from './components/FloatingShape';
 import Login from './components/Login';
 import ConferencePage from './pages/ConferencePage';
 import Signup from './components/SignUp';
+import EventsPage from './pages/events2';
 import Profile from './components/Profile';
 
 // Add ProtectedRoute component
@@ -37,6 +38,7 @@ function App() {
                 // </ProtectedRoute>
               } />
               <Route path="/team" element={<Team />} />
+              <Route path="/events2" element={<EventsPage />} />
               <Route path="/sponsors" element={<Sponsors />} />
               <Route path="/login" element={<Login />} />
               <Route path="/sign" element={<Signup />} />

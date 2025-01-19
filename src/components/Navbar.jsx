@@ -22,6 +22,7 @@ const Navbar = () => {
     { name: 'Sponsors', href: '/sponsors', icon: 'ri-money-dollar-circle-line' },
     { name: 'Conference', href: '/conference', icon: 'ri-slideshow-line' },
     { name: 'Profile', href: '/profile', icon: 'ri-user-line' },
+    {name: 'Events2', href: '/events2', icon: 'ri-calendar-todo-line'},
   ];
 
   return (
