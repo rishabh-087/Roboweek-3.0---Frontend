@@ -1,34 +1,8 @@
 import { motion } from 'framer-motion';
-import { useEffect,useState } from 'react';
-import axios from 'axios';
+import teamData from '../../public/data/test.json';  // Update path as needed
 import Button from '../components/Button';
 
 const Team = () => {
-  const [teamMembers,setTeamMembers]=useState([]);
-  const [loading,setLoading]=useState(true);
-
-  useEffect(() => {
-    console.log("Making API Request");
-    const fetchTeamData = async () => {
-      try {
-        const response = await axios.get('http://localhost:8000/users');
-        console.log(response.data);
-        setTeamMembers(response.data); 
-      } catch (err) {
-        console.log(err);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchTeamData();
-  }, []);
-
-
-  if(loading){
-    return <div>Loading...</div>
-  }
-
-
   return (
     <div className="min-h-screen py-20 z-1000">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -43,49 +17,76 @@ const Team = () => {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {teamMembers.map((member, index) => (
+          {teamData.map((member, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className="backdrop-blur-lg bg-black/10 rounded-2xl overflow-hidden border border-pink-500/50 hover:bg-white/20 transition-all duration-300"
+              className="group h-[400px] [perspective:1000px]"
             >
-              <img
-                src={member.ProfilePicture}
-                alt={member.Name}
-                className="w-full h-64 object-contain object-center"
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-white mb-2">{member.Name}</h3>
-                <div className="text-pink-400 font-semibold mb-4">{member.Post}</div>
-                <p className="text-gray-300">{member.TechStack}</p>
-                <div className="flex justify-between mt-4">
-                  <a
-                    href={member.Github}
-                    className="text-pink-400 hover:text-white"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    GitHub
-                  </a>
-                  <a
-                    href={member.LinkedIn}
-                    className="text-pink-400 hover:text-white"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    LinkedIn
-                  </a>
-                  <a
-                    href={member.Instagram}
-                    className="text-pink-400 hover:text-white"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Instagram
-                  </a>
+              <div className="relative h-full w-full transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                {/* Front Side */}
+                <div className="absolute inset-0 backdrop-blur-lg bg-black/10 rounded-2xl overflow-hidden border border-pink-500/50">
+                  <img
+                    src={member.ProfilePicture}
+                    alt={member.Name}
+                    className="w-full h-3/4 object-cover object-center"
+                  />
+                  <div className="p-4 text-center">
+                    <h3 className="text-xl font-bold text-white mb-2">{member.Name}</h3>
+                    <div className="text-pink-400 font-semibold">{member.Post}</div>
+                  </div>
+                </div>
+
+                {/* Back Side */}
+                <div className="absolute inset-0 h-full w-full [transform:rotateY(180deg)] [backface-visibility:hidden] bg-black rounded-2xl overflow-hidden border border-pink-500/50">
+                  <div className="flex flex-col justify-center h-full p-6 text-center"> {/* Center aligned */}
+                    <div className="mb-4"> {/* Added margin bottom for spacing */}
+                      <h3 className="text-xl font-bold text-white mb-2">{member.Name}</h3>
+                      <div className="text-pink-400 font-semibold mb-4">{member.Post}</div>
+                      <div className="flex flex-wrap justify-center gap-2 mb-4">
+                        {member.Techstack.split(',').map((tech, idx) => (
+                          <span key={idx} className="bg-pink-500 text-white rounded-full px-3 py-1 text-sm">
+                            {tech.trim()}
+                          </span>
+                        ))}
+                      </div> {/* Techstack in rounded boxes */}
+                    </div>
+                    <div className="flex justify-center gap-6">
+                      {member.Github && member.Github !== "Non active" && (
+                        <a
+                          href={member.Github}
+                          className="text-pink-400 hover:text-white transition-colors duration-300"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <i className="ri-github-fill text-2xl"></i>
+                        </a>
+                      )}
+                      {member.LinkedIn && (
+                        <a
+                          href={member.LinkedIn}
+                          className="text-pink-400 hover:text-white transition-colors duration-300"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <i className="ri-linkedin-box-fill text-2xl"></i>
+                        </a>
+                      )}
+                      {member.Instagram && member.Instagram !== "__" && (
+                        <a
+                          href={member.Instagram}
+                          className="text-pink-400 hover:text-white transition-colors duration-300"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <i className="ri-instagram-fill text-2xl"></i>
+                        </a>
+                      )}
+                    </div>
+                  </div>
                 </div>
               </div>
             </motion.div>

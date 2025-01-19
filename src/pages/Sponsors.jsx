@@ -38,7 +38,7 @@ const Sponsors = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-20 backdrop-blur-lg bg-black/20 p-6 rounded-3xl border border-pink-500/30"
         >
-          <h1 className="relative z-10 text-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-pink-400 to-blue-300 mb-4">
+          <h1 className="relative z-10 text-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-pink-400 to-blue-300 mb-4 font-squidFont">
             Our Partners in Innovation
           </h1>
           <p className="text-lg text-gray-400 max-w-2xl mx-auto">
@@ -57,7 +57,7 @@ const Sponsors = () => {
           >
             <div className="flex items-center justify-center mb-8">
               <div className="h-[1px] flex-grow bg-gradient-to-r from-transparent via-pink-500 to-transparent"></div>
-              <h2 className="text-2xl font-bold text-white px-4">{tier.tier}</h2>
+              <h2 className="text-2xl font-bold text-white px-4 font-squidFont">{tier.tier}</h2>
               <div className="h-[1px] flex-grow bg-gradient-to-r from-transparent via-pink-500 to-transparent"></div>
             </div>
 
@@ -97,7 +97,7 @@ const Sponsors = () => {
         >
           <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
           <div className="flex flex-col items-center text-center gap-4">
-            <h2 className="text-2xl font-bold text-white">Join Our Mission</h2>
+            <h2 className="text-2xl font-bold text-white font-squidFont">Join Our Mission</h2>
             <p className="text-md text-gray-300 max-w-2xl">
               Partner with us to shape the future of robotics and empower the next generation of innovators.
             </p>
