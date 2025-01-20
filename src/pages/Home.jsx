@@ -114,6 +114,8 @@ const Home = () => {
         </div>
       </section>
 
+      <Prizes />
+
       <Sponsors />
       {/* Conference Section */}
       {/* <Conference /> */}
