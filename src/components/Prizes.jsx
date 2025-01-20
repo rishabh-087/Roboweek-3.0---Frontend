@@ -68,6 +68,7 @@ const Prizes = () => {
                 exit={{ opacity: 0, y: -50 }}
                 transition={{ duration: 0.5 }}
                 className="relative w-96 z-20"
+                onClick={handleNext} // Added click event to current card
               >
                 <div className="w-full backdrop-blur-lg bg-gradient-to-br from-pink-900/30 to-purple-900/30 p-8 rounded-2xl border-2 border-pink-500/50 shadow-2xl">
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-pink-500 to-purple-600 text-white px-6 py-1 rounded-full text-sm font-bold">

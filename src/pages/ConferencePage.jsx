@@ -4,21 +4,18 @@ import Button from '../components/Button';
 
 const speakers = [
   {
-    name: "Dr. John Doe",
+    name: "Speaker 1",
     title: "AI Expert",
-    bio: "Expert in artificial intelligence and machine learning.",
     image: "https://images.pexels.com/photos/3184295/pexels-photo-3184295.jpeg"
   },
   {
-    name: "Jane Smith",
+    name: "Speaker 2",
     title: "Robotics Engineer",
-    bio: "Specialist in robotics and automation technologies.",
     image: "https://images.pexels.com/photos/3184296/pexels-photo-3184296.jpeg"
   },
   {
-    name: "Alice Johnson",
+    name: "Speaker 3",
     title: "Data Scientist",
-    bio: "Data scientist with a focus on big data analytics.",
     image: "https://images.pexels.com/photos/3184297/pexels-photo-3184297.jpeg"
   }
 ];
@@ -34,7 +31,7 @@ const ConferencePage = () => {
         </p>
       </header>
 
-      <Button text='Submit your Extract' iconLink= <i class="ri-corner-right-down-line"></i> />
+      <Button text='Submit your Extract' iconLink= <i className="ri-corner-right-down-line"></i> />
 
       <section className='mt-12 relative z-[100]'>
         <h2 className='text-5xl font-bold text-center text-white mb-6'>Featured <span className="text-pink-400">Speakers</span></h2>
@@ -48,8 +45,8 @@ const ConferencePage = () => {
             >
               <img src={speaker.image} alt={speaker.name} className="w-full h-48 object-cover rounded-lg mb-4" />
               <h2 className="text-2xl font-bold text-pink-400">{speaker.name}</h2>
-              <h3 className="text-lg text-gray-300">{speaker.title}</h3>
-              <p className="text-gray-400 mt-2">{speaker.bio}</p>
+              <h3 className="text-lg text-gray-300">Details will be revealed soon!</h3>
+              <p className="text-gray-400 mt-2">Stay tuned for more information!</p>
             </div>
           ))}
         </div>

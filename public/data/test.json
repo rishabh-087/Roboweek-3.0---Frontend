@@ -198,7 +198,17 @@
         "LinkedIn":"https:\/\/www.linkedin.com\/in\/fictech\/",
         "ProfilePicture":"https://res.cloudinary.com/dosnuagvu/image/upload/v1736085886/143938643_-_Ashish_Ranjan_mm4qba.png"
     },
-   
+    {
+        "Timestamp":1735858829314,
+        "Email Address":"23bme025@nith.ac.in",
+        "Name":"Jai Krishan Sharma",
+        "Post":"Executive",
+        "Techstack":"DSA in C++,Hardware,Python",
+        "Github":"https:\/\/github.com\/jaikrishansharma",
+        "Instagram":"https:\/\/www.instagram.com\/jk_this_side\/",
+        "LinkedIn":"https:\/\/www.linkedin.com\/in\/jai-krishan-sharma-a795922aa?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        "ProfilePicture":"https://res.cloudinary.com/dosnuagvu/image/upload/v1736085878/WhatsApp_Image_2025-01-02_at_10.48.57_PM_-_ASHISH_RANJAN_ebwed5.jpg"
+    },
     {
         "Timestamp":1735854902159,
         "Email Address":"vaibhavshukla.2344@gmail.com",
@@ -409,17 +419,7 @@
         "LinkedIn":"https:\/\/www.linkedin.com\/in\/nikit-bhari-a635972b2",
         "ProfilePicture":"https://res.cloudinary.com/dosnuagvu/image/upload/v1736085864/IMG-20241110-WA0020_-_Nikit_Bhari_fs8iuv.jpg"
     },
-    {
-        "Timestamp":1735858829314,
-        "Email Address":"23bme025@nith.ac.in",
-        "Name":"Jai Krishan Sharma",
-        "Post":"Executive",
-        "Techstack":"DSA in C++,Hardware,Python",
-        "Github":"https:\/\/github.com\/jaikrishansharma",
-        "Instagram":"https:\/\/www.instagram.com\/jk_this_side\/",
-        "LinkedIn":"https:\/\/www.linkedin.com\/in\/jai-krishan-sharma-a795922aa?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-        "ProfilePicture":"https://res.cloudinary.com/dosnuagvu/image/upload/v1736085878/WhatsApp_Image_2025-01-02_at_10.48.57_PM_-_ASHISH_RANJAN_ebwed5.jpg"
-    },
+    
     {
         "Timestamp":1735858829314,
         "Email Address":"23bme025@nith.ac.in",
@@ -667,7 +667,7 @@
         "Email Address":"sharmayashwin443@gmail.com",
         "Name":"Yashwin Sharma ",
         "Post":"Volunteer ",
-        "Techstack":"basic clarity of: c\/c++ and also started python and html \nelementary knowledge of Adobe premier pro ",
+        "Techstack":"basic clarity of: c\/c++ ,started python , html ,elementary knowledge of Adobe premier pro ",
         "Github":"https:\/\/github.com\/YASHWINSHARMAA",
         "Instagram":"__",
         "LinkedIn":"https:\/\/www.linkedin.com\/in\/yashwin-sharma443",
