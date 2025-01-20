@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import Button from './Button';
 import { useAuth } from '../context/AuthContext';
@@ -8,6 +8,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { user, logout } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleLogout = () => {
     logout();
@@ -21,9 +22,19 @@ const Navbar = () => {
     { name: 'Team', href: '/team', icon: 'ri-team-line' },
     { name: 'Sponsors', href: '/sponsors', icon: 'ri-money-dollar-circle-line' },
     { name: 'Conference', href: '/conference', icon: 'ri-slideshow-line' },
-    // { name: 'Profile', href: '/profile', icon: 'ri-user-line' },
-    // {name: 'Events2', href: '/events2', icon: 'ri-calendar-todo-line'},
+    { name: 'Contact', href: '#contact', icon: 'ri-mail-line' },
   ];
+
+  const handleLinkClick = (href) => {
+    if (location.pathname === '/') {
+      const section = document.querySelector(href);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      navigate(href);
+    }
+  };
 
   return (
     <>
@@ -37,28 +48,6 @@ const Navbar = () => {
           </div>
         </div>
       )}
-
-      {/* <div className="hidden lg:flex lg:fixed top-6 right-6 z-50">
-        {user ? (
-          <div className="flex items-center gap-4">
-            <div onClick={handleLogout}>
-              <Button
-                text="Logout"
-                textSize="text-2xl"
-                iconLink={<i className="ri-logout-box-line text-3xl"></i>}
-              />
-            </div>
-          </div>
-        ) : (
-          <Link to="/login">
-            <Button
-              text="Login"
-              textSize="text-xl"
-              iconLink={<i className="ri-login-box-line text-xl"></i>}
-            />
-          </Link>
-        )} 
-      </div> */}
 
       <nav
         className={`hidden md:flex fixed left-6 top-1/2 -translate-y-1/2 z-[1000] ${isOpen ? 'w-64' : 'w-12'} transition-all duration-500 ease-in-out hover:shadow-lg hover:shadow-pink-500/10`}
@@ -81,6 +70,7 @@ const Navbar = () => {
               <Link
                 key={item.name}
                 to={item.href}
+                onClick={() => handleLinkClick(item.href)}
                 style={{
                   transitionDelay: `${index * 50}ms`
                 }}
@@ -110,7 +100,7 @@ const Navbar = () => {
 
       <div className="md:hidden fixed bottom-0 left-0 right-0 bg-black/20 border-t border-pink-500/30 p-4 flex justify-around z-50">
         {navigation.map((item) => (
-          <Link key={item.name} to={item.href} className="flex flex-col items-center text-gray-300 hover:text-pink-400 transition-colors duration-300">
+          <Link key={item.name} to={item.href} onClick={() => handleLinkClick(item.href)} className="flex flex-col items-center text-gray-300 hover:text-pink-400 transition-colors duration-300">
             <i className={`${item.icon} text-2xl`}></i>
             <span className="text-sm">{item.name}</span>
           </Link>

@@ -23,7 +23,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="relative z-[100] min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+    <div id='contact' className="relative z-[100] min-h-screen py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto backdrop-blur-lg bg-black/50 border border-pink-500/50 rounded-2xl shadow-lg">
         <div className="grid md:grid-cols-2 gap-8">
           {/* Left Column - Contact Information */}
