@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { RiDiscordLine, RiGithubLine, RiTwitterLine, RiYoutubeLine } from 'react-icons/ri';
 import Button from './Button';
 
 const Contact = () => {
@@ -54,16 +53,16 @@ const Contact = () => {
               {/* Social Media Links */}
               <div className="flex space-x-4 pt-8">
                 <a href="#" className="text-pink-400 hover:text-pink-300">
-                  <RiDiscordLine className="text-2xl" />
+                  <i className="ri-discord-line text-3xl"></i>
                 </a>
                 <a href="#" className="text-pink-400 hover:text-pink-300">
-                  <RiGithubLine className="text-2xl" />
+                  <i className="ri-github-fill text-3xl"></i>
                 </a>
                 <a href="#" className="text-pink-400 hover:text-pink-300">
-                  <RiTwitterLine className="text-2xl" />
+                  <i className="ri-twitter-x-line text-3xl"></i>
                 </a>
                 <a href="#" className="text-pink-400 hover:text-pink-300">
-                  <RiYoutubeLine className="text-2xl" />
+                  <i className="ri-youtube-line text-3xl"></i>
                 </a>
               </div>
             </div>
