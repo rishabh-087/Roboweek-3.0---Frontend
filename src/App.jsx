@@ -13,7 +13,6 @@ import ConferencePage from './pages/ConferencePage';
 import Signup from './components/SignUp';
 import Profile from './components/Profile';
 
-// Add ProtectedRoute component
 const ProtectedRoute = ({ children }) => {
   const { user } = useAuth();
   if (!user) return <Navigate to="/login" />;
@@ -32,22 +31,17 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/events" element={
-                // <ProtectedRoute>
                   <Events />
-                // </ProtectedRoute>
               } />
               <Route path="/team" element={<Team />} />
               <Route path="/ashish" element={<Events />} />
-              {/* <Route path="/events2" element={<EventsPage />} /> */}
               <Route path="/sponsors" element={<Sponsors />} />
               <Route path="/login" element={<Login />} />
               <Route path="/sign" element={<Signup />} />
               <Route 
                 path="/profile" 
                 element={
-                  // <ProtectedRoute>
                     <Profile />
-                  // </ProtectedRoute> 
                 } 
               />
               <Route path="/conference" element={<ConferencePage />} />
