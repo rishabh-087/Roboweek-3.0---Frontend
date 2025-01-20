@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaDiscord, FaGithub, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { RiDiscordLine, RiGithubLine, RiTwitterLine, RiYoutubeLine } from 'react-icons/ri';
 import Button from './Button';
 
 const Contact = () => {
@@ -54,16 +54,16 @@ const Contact = () => {
               {/* Social Media Links */}
               <div className="flex space-x-4 pt-8">
                 <a href="#" className="text-pink-400 hover:text-pink-300">
-                  <FaDiscord className="text-2xl" />
+                  <RiDiscordLine className="text-2xl" />
                 </a>
                 <a href="#" className="text-pink-400 hover:text-pink-300">
-                  <FaGithub className="text-2xl" />
+                  <RiGithubLine className="text-2xl" />
                 </a>
                 <a href="#" className="text-pink-400 hover:text-pink-300">
-                  <FaTwitter className="text-2xl" />
+                  <RiTwitterLine className="text-2xl" />
                 </a>
                 <a href="#" className="text-pink-400 hover:text-pink-300">
-                  <FaYoutube className="text-2xl" />
+                  <RiYoutubeLine className="text-2xl" />
                 </a>
               </div>
             </div>
