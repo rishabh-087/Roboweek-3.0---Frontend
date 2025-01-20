@@ -72,7 +72,7 @@ const Sponsors = () => {
                   className="backdrop-blur-lg bg-black/30 group relative overflow-hidden rounded-xl p-4 border border-pink-500/20 h-36 flex items-center justify-center"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-pink-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  <p className="text-gray-300">Will be updated soon</p>
+                  <p className="text-gray-300 text-center">Will be revealed soon <br />stay tuned!</p>
                 </motion.div>
               ))}
             </div>

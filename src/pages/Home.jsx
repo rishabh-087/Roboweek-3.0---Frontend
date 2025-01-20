@@ -8,6 +8,7 @@ import Sponsors from './Sponsors';
 import logo from '../assets/Heading.png';
 import squidFont from '../../public/assets/fonts/GameOfSquids.ttf'; // Assuming you have a CSS file to apply the font
 import Prizes from '../components/Prizes';
+import Contact from '../components/contact';
 
 const Home = () => {
 
@@ -30,7 +31,6 @@ const Home = () => {
             </Link>
           </div>
         </section>
-
 
         {/* Features Section */}
       <section className="py-20 z-1000">
@@ -117,6 +117,8 @@ const Home = () => {
       <Prizes />
 
       <Sponsors />
+    <Contact />
+
       {/* Conference Section */}
       {/* <Conference /> */}
     </div>

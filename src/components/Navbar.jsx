@@ -61,7 +61,7 @@ const Navbar = () => {
       </div> */}
 
       <nav
-        className={`hidden md:flex fixed left-6 top-1/2 -translate-y-1/2 z-50 ${isOpen ? 'w-64' : 'w-12'} transition-all duration-500 ease-in-out hover:shadow-lg hover:shadow-pink-500/10`}
+        className={`hidden md:flex fixed left-6 top-1/2 -translate-y-1/2 z-[1000] ${isOpen ? 'w-64' : 'w-12'} transition-all duration-500 ease-in-out hover:shadow-lg hover:shadow-pink-500/10`}
         onMouseEnter={() => setIsOpen(true)}
         onMouseLeave={() => setIsOpen(false)}
       >
