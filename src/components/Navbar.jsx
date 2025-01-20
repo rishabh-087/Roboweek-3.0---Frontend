@@ -21,8 +21,16 @@ const Navbar = () => {
     { name: 'Team', href: '/team', icon: 'ri-team-line' },
     { name: 'Sponsors', href: '/sponsors', icon: 'ri-money-dollar-circle-line' },
     { name: 'Conference', href: '/conference', icon: 'ri-slideshow-line' },
-    { name: 'Contact', href: '#contact', icon: 'ri-mail-line' }, // Added Contact button
+    { name: 'Contact', href: '#contact', icon: 'ri-mail-line' }, // Linked Contact button to contact section
   ];
+
+  const handleScrollToContact = (event) => {
+    event.preventDefault();
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <>
@@ -57,7 +65,8 @@ const Navbar = () => {
             {navigation.map((item, index) => (
               <Link
                 key={item.name}
-                to={item.href}
+                to={item.name === 'Contact' ? '#' : item.href}
+                onClick={item.name === 'Contact' ? handleScrollToContact : undefined}
                 style={{
                   transitionDelay: `${index * 50}ms`
                 }}
@@ -87,7 +96,7 @@ const Navbar = () => {
 
       <div className="md:hidden fixed bottom-0 left-0 right-0 bg-black/20 border-t border-pink-500/30 p-4 flex justify-around z-50">
         {navigation.map((item) => (
-          <Link key={item.name} to={item.href} className="flex flex-col items-center text-gray-300 hover:text-pink-400 transition-colors duration-300">
+          <Link key={item.name} to={item.name === 'Contact' ? '#' : item.href} onClick={item.name === 'Contact' ? handleScrollToContact : undefined} className="flex flex-col items-center text-gray-300 hover:text-pink-400 transition-colors duration-300">
             <i className={`${item.icon} text-2xl`}></i>
             <span className="text-sm">{item.name}</span>
           </Link>
