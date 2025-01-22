@@ -2,10 +2,15 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 import Button from '../components/Button';
-import pathfinder from '../images/pathfinder.jpg';
-import bowlBotDerby from '../images/bowl-bot-derby.jpg';
-import mechaMayhem from '../images/mecha-mayhem.jpg';
-import spectrumSprint from '../images/spectrum-sprint.jpg';
+import pathfinder from '../assets/pathfinder.png';
+import bowlBotDerby from '../assets/BowlBotDerby.png';
+import mechaMayhem from '../assets/MECHA MAYHEM (1).png';
+import spectrumSprint from '../assets/2.png';
+// import aiRoboticsWorkshop from '../assets/ai-robotics-workshop.jpg';
+// import startupWorkshop from '../assets/startup-workshop.jpg';
+// import bowlBotDerby from '../images/bowl-bot-derby.jpg';
+// import mechaMayhem from '../images/mecha-mayhem.jpg';
+// import spectrumSprint from '../images/spectrum-sprint.jpg';
 const Events = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -25,7 +30,7 @@ const Events = () => {
         teamSize: "1-4 members",
       },
       rulebookLink: "https://example.com/rulebook/pathfinder",
-      image: "", 
+      image: pathfinder, 
     },
     {
       title: "Bowl Bot Derby",
@@ -40,7 +45,7 @@ const Events = () => {
         teamSize: "1-4 members",
       },
       rulebookLink: "https://example.com/rulebook/competition3",
-      image: "bowl-bot-derby.jpg", 
+      image: bowlBotDerby, 
     },
     {
       title: "MECHA MAYHEM",
@@ -55,7 +60,7 @@ const Events = () => {
         teamSize: "1-4 members",
       },
       rulebookLink: "https://example.com/rulebook/competition3",
-      image: "mecha-mayhem.jpg",
+      image: mechaMayhem,
     },
     {
       title: "SPECTRUM SPRINT",
@@ -70,7 +75,7 @@ const Events = () => {
         teamSize: "1-4 members",
       },
       rulebookLink: "https://example.com/rulebook/competition3",
-      image: "spectrum-sprint.jpg", 
+      image: spectrumSprint, 
     },
     {
       title: "Workshop on Artificial Intelligence and Robotics: Transforming Academia to Industries",
@@ -90,7 +95,7 @@ const Events = () => {
         ]
       },
       rulebookLink: null,
-      image: "ai-robotics-workshop.jpg",
+      image: [],
     },
     {
       title: "Workshop on Entrepreneurship of the Golden Era of Startups",
@@ -110,7 +115,7 @@ const Events = () => {
         ]
       },
       rulebookLink: null,
-      image: "startup-workshop.jpg", 
+      image: [], 
     }
   ];
 
@@ -134,7 +139,7 @@ const Events = () => {
   };
 
   return (
-    <div className="min-h-screen py-20">
+    <div className="relative z-[1000] min-h-screen py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -179,7 +184,7 @@ const Events = () => {
               onClick={() => setSelectedEvent(event)}
               className="backdrop-blur-lg bg-black/20 rounded-xl border border-pink-500/30 overflow-hidden hover:border-pink-500 transition-all duration-300 cursor-pointer"
             >
-              <img src={`images/${event.image}`} alt={event.title} className="w-full h-40 object-cover rounded-t-xl" />
+              <img src={event.image} alt={event.title} className="w-full h-52 object-cover object-top rounded-t-xl" />
               <div className="p-6">
                 <h3 className="text-2xl font-bold text-pink-400 mb-2">{event.title}</h3>
                 <p className="text-gray-300 mb-4">{event.description}</p>
@@ -207,12 +212,12 @@ const Events = () => {
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.95, opacity: 0 }}
                 onClick={(e) => e.stopPropagation()}
-                className="bg-black/90 border border-pink-500/30 rounded-xl p-8 max-w-2xl w-full max-h-[80vh] overflow-y-auto"
+                className="bg-black/90 border border-pink-500/30 rounded-xl p-8  overflow-y-auto"
               >
                 <img
-                  src={`images/${selectedEvent.image}`}
+                  src={selectedEvent.image}
                   alt={selectedEvent.title}
-                  className="w-full h-56 object-cover rounded-xl mb-6"
+                  className="w-full h-72 object-cover rounded-xl mb-6"
                 />
                 <h2 className="text-3xl font-bold text-pink-400 mb-4">{selectedEvent.title}</h2>
                 <div className="space-y-6">
@@ -233,7 +238,7 @@ const Events = () => {
                         rel="noopener noreferrer"
                         className="text-pink-400 underline"
                       >
-                        Click here for Rulebook
+                        RuleBook
                       </a>
                     </div>
                   )}
