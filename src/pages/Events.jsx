@@ -2,7 +2,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 import Button from '../components/Button';
-
+import pathfinder from '../images/pathfinder.jpg';
+import bowlBotDerby from '../images/bowl-bot-derby.jpg';
+import mechaMayhem from '../images/mecha-mayhem.jpg';
+import spectrumSprint from '../images/spectrum-sprint.jpg';
 const Events = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -10,149 +13,116 @@ const Events = () => {
 
   const events = [
     {
-      title: "CompeTition 1",
+      title: "PathFinder",
       type: "competition",
-      date: "Mar XX, XXXX",
-      description: "Descritption will be updated soon ! ",
+      date: "Mar 22, 2025",
+      description: "Driven By code, Guided By Lines !",
       categories: ["requirments 1", "requirments 2", "requirments 3"],
       details: {
         venue: "NIT Hamirpur",
-        time: "10:00 AM - 5:00 PM",
-        prize: "₹ XXXX",
-        teamSize: "3-4 members",
-        requirements: [
-          "--------------------------------------------------------",
-          "--------------------------------------------------------",
-          "--------------------------------------------------------"
-        ],
-        rules: [
-          "--------------------------------------------------------",
-          "--------------------------------------------------------",
-          "--------------------------------------------------------"
-        ]
-      }
+        time: "4:00 PM  - 6:00 PM",
+        prize: "₹ 70000000",
+        teamSize: "1-4 members",
+      },
+      rulebookLink: "https://example.com/rulebook/pathfinder",
+      image: "", 
     },
     {
-      title: "CompeTition 2",
+      title: "Bowl Bot Derby",
       type: "competition",
-      date: "Mar XX, XXXX",
-      description: "Descritption will be updated soon ! ",
+      date: "Mar 23, 2025",
+      description: "BALANCE . NAVIGATE . BOWL TO WIN !",
       categories: ["requirments 1", "requirments 2", "requirments 3"],
       details: {
         venue: "NIT Hamirpur",
-        time: "10:00 AM - 5:00 PM",
-        prize: "₹ XXXX",
-        teamSize: "3-4 members",
-        requirements: [
-          "--------------------------------------------------------",
-          "--------------------------------------------------------",
-          "--------------------------------------------------------"
-        ],
-        rules: [
-          "--------------------------------------------------------",
-          "--------------------------------------------------------",
-          "--------------------------------------------------------"
-        ]
-      }
+        time: "9:00 AM - 12:00 PM",
+        prize: "₹ 70000000",
+        teamSize: "1-4 members",
+      },
+      rulebookLink: "https://example.com/rulebook/competition3",
+      image: "bowl-bot-derby.jpg", 
     },
     {
-      title: "CompeTition 3",
+      title: "MECHA MAYHEM",
       type: "competition",
-      date: "Mar XX, XXXX",
-      description: "Descritption will be updated soon ! ",
+      date: "Mar 22, 2025",
+      description: "BOOK YOUR TICKET TO THE FUTURE !",
       categories: ["requirments 1", "requirments 2", "requirments 3"],
       details: {
         venue: "NIT Hamirpur",
-        time: "10:00 AM - 5:00 PM",
+        time: "2:00 PM - 4:00 PM",
         prize: "₹ XXXX",
-        teamSize: "3-4 members",
-        requirements: [
-          "--------------------------------------------------------",
-          "--------------------------------------------------------",
-          "--------------------------------------------------------"
-        ],
-        rules: [
-          "--------------------------------------------------------",
-          "--------------------------------------------------------",
-          "--------------------------------------------------------"
-        ]
-      }
+        teamSize: "1-4 members",
+      },
+      rulebookLink: "https://example.com/rulebook/competition3",
+      image: "mecha-mayhem.jpg",
     },
     {
-      title: "CompeTition 4",
+      title: "SPECTRUM SPRINT",
       type: "competition",
-      date: "Mar XX, XXXX",
-      description: "Descritption will be updated soon ! ",
+      date: "Mar 24, 2025",
+      description: "CATCH THE RAINBOW !",
       categories: ["requirments 1", "requirments 2", "requirments 3"],
       details: {
         venue: "NIT Hamirpur",
-        time: "10:00 AM - 5:00 PM",
-        prize: "₹ XXXX",
-        teamSize: "3-4 members",
-        requirements: [
-          "--------------------------------------------------------",
-          "--------------------------------------------------------",
-          "--------------------------------------------------------"
-        ],
-        rules: [
-          "--------------------------------------------------------",
-          "--------------------------------------------------------",
-          "--------------------------------------------------------"
-        ]
-      }
+        time: "9:00 AM - 12:00 PM",
+        prize: "₹ 700000000000000000000",
+        teamSize: "1-4 members",
+      },
+      rulebookLink: "https://example.com/rulebook/competition3",
+      image: "spectrum-sprint.jpg", 
     },
     {
-      title: "Workshop on Robotics",
+      title: "Workshop on Artificial Intelligence and Robotics: Transforming Academia to Industries",
       type: "workshop",
       date: "Apr XX, XXXX",
-      description: "Join us for an interactive workshop on robotics.",
-      categories: ["requirments 1", "requirments 2", "requirments 3"],
+      description: "This workshop focuses on equipping graduate students and startups with practical insights into how AI and robotics are transforming industries. It will cover industry use cases, startup strategies, and pathways to bridge theoretical knowledge with industrial applications.",
+      categories: ["AI", "Robotics", "Industry Applications", "Innovation"],
       details: {
         venue: "NIT Hamirpur",
         time: "10:00 AM - 4:00 PM",
         prize: "Participation Certificate",
         teamSize: "1-2 members",
-        requirements: [
-          "Basic knowledge of programming",
-          "Laptop required"
-        ],
+        requirements: ["Basic knowledge of AI and robotics", "Laptop required"],
         rules: [
           "No late entries allowed",
-          "Follow the instructions of the instructor"
+          "Follow the instructor's instructions"
         ]
-      }
+      },
+      rulebookLink: null,
+      image: "ai-robotics-workshop.jpg",
     },
     {
-      title: "Guest Talk on AI",
-      type: "talk",
-      date: "May XX, XXXX",
-      description: "A talk by industry experts on the future of AI.",
-      categories: ["requirments 1", "requirments 2", "requirments 3"],
+      title: "Workshop on Entrepreneurship of the Golden Era of Startups",
+      type: "workshop",
+      date: "Apr XX, XXXX",
+      description: "This workshop will equip graduate students and aspiring entrepreneurs with the knowledge and tools to thrive in the current booming startup ecosystem. It emphasizes fostering innovation, leveraging emerging technologies, and building sustainable business models in today's dynamic environment.",
+      categories: ["Entrepreneurship", "Startups", "Innovation", "Business Models"],
       details: {
         venue: "NIT Hamirpur",
-        time: "2:00 PM - 3:30 PM",
-        prize: "Free refreshments",
-        teamSize: "Open to all",
-        requirements: [
-          "No prior registration needed"
-        ],
+        time: "10:00 AM - 4:00 PM",
+        prize: "Participation Certificate",
+        teamSize: "1-2 members",
+        requirements: ["Basic knowledge of entrepreneurship", "Laptop required"],
         rules: [
-          "Maintain decorum during the talk",
-          "Ask questions at the end"
+          "No late entries allowed",
+          "Follow the instructor's instructions"
         ]
-      }
-    },
+      },
+      rulebookLink: null,
+      image: "startup-workshop.jpg", 
+    }
   ];
 
   const categories = [
     { id: 'all', label: 'All Events' },
     { id: 'competition', label: 'Competitions' },
     { id: 'workshop', label: 'Workshops' },
-    { id: 'talk', label: 'Talks' }
+    { id: 'talk', label: 'Talks' },
   ];
 
-  const filteredEvents = selectedCategory === 'all' 
-    ? events 
+  const filteredEvents = selectedCategory === 'all'
+    ? events
     : events.filter(event => event.type === selectedCategory);
 
   const handleRegister = (event) => {
@@ -164,20 +134,23 @@ const Events = () => {
   };
 
   return (
-    <div className=" min-h-screen py-20">
+    <div className="min-h-screen py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h1 className="relative z-[100] text-4xl lg:text-6xl font-bold text-white mb-4 font-squidFont">Events at <span className="text-pink-400">RoboWeek 3.0</span></h1>
-          <p className="relative z-[100] text-xl text-pink-100">Discover exciting events and competitions</p>
+          <h1 className="text-4xl lg:text-6xl font-bold text-white mb-4 font-squidFont">
+            Events at <span className="text-pink-400">RoboWeek 3.0</span>
+          </h1>
+          <p className="text-xl text-pink-100">Discover exciting events and competitions</p>
         </motion.div>
 
         {/* Category Filter */}
-        <div className="relative z-[100] flex flex-wrap justify-center gap-4 mb-12">
+        <div className="flex flex-wrap justify-center gap-4 mb-12">
           {categories.map(category => (
             <button
               key={category.id}
@@ -206,9 +179,7 @@ const Events = () => {
               onClick={() => setSelectedEvent(event)}
               className="backdrop-blur-lg bg-black/20 rounded-xl border border-pink-500/30 overflow-hidden hover:border-pink-500 transition-all duration-300 cursor-pointer"
             >
-              <div className="relative h-48 flex items-center justify-center">
-                <span className="text-white text-lg">Events will be available soon</span>
-              </div>
+              <img src={`images/${event.image}`} alt={event.title} className="w-full h-40 object-cover rounded-t-xl" />
               <div className="p-6">
                 <h3 className="text-2xl font-bold text-pink-400 mb-2">{event.title}</h3>
                 <p className="text-gray-300 mb-4">{event.description}</p>
@@ -238,9 +209,11 @@ const Events = () => {
                 onClick={(e) => e.stopPropagation()}
                 className="bg-black/90 border border-pink-500/30 rounded-xl p-8 max-w-2xl w-full max-h-[80vh] overflow-y-auto"
               >
-                <div className="relative h-64 mb-6 rounded-lg overflow-hidden">
-                  <span className="text-white text-lg">Events will be available soon</span>
-                </div>
+                <img
+                  src={`images/${selectedEvent.image}`}
+                  alt={selectedEvent.title}
+                  className="w-full h-56 object-cover rounded-xl mb-6"
+                />
                 <h2 className="text-3xl font-bold text-pink-400 mb-4">{selectedEvent.title}</h2>
                 <div className="space-y-6">
                   <div className="grid grid-cols-2 gap-4 text-gray-300">
@@ -252,25 +225,16 @@ const Events = () => {
                     )}
                   </div>
 
-                  {selectedEvent.details.requirements && (
-                    <div>
-                      <h3 className="text-xl font-semibold text-white mb-2">Requirements</h3>
-                      <ul className="list-disc list-inside text-gray-300">
-                        {selectedEvent.details.requirements.map((req, index) => (
-                          <li key={index}>{req}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-
-                  {selectedEvent.details.rules && (
-                    <div>
-                      <h3 className="text-xl font-semibold text-white mb-2">Rules</h3>
-                      <ul className="list-disc list-inside text-gray-300">
-                        {selectedEvent.details.rules.map((rule, index) => (
-                          <li key={index}>{rule}</li>
-                        ))}
-                      </ul>
+                  {selectedEvent.rulebookLink && (
+                    <div className="mt-4">
+                      <a
+                        href={selectedEvent.rulebookLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-pink-400 underline"
+                      >
+                        Click here for Rulebook
+                      </a>
                     </div>
                   )}
 
