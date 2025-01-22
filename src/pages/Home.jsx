@@ -23,7 +23,7 @@ const Home = () => {
       {/* Hero Section */}
 
         <section className='relative w-full lg:min-h-screen min-h-[70vh] flex flex-col justify-center items-center '>
-      <img src={logo} alt="" className='lg:absolute lg:top-5 lg:right-[-10px]  w-[200px] shadow-2xl shadow-white/10'/>
+      <img src={logo} alt="" className='lg:absolute lg:top-5 lg:right-[-10px]  w-[200px]'/>
         <div className='flex flex-col justify-center items-center space-y-8 gap-205'>
           <h1 className='relative z-[100] text-white/80 font-squidFont lg:text-[8vw] lg:leading-[8vw] leading-[14vw] text-[14vw] text-center '>RoboWeek<br />3.0</h1>
             <CountdownTimer />
