@@ -172,17 +172,17 @@ const Events = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h1 className="relative z-[100] text-6xl font-bold text-white mb-4">Events at <span className="text-pink-400">RoboWeek 3.0</span></h1>
+          <h1 className="relative z-[100] text-4xl lg:text-6xl font-bold text-white mb-4 font-squidFont">Events at <span className="text-pink-400">RoboWeek 3.0</span></h1>
           <p className="relative z-[100] text-xl text-pink-100">Discover exciting events and competitions</p>
         </motion.div>
 
         {/* Category Filter */}
-        <div className="relative z-[100] flex justify-center gap-4 mb-12">
+        <div className="relative z-[100] flex flex-wrap justify-center gap-4 mb-12">
           {categories.map(category => (
             <button
               key={category.id}
               onClick={() => setSelectedCategory(category.id)}
-              className={`px-6 py-2 rounded-full transition-all duration-300 ${
+              className={`px-4 py-2 rounded-full transition-all duration-300 text-sm sm:text-base ${
                 selectedCategory === category.id
                   ? 'bg-pink-500 text-white'
                   : 'bg-pink-500/10 text-pink-400 hover:bg-pink-500/20'

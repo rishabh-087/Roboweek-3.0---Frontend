@@ -5,10 +5,11 @@ import CountdownTimer from '../components/Timer';
 import About from './AboutUs';
 import Sponsors from './Sponsors';
 // import Conference from '../components/Conference';
-import logo from '../assets/Heading.png';
+// import logo from '../assets/Heading.png';
 import squidFont from '../../public/assets/fonts/GameOfSquids.ttf'; // Assuming you have a CSS file to apply the font
 import Prizes from '../components/Prizes';
-import Contact from '../components/contact';
+import Contact from '../components/contact'
+import logo from '../../public/assets/images/Logo.png';
 
 const Home = () => {
 
@@ -17,10 +18,12 @@ const Home = () => {
   }
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-hidden">
 
       {/* Hero Section */}
-        <section className='w-screen lg:min-h-screen min-h-[70vh] flex flex-col justify-center items-center '>
+
+        <section className='relative w-full lg:min-h-screen min-h-[70vh] flex flex-col justify-center items-center '>
+      <img src={logo} alt="" className='lg:absolute lg:top-5 lg:right-[-10px]  w-[200px] shadow-2xl shadow-white/10'/>
         <div className='flex flex-col justify-center items-center space-y-8 gap-205'>
           <h1 className='relative z-[100] text-white/80 font-squidFont lg:text-[8vw] lg:leading-[8vw] leading-[14vw] text-[14vw] text-center '>RoboWeek<br />3.0</h1>
             <CountdownTimer />

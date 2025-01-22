@@ -24,7 +24,7 @@ const About = () => {
           transition={{ duration: 0.2 }}
           className="text-center mb-16 relative z-10"
         >
-          <h1 className="text-6xl font-bold text-white mb-4 font-squidFont">
+          <h1 className="text-5xl sm:text-5xl md:text-6xl font-bold text-white mb-4 font-squidFont">
             About <span className="text-pink-400 font-bold">RoboWeek 3.0</span>
           </h1>
         </motion.div>
