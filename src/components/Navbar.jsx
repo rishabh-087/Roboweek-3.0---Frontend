@@ -34,8 +34,8 @@ const Navbar = () => {
 
   return (
     <>
-      {user && (
-        <div className="fixed top-6 left-6 z-50">
+      {/* {user && (
+        <div className="fixed top-6 right-6 z-50">
           <div className="backdrop-blur-lg bg-black/20 border border-pink-500/30 rounded-xl px-6 py-3">
             <span className="text-pink-400 font-semibold">
               <i className="ri-user-line mr-2"></i>
@@ -43,7 +43,7 @@ const Navbar = () => {
             </span>
           </div>
         </div>
-      )}
+      )} */}
 
       <nav
         className={`hidden md:flex fixed left-6 top-1/2 -translate-y-1/2 z-[1000] ${isOpen ? 'w-64' : 'w-12'} transition-all duration-500 ease-in-out hover:shadow-lg hover:shadow-pink-500/10`}

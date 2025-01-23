@@ -32,8 +32,8 @@ const Contact = () => {
               <div>
                 <h3 className="text-2xl font-bold text-pink-400 font-squidFont">Chat to us</h3>
                 <p className="text-gray-300 mt-2">Our robot team is ready to assist.</p>
-                <a href="mailto:hello@roboweek.dev" className="text-pink-400 hover:text-pink-300 mt-1 block">
-                  roboweek@gmail.com
+                <a href="mailto:robonith@nith.ac.in" className="text-pink-400 hover:text-pink-300 mt-1 block">
+                robonith@nith.ac.in
                 </a>
               </div>
               <div>
@@ -52,16 +52,19 @@ const Contact = () => {
 
               {/* Social Media Links */}
               <div className="flex justify-center space-x-4 pt-8">
-                <a href="#" className="text-pink-400 hover:text-pink-300">
-                  <i className="ri-discord-line text-3xl"></i>
-                </a>
-                <a href="#" className="text-pink-400 hover:text-pink-300">
+                <a href="https://github.com/robosocnith" className="text-pink-400 hover:text-pink-300">
                   <i className="ri-github-fill text-3xl"></i>
                 </a>
-                <a href="#" className="text-pink-400 hover:text-pink-300">
-                  <i className="ri-twitter-x-line text-3xl"></i>
+                <a href="https://www.facebook.com/robo.soc.nith/" className="text-pink-400 hover:text-pink-300">
+                  <i className="ri-facebook-line text-3xl"></i>
                 </a>
-                <a href="#" className="text-pink-400 hover:text-pink-300">
+                {/* <a href="#" className="text-pink-400 hover:text-pink-300">
+                  <i className="ri-twitter-x-line text-3xl"></i>
+                </a> */}
+                <a href="https://www.instagram.com/robosocnith/?hl=en" className="text-pink-400 hover:text-pink-300">
+                  <i className="ri-instagram-line text-3xl"></i>
+                </a>
+                <a href="https://www.youtube.com/@roboticssocietynith8888/" className="text-pink-400 hover:text-pink-300">
                   <i className="ri-youtube-line text-3xl"></i>
                 </a>
               </div>

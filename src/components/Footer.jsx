@@ -108,8 +108,12 @@ const Footer = () => {
           <article className="card backdrop-blur-lg bg-black/10 p-6 rounded-xl border border-pink-500/30">
             <h4 className="text-lg font-semibold text-pink-400">Contact Us</h4>
             <ul className="mt-4 space-y-2">
-              <li className="text-gray-300">Email: roboweek@gmail.com</li>
-              <li className="text-gray-300">Phone: +91 XXXXXXXXXX</li>
+              <li className="text-gray-300">
+                Email: <a href="mailto:robonith@nith.ac.in" className="text-pink-400 hover:underline">robonith@nith.ac.in</a>
+              </li>
+              <li className="text-gray-300">
+                Phone: <a href="tel:+91XXXXXXXXXX" className="text-pink-400 hover:underline">+91 XXXXXXXXXX</a>
+              </li>
             </ul>
           </article>
         </div>

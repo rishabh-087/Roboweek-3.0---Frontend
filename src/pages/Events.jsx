@@ -182,11 +182,11 @@ const Events = () => {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
               onClick={() => setSelectedEvent(event)}
-              className="backdrop-blur-lg bg-black/20 rounded-xl border border-pink-500/30 overflow-hidden hover:border-pink-500 transition-all duration-300 cursor-pointer"
+              className="backdrop-blur-lg bg-black/20 rounded-xl border border-pink-500/30 overflow-hidden hover:border-pink-500 transition-all duration-300 cursor-pointer p-4"
             >
-              <img src={event.image} alt={event.title} className="w-full h-52 object-cover object-top rounded-t-xl" />
-              <div className="p-6">
-                <h3 className="text-2xl font-bold text-pink-400 mb-2">{event.title}</h3>
+              <img src={event.image} alt={event.title} className="w-3/4 h-auto object-cover object-top mx-auto" /> {/* Made the image smaller */}
+              <div className="p-4">
+                <h3 className="text-xl font-bold text-pink-400 mb-2">{event.title}</h3>
                 <p className="text-gray-300 mb-4">{event.description}</p>
                 <div className="flex justify-between items-center">
                   <div className="text-pink-400">{event.date}</div>
