@@ -94,7 +94,7 @@ const Navbar = () => {
         </div>
       </nav>
 
-      <div className="md:hidden fixed bottom-0 left-0 right-0 bg-black/20 border-t border-pink-500/30 p-4 flex justify-around z-50">
+      <div className="z-[1000] md:hidden fixed backdrop-blur-[5px] bottom-0 left-0 right-0 bg-black/20 border-t border-pink-500/30 p-4 flex justify-around z-50">
         {navigation.map((item) => (
           <Link key={item.name} to={item.name === 'Contact' ? '#' : item.href} onClick={item.name === 'Contact' ? handleScrollToContact : undefined} className="flex flex-col items-center text-gray-300 hover:text-pink-400 transition-colors duration-300">
             <i className={`${item.icon} text-2xl`}></i>
