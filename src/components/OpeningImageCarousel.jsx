@@ -1,111 +1,171 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const images = [
   { src: "/assets/images/gallery/Image1.jpg", alt: "Image 1 - Campus Overview" },
   { src: "/assets/images/gallery/Image2.jpg", alt: "Image 2 - Robotics Demo" },
   { src: "/assets/images/gallery/Image3.jpg", alt: "Image 3 - Workshop Session" },
   { src: "/assets/images/gallery/Image4.jpg", alt: "Image 4 - Team Presentation" },
-  { src: "/assets/images/gallery/Image5.jpg", alt: "Image 5 - Coding Challenge" },
   { src: "/assets/images/gallery/Image6.jpg", alt: "Image 6 - Award Ceremony" },
   { src: "/assets/images/gallery/Image7.jpg", alt: "Image 7 - Project Showcase" },
   { src: "/assets/images/gallery/Image8.jpg", alt: "Image 8 - Networking Event" },
   { src: "/assets/images/gallery/Image9.jpg", alt: "Image 9 - Group Photo" },
+  { src: "/assets/images/gallery/image10.jpg", alt: "Image 10 - Campus Overview" },
+  { src: "/assets/images/gallery/image11.jpg", alt: "Image 11 - Campus Overview" },
+  { src: "/assets/images/gallery/image12.jpg", alt: "Image 12 - Campus Overview" },
+  { src: "/assets/images/gallery/image13.jpg", alt: "Campus Overview" },
+  { src: "/assets/images/gallery/image14.jpg", alt: "Campus Overview" },
+  { src: "/assets/images/gallery/image15.jpg", alt: "Campus Overview" },
+  { src: "/assets/images/gallery/image16.jpg", alt: "Campus Overview" },
+  { src: "/assets/images/gallery/image17.jpg", alt: "Campus Overview" },
+  { src: "/assets/images/gallery/image18.jpg", alt: "Campus Overview" },
+  { src: "/assets/images/gallery/image19.jpg", alt: "Campus Overview" },
+  { src: "/assets/images/gallery/image20.jpg", alt: "Campus Overview" },
+  { src: "/assets/images/gallery/image21.jpg", alt: "Campus Overview" },
+  { src: "/assets/images/gallery/image22.jpg", alt: "Campus Overview" },
+  { src: "/assets/images/gallery/image23.jpg", alt: "Campus Overview" },
+  { src: "/assets/images/gallery/image24.jpg", alt: "Campus Overview" },
+  { src: "/assets/images/gallery/image25.jpg", alt: "Campus Overview" },
+  { src: "/assets/images/gallery/image26.jpg", alt: "Campus Overview" },
+  { src: "/assets/images/gallery/image27.jpg", alt: "Campus Overview" },
+  { src: "/assets/images/gallery/image28.jpg", alt: "Campus Overview" },
+  { src: "/assets/images/gallery/image29.jpg", alt: "Campus Overview" },
+  { src: "/assets/images/gallery/image30.jpg", alt: "Campus Overview" },
+  { src: "/assets/images/gallery/image31.jpg", alt: "Campus Overview" },
+  { src: "/assets/images/gallery/image32.jpg", alt: "Campus Overview" },
+  { src: "/assets/images/gallery/image33.jpg", alt: "Campus Overview" },
+  { src: "/assets/images/gallery/image34.jpg", alt: "Campus Overview" },
+  { src: "/assets/images/gallery/image35.jpg", alt: "Campus Overview" },
+  { src: "/assets/images/gallery/image36.jpg", alt: "Campus Overview" },
+  { src: "/assets/images/gallery/image37.jpg", alt: "Campus Overview" },
+  { src: "/assets/images/gallery/image38.jpg", alt: "Campus Overview" },
+  { src: "/assets/images/gallery/image39.jpg", alt: "Campus Overview" },
+  { src: "/assets/images/gallery/image40.jpg", alt: "Campus Overview" },
+  { src: "/assets/images/gallery/image41.jpg", alt: "Campus Overview" },
+  { src: "/assets/images/gallery/image42.jpg", alt: "Campus Overview" },
 ];
+
+const AUTO_SCROLL_DELAY = 3000; // 3 seconds
 
 const ImageCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
   const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % images.length);
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    setIsPaused(true);
   };
 
   const handlePrevious = () => {
-    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+    setIsPaused(true);
   };
 
-  // Keyboard navigation
+  const handleDotClick = (index) => {
+    setCurrentIndex(index);
+    setIsPaused(true);
+  };
+
   useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (e.key === "ArrowRight") handleNext();
-      if (e.key === "ArrowLeft") handlePrevious();
-    };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, []);
+    if (!isPaused) {
+      const interval = setInterval(() => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+      }, AUTO_SCROLL_DELAY);
+
+      return () => clearInterval(interval);
+    }
+  }, [isPaused]);
+  
+  useEffect(() => {
+    if (isPaused) {
+      const timeout = setTimeout(() => setIsPaused(false), AUTO_SCROLL_DELAY * 2);
+      return () => clearTimeout(timeout);
+    }
+  }, [isPaused]);
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      className="relative w-full max-w-6xl mx-auto px-4 py-12"
-    >
-      <h2 className="text-3xl font-bold text-pink-400 mb-8 text-center">Gallery</h2>
-      <div className="relative h-[400px] overflow-hidden">
-        {/* Image stack */}
-        <div className="relative h-full">
-          {images.map((image, index) => {
-            const position = (index - currentIndex) % images.length;
-            const zIndex = position === 0 ? 5 : 0;
+    <section className="py-20 relative z-[100]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-5xl font-bold text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-pink-800 font-squidFont">
+          Gallery
+        </h2>
 
-            return (
-              <motion.div
-                key={index}
-                className="absolute w-full h-full rounded-2xl overflow-hidden"
-                initial={false}
-                animate={{
-                  x: `${position * 40}%`,
-                  scale: position === 0 ? 1 : 0.8,
-                  zIndex: zIndex,
-                  opacity: Math.abs(position) <= 2 ? 1 : 0,
-                }}
-                transition={{ duration: 0.5 }}
-              >
-                <div className="relative w-full h-full backdrop-blur-lg bg-black/20 rounded-2xl border border-pink-500/50 overflow-hidden">
-                  <img
-                    src={image.src}
-                    alt={image.alt}
-                    className="w-full h-full object-cover"
-                    onError={(e) => (e.target.src = "/assets/images/fallback.jpg")}
-                  />
-                </div>
-              </motion.div>
-            );
-          })}
+        <div className="relative flex justify-center items-center min-h-[600px]">
+          <button
+            onClick={handlePrevious}
+            className="absolute left-2 top-1/2 -translate-y-1/2 bg-pink-500/70 p-3 rounded-full shadow-lg hover:bg-pink-600 transition z-10"
+          >
+            ❮
+          </button>
+
+          <div className="flex items-center space-x-14">
+            <motion.div
+              className="w-64 h-96 flex-shrink-0 overflow-hidden rounded-lg shadow-md bg-gray-200"
+              initial={{ opacity: 0, x: -100 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              style={{ filter: "blur(1px)" }}
+            >
+              <img
+                src={images[(currentIndex - 1 + images.length) % images.length].src}
+                alt={images[(currentIndex - 1 + images.length) % images.length].alt}
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+
+            <motion.div
+              key={currentIndex}
+              className="w-96 h-110 flex-shrink-0 overflow-hidden rounded-lg shadow-2xl bg-gray-300"
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1.2, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <img
+                src={images[currentIndex].src}
+                alt={images[currentIndex].alt}
+                className="w-full h-full object-absolute"
+              />
+            </motion.div>
+
+            <motion.div
+              className="w-64 h-96 flex-shrink-0 overflow-hidden rounded-lg shadow-md bg-gray-200"
+              initial={{ opacity: 0, x: 100 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              style={{ filter: "blur(1px)" }}
+            >
+              <img
+                src={images[(currentIndex + 1) % images.length].src}
+                alt={images[(currentIndex + 1) % images.length].alt}
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+          </div>
+
+          <button
+            onClick={handleNext}
+            className="absolute right-2 top-1/2 -translate-y-1/2 bg-pink-500/70 p-3 rounded-full shadow-lg hover:bg-pink-600 transition z-10"
+          >
+            ❯
+          </button>
         </div>
 
-        {/* Navigation buttons */}
-        <button
-          onClick={handlePrevious}
-          className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-pink-500/20 text-pink-400 p-2 rounded-full transition-all border border-pink-500/50 z-10"
-        >
-          <ChevronLeft className="w-6 h-6" />
-        </button>
-        <button
-          onClick={handleNext}
-          className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-pink-500/20 text-pink-400 p-2 rounded-full transition-all border border-pink-500/50 z-10"
-        >
-          <ChevronRight className="w-6 h-6" />
-        </button>
+        <div className="flex justify-center gap-3 mt-8">
+          {images.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => handleDotClick(index)}
+              className={`w-3 h-3 rounded-full transition-all ${
+                index === currentIndex
+                  ? "bg-pink-500 w-8"
+                  : "bg-pink-500/40 hover:bg-pink-500/60"
+              }`}
+            />
+          ))}
+        </div>
       </div>
-
-      {/* Dot indicators */}
-      <div className="flex justify-center space-x-2 mt-6">
-        {images.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentIndex(index)}
-            className={`w-2 h-2 rounded-full transition-all duration-300 ${
-              index === currentIndex
-                ? "bg-pink-400 w-4"
-                : "bg-pink-400/50 hover:bg-pink-400/75"
-            }`}
-            aria-label={`Go to slide ${index + 1}`}
-          />
-        ))}
-      </div>
-    </motion.div>
+    </section>
   );
 };
 
