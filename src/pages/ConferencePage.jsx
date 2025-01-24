@@ -51,7 +51,7 @@ const ConferencePage = () => {
           ))}
         </div>
       </section>
-      <section className='relative z-[100] mt-12 text-center mb-12'>
+      <section className='relative flex flex-col z-[100] mt-12 text-center mb-12'>
         <h2 className='text-3xl md:text-5xl font-bold text-white mb-6'>Engaging Workshops & Sessions</h2>
         <p className='text-base md:text-lg text-gray-300 mb-8'>Join us for interactive workshops and enlightening sessions led by industry leaders.</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">

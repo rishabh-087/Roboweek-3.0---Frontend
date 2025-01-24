@@ -9,7 +9,7 @@ const Team = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.2 }}
           className="text-center mb-16 backdrop-blur-lg bg-black/10 p-8 rounded-2xl border border-pink-500/50"
         >
           <h1 className="text-6xl font-bold text-white mb-4">Our <span className="text-pink-400">Team</span></h1>
@@ -22,7 +22,7 @@ const Team = () => {
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
+              transition={{ duration: 0.1, delay: 0.2 }}
               viewport={{ once: true }}
               className="group h-[400px] [perspective:1000px]"
             >
@@ -32,7 +32,7 @@ const Team = () => {
                   <img
                     src={member.ProfilePicture}
                     alt={member.Name}
-                    className="w-full h-3/4 object-cover object-center"
+                    className="w-full h-3/4 object-contain object-center"
                   />
                   <div className="p-4 text-center">
                     <h3 className="text-xl font-bold text-white mb-2">{member.Name}</h3>
