@@ -138,6 +138,7 @@ const Home = () => {
   </div>
 </section>
 
+
       <Prizes />
 
       <Sponsors />
