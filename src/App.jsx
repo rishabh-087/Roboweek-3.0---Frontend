@@ -27,8 +27,10 @@ function App() {
     <AuthProvider>
       <Router className="">
       
+      <div className="relative  z-[0]">
 
-      <SplashCursor className='z-[0]' />
+      <SplashCursor />
+      </div>
       
         <FloatingShape /> 
         <div id='main-container' className=" flex flex-col bg-black">
