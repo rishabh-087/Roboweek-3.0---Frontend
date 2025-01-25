@@ -27,7 +27,10 @@ const Home = () => {
       <img src={logo} alt="" className='lg:absolute lg:top-[-20px] lg:right-[-55px]  w-[350px] '/>
       {/* <img src={SocietyLogo} alt="" className='lg:absolute lg:top-[7px] lg:right-[10px] rounded-3xl w-[100px] bg-white '/> */}
         <div className='flex flex-col justify-center items-center space-y-8 gap-205'>
-          <h1 className='relative z-[100] text-white/80 font-squidFont lg:text-[8vw] lg:leading-[8vw] leading-[14vw] text-[14vw] text-center '>RoboWeek<br />3.0</h1>
+          <h1 className='relative z-[100] text-white/80 font-squidFont lg:text-[8vw] lg:leading-[8vw] leading-[14vw] text-[14vw] text-center '>ROBOWEEK 3.0</h1>
+
+          <h2 className='font-squidFont'>MYRAID OF iNNOVATION</h2>
+
             <CountdownTimer />
           </div>
           <div className='mt-5'>
