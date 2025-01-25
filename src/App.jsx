@@ -12,6 +12,9 @@ import Login from './components/Login';
 import ConferencePage from './pages/ConferencePage';
 import Signup from './components/SignUp';
 import Profile from './components/Profile';
+// import SplashCursor from './SplashCursor'
+import SplashCursor from './blocks/Animations/SplashCursor/SplashCursor.jsx'
+
 
 const ProtectedRoute = ({ children }) => {
   const { user } = useAuth();
@@ -23,6 +26,10 @@ function App() {
   return (
     <AuthProvider>
       <Router className="">
+      
+
+      <SplashCursor className='z-[0]' />
+      
         <FloatingShape /> 
         <div id='main-container' className=" flex flex-col bg-black">
           <Navbar />
