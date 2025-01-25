@@ -52,6 +52,7 @@ const ImageCarousel = () => {
   const [isPaused, setIsPaused] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalImage, setModalImage] = useState(null);
+  const [modalImageSize, setModalImageSize] = useState({ width: 0, height: 0 });
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -64,8 +65,34 @@ const ImageCarousel = () => {
   };
 
   const openModal = (index) => {
-    setModalImage(images[index]);
-    setIsModalOpen(true);
+    const img = new Image();
+    img.src = images[index].src;
+
+    img.onload = () => {
+      const aspectRatio = img.naturalWidth / img.naturalHeight;
+
+      const maxModalWidth = window.innerWidth * 0.9;
+      const maxModalHeight = window.innerHeight * 0.9;
+
+      if (img.naturalWidth > maxModalWidth || img.naturalHeight > maxModalHeight) {
+        if (maxModalWidth / aspectRatio < maxModalHeight) {
+          setModalImageSize({
+            width: maxModalWidth,
+            height: maxModalWidth / aspectRatio,
+          });
+        } else {
+          setModalImageSize({
+            width: maxModalHeight * aspectRatio,
+            height: maxModalHeight,
+          });
+        }
+      } else {
+        setModalImageSize({ width: img.naturalWidth, height: img.naturalHeight });
+      }
+
+      setModalImage(images[index]);
+      setIsModalOpen(true);
+    };
   };
 
   const closeModal = () => {
@@ -78,7 +105,6 @@ const ImageCarousel = () => {
       const interval = setInterval(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
       }, AUTO_SCROLL_DELAY);
-
       return () => clearInterval(interval);
     }
   }, [isPaused]);
@@ -93,7 +119,7 @@ const ImageCarousel = () => {
   return (
     <section className="py-20 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-5xl font-bold text-center mb-16 text-pink-600">
+        <h2 className="text-5xl font-bold text-center mb-16 text-pink-600 font-squidFont">
           Gallery
         </h2>
 
@@ -111,7 +137,7 @@ const ImageCarousel = () => {
               initial={{ opacity: 0, x: -100 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              style={{ filter: 'blur(5px)' }}
+              style={{ filter: "blur(5px)" }}
             >
               <img
                 src={images[(currentIndex - 1 + images.length) % images.length].src}
@@ -141,7 +167,7 @@ const ImageCarousel = () => {
               initial={{ opacity: 0, x: 100 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              style={{ filter: 'blur(5px)' }}
+              style={{ filter: "blur(5px)" }}
             >
               <img
                 src={images[(currentIndex + 1) % images.length].src}
@@ -162,21 +188,36 @@ const ImageCarousel = () => {
 
       {isModalOpen && modalImage && (
         <div className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50">
-          <div className="relative p-4">
+          <div
+            className="relative rounded-lg bg-transparent"
+            style={{
+              width: modalImageSize.width,
+              height: modalImageSize.height,
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
             <button
               onClick={closeModal}
-              className="absolute top-2 right-2 bg-white p-2 rounded-full shadow-lg"
+              className="absolute top-2 right-2 bg-white p-2 rounded-full shadow-lg z-10"
             >
               ❌
             </button>
             <motion.img
               src={modalImage.src}
               alt={modalImage.alt}
-              initial={{ scale: 0.5, opacity: 0 }}
+              initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.5, opacity: 0 }}
+              exit={{ scale: 0.8, opacity: 0 }}
               transition={{ duration: 0.5 }}
-              className="w-[80vw] h-[80vh] object-cover rounded-lg shadow-lg"
+              className="rounded-lg"
+              style={{
+                maxWidth: "100%",
+                maxHeight: "100%",
+                objectFit: "contain",
+                backgroundColor: "transparent",
+              }}
             />
           </div>
         </div>
