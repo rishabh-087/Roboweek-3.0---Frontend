@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { set } from "react-hook-form";
 
 const images = [
   { src: "/assets/images/gallery/Image1.jpg", alt: "Image 1 - Campus Overview" },
@@ -50,6 +51,8 @@ const AUTO_SCROLL_DELAY = 3000; // 3 seconds
 const ImageCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalImage, setModalImage]= useState(null);
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -61,10 +64,15 @@ const ImageCarousel = () => {
     setIsPaused(true);
   };
 
-  const handleDotClick = (index) => {
+  const openModal = (index) => {
     setCurrentIndex(index);
-    setIsPaused(true);
+    setIsModalOpen(true);
   };
+
+  const closeModal=()=>{
+    setIsModalOpen(false);
+    setModalImage(null);
+  }
 
   useEffect(() => {
     if (!isPaused) {
@@ -104,7 +112,7 @@ const ImageCarousel = () => {
               initial={{ opacity: 0, x: -100 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              style={{ filter: "blur(1px)" }}
+              style={{ filter: "blur(5px)" }}
             >
               <img
                 src={images[(currentIndex - 1 + images.length) % images.length].src}
@@ -133,7 +141,7 @@ const ImageCarousel = () => {
               initial={{ opacity: 0, x: 100 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              style={{ filter: "blur(1px)" }}
+              style={{ filter: "blur(5px)" }}
             >
               <img
                 src={images[(currentIndex + 1) % images.length].src}
@@ -147,22 +155,29 @@ const ImageCarousel = () => {
             onClick={handleNext}
             className="absolute right-2 top-1/2 -translate-y-1/2 bg-pink-500/70 p-3 rounded-full shadow-lg hover:bg-pink-600 transition z-10"
           >
+
+            {isModalOpen && (
+              <div className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-[200]">
+                <div className="relative ">
+                  <button
+                    onClick={closeModal}
+                    className="absolute top-2 right-2 bg-white p-2 rounded-full shadow-lg">
+                    ❌
+                    </button>
+                    <motion.img
+                      src={modalImage.src}
+                      alt={modalImage.alt}
+                      initial={{ scale: 0.5, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      exit={{ scale: 0.5, opacity: 0 }}
+                      transition={{ duration: 0.5 }}
+                      className="w-[80vw] h-[80vh] object-cover"
+                    />
+                </div>
+              </div>
+            )}
             ❯
           </button>
-        </div>
-
-        <div className="flex justify-center gap-3 mt-8">
-          {images.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => handleDotClick(index)}
-              className={`w-3 h-3 rounded-full transition-all ${
-                index === currentIndex
-                  ? "bg-pink-500 w-8"
-                  : "bg-pink-500/40 hover:bg-pink-500/60"
-              }`}
-            />
-          ))}
         </div>
       </div>
     </section>
