@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { set } from "react-hook-form";
 
 const images = [
   { src: "/assets/images/gallery/Image1.jpg", alt: "Image 1 - Campus Overview" },
@@ -52,7 +51,7 @@ const ImageCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [modalImage, setModalImage]= useState(null);
+  const [modalImage, setModalImage] = useState(null);
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -65,14 +64,14 @@ const ImageCarousel = () => {
   };
 
   const openModal = (index) => {
-    setCurrentIndex(index);
+    setModalImage(images[index]);
     setIsModalOpen(true);
   };
 
-  const closeModal=()=>{
+  const closeModal = () => {
     setIsModalOpen(false);
     setModalImage(null);
-  }
+  };
 
   useEffect(() => {
     if (!isPaused) {
@@ -83,7 +82,7 @@ const ImageCarousel = () => {
       return () => clearInterval(interval);
     }
   }, [isPaused]);
-  
+
   useEffect(() => {
     if (isPaused) {
       const timeout = setTimeout(() => setIsPaused(false), AUTO_SCROLL_DELAY * 2);
@@ -92,27 +91,27 @@ const ImageCarousel = () => {
   }, [isPaused]);
 
   return (
-    <section className="py-20 relative z-[100]">
+    <section className="py-20 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-5xl font-bold text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-pink-800 font-squidFont">
+        <h2 className="text-5xl font-bold text-center mb-16 text-pink-600">
           Gallery
         </h2>
 
-        <div className="relative flex justify-center items-center min-h-[600px]">
+        <div className="relative flex justify-center items-center">
           <button
             onClick={handlePrevious}
-            className="absolute left-2 top-1/2 -translate-y-1/2 bg-pink-500/70 p-3 rounded-full shadow-lg hover:bg-pink-600 transition z-10"
+            className="absolute left-2 top-1/2 -translate-y-1/2 bg-pink-500 p-3 rounded-full shadow-lg hover:bg-pink-600 transition z-10"
           >
             ❮
           </button>
 
-          <div className="flex items-center space-x-14">
+          <div className="flex items-center space-x-8">
             <motion.div
               className="w-64 h-96 flex-shrink-0 overflow-hidden rounded-lg shadow-md bg-gray-200"
               initial={{ opacity: 0, x: -100 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              style={{ filter: "blur(5px)" }}
+              style={{ filter: 'blur(5px)' }}
             >
               <img
                 src={images[(currentIndex - 1 + images.length) % images.length].src}
@@ -123,16 +122,17 @@ const ImageCarousel = () => {
 
             <motion.div
               key={currentIndex}
-              className="w-96 h-110 flex-shrink-0 overflow-hidden rounded-lg shadow-2xl bg-gray-300"
+              className="w-96 h-[500px] flex-shrink-0 overflow-hidden rounded-lg shadow-2xl bg-gray-300 cursor-pointer"
               initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1.2, opacity: 1 }}
+              animate={{ scale: 1.1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               transition={{ duration: 0.5 }}
+              onClick={() => openModal(currentIndex)}
             >
               <img
                 src={images[currentIndex].src}
                 alt={images[currentIndex].alt}
-                className="w-full h-full object-absolute"
+                className="w-full h-full object-cover"
               />
             </motion.div>
 
@@ -141,7 +141,7 @@ const ImageCarousel = () => {
               initial={{ opacity: 0, x: 100 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              style={{ filter: "blur(5px)" }}
+              style={{ filter: 'blur(5px)' }}
             >
               <img
                 src={images[(currentIndex + 1) % images.length].src}
@@ -153,33 +153,34 @@ const ImageCarousel = () => {
 
           <button
             onClick={handleNext}
-            className="absolute right-2 top-1/2 -translate-y-1/2 bg-pink-500/70 p-3 rounded-full shadow-lg hover:bg-pink-600 transition z-10"
+            className="absolute right-2 top-1/2 -translate-y-1/2 bg-pink-500 p-3 rounded-full shadow-lg hover:bg-pink-600 transition z-10"
           >
-
-            {isModalOpen && (
-              <div className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-[200]">
-                <div className="relative ">
-                  <button
-                    onClick={closeModal}
-                    className="absolute top-2 right-2 bg-white p-2 rounded-full shadow-lg">
-                    ❌
-                    </button>
-                    <motion.img
-                      src={modalImage.src}
-                      alt={modalImage.alt}
-                      initial={{ scale: 0.5, opacity: 0 }}
-                      animate={{ scale: 1, opacity: 1 }}
-                      exit={{ scale: 0.5, opacity: 0 }}
-                      transition={{ duration: 0.5 }}
-                      className="w-[80vw] h-[80vh] object-cover"
-                    />
-                </div>
-              </div>
-            )}
             ❯
           </button>
         </div>
       </div>
+
+      {isModalOpen && modalImage && (
+        <div className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50">
+          <div className="relative p-4">
+            <button
+              onClick={closeModal}
+              className="absolute top-2 right-2 bg-white p-2 rounded-full shadow-lg"
+            >
+              ❌
+            </button>
+            <motion.img
+              src={modalImage.src}
+              alt={modalImage.alt}
+              initial={{ scale: 0.5, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.5, opacity: 0 }}
+              transition={{ duration: 0.5 }}
+              className="w-[80vw] h-[80vh] object-cover rounded-lg shadow-lg"
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 };
