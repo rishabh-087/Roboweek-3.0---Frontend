@@ -4,73 +4,86 @@ import Button from '../components/Button';
 
 const speakers = [
   {
-    name: "Speaker 1",
-    title: "AI Expert",
-    image: "https://images.pexels.com/photos/3184295/pexels-photo-3184295.jpeg"
+    name: "To be revealed!",
+    image: "https://images.pexels.com/photos/3184295/pexels-photo-3184295.jpeg",
   },
   {
-    name: "Speaker 2",
-    title: "Robotics Engineer",
-    image: "https://images.pexels.com/photos/3184296/pexels-photo-3184296.jpeg"
+    name: "To be revealed!",
+    image: "https://images.pexels.com/photos/3184296/pexels-photo-3184296.jpeg",
   },
   {
-    name: "Speaker 3",
-    title: "Data Scientist",
-    image: "https://images.pexels.com/photos/3184297/pexels-photo-3184297.jpeg"
-  }
+    name: "To be revealed!",
+    image: "https://images.pexels.com/photos/3184297/pexels-photo-3184297.jpeg",
+  },
 ];
 
 const ConferencePage = () => {
   return (
-    <div className='flex flex-col items-center min-h-screen bg-black'>
-      <header className='text-center py-10 relative z-[100] mt-10'>
-        <h1 className='text-5xl md:text-7xl font-extrabold text-white mb-4'>Roboweek 3.0<span className="text-pink-400"> Conference</span></h1>
+    <div className="flex flex-col items-center min-h-screen bg-black">
+      {/* Header Section */}
+      <header className="text-center py-10 relative z-[100] mt-10 px-4">
+        <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-white mb-4">
+          Roboweek 3.0<span className="text-pink-400"> Conference</span>
+        </h1>
         <CountdownTimer />
-        <p className='text-base md:text-lg text-gray-300 mt-4 font-semibold text-center'>
-          Join us for an exciting event filled with <span className="text-pink-400">knowledge</span> and <span className="text-pink-400">networking</span>!
+        <p className="text-sm md:text-base lg:text-lg text-gray-300 mt-4 font-semibold text-center">
+          Join us for an event featuring top industry professionals, insightful talks, and unparalleled networking opportunities.
         </p>
       </header>
 
-      <Button text='Submit your Extract' iconLink={<i className="ri-corner-right-down-line"></i>} />
+      {/* Submit Button */}
+      <Button text="Submit Your Extract" iconLink={<i className="ri-corner-right-down-line"></i>} />
 
-      <section className='mt-12 relative z-[100]'>
-        <h2 className='text-3xl md:text-5xl font-bold text-center text-white mb-6'>Featured <span className="text-pink-400">Speakers</span></h2>
-        <p className='text-base md:text-lg text-center text-gray-300 mb-8'>Meet our esteemed speakers who will share their insights and expertise at the conference.</p>
+      {/* Featured Speakers Section */}
+      <section className="mt-12 relative z-[100] px-4 w-full max-w-7xl">
+        <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-center text-white mb-6">
+          Featured <span className="text-pink-400">Speakers</span>
+        </h2>
+        <p className="text-sm md:text-base lg:text-lg text-center text-gray-300 mb-8">
+          Stay tuned for the unveiling of our esteemed speakers who will share their expertise on emerging trends and technologies.
+        </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
           {speakers.map((speaker, index) => (
             <div
               key={index}
-              className="bg-black/70 backdrop-blur-lg border border-pink-500 rounded-xl p-6 text-center transition-transform duration-300 hover:scale-105"
+              className="bg-black/70 backdrop-blur-lg border border-gray-600 rounded-xl p-4 md:p-6 text-center transition-transform duration-300 hover:scale-105"
             >
-              <img src={speaker.image} alt={speaker.name} className="w-full h-48 object-cover rounded-lg mb-4" />
-              <h2 className="text-xl md:text-2xl font-bold text-pink-400">{speaker.name}</h2>
-              <h3 className="text-base md:text-lg text-gray-300">Details will be revealed soon!</h3>
-              <p className="text-gray-400 mt-2">Stay tuned for more information!</p>
+              <img
+                src={speaker.image}
+                alt={speaker.name}
+                className="w-full h-40 md:h-48 object-cover rounded-lg mb-4"
+              />
+              <h2 className="text-lg md:text-xl font-bold text-white">{speaker.name}</h2>
+              <p className="text-sm md:text-base text-gray-400 mt-2 font-semibold">
+                Details coming soon.
+              </p>
             </div>
           ))}
         </div>
       </section>
-      <section className='relative flex flex-col z-[100] mt-12 text-center mb-12'>
-        <h2 className='text-3xl md:text-5xl font-bold text-white mb-6'>Engaging Workshops & Sessions</h2>
-        <p className='text-base md:text-lg text-gray-300 mb-8'>Join us for interactive workshops and enlightening sessions led by industry leaders.</p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-          <div className="bg-black/70 backdrop-blur-lg border border-pink-500 rounded-xl p-6 w-full">
-            <h3 className="text-xl md:text-2xl font-bold text-pink-400">AI in Action</h3>
-            <p className="text-gray-300 mt-2">Explore the latest advancements in AI technology and its applications.</p>
-          </div>
-          <div className="bg-black/70 backdrop-blur-lg border border-pink-500 rounded-xl p-6 w-full">
-            <h3 className="text-xl md:text-2xl font-bold text-pink-400">Robotics Workshop</h3>
-            <p className="text-gray-300 mt-2">Get hands-on experience with robotics and automation tools.</p>
-          </div>
-          <div className="bg-black/70 backdrop-blur-lg border border-pink-500 rounded-xl p-6 w-full">
-            <h3 className="text-xl md:text-2xl font-bold text-pink-400">Data Science Insights</h3>
-            <p className="text-gray-300 mt-2">Learn about data analytics and its impact on decision-making.</p>
-          </div>
+
+      {/* Workshops & Sessions Section */}
+      <section className="relative flex flex-col z-[100] mt-12 text-center mb-12 px-4 w-full max-w-5xl">
+        <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
+          Workshops & Sessions
+        </h2>
+        <p className="text-sm md:text-base lg:text-lg text-gray-300 mb-8">
+          Participate in interactive workshops and hear from leading experts in the field.
+        </p>
+
+        {/* Glowing Sign */}
+        <div className="relative bg-black border-4 border-pink-400 rounded-lg shadow-lg py-6 px-6 md:px-12 animate-pulse">
+          <h3 className="text-xl md:text-3xl font-bold text-white uppercase tracking-wide">
+            Session Details
+          </h3>
+          <p className="text-lg md:text-xl font-semibold text-pink-400 mt-2">
+            To Be Revealed Soon!
+          </p>
         </div>
       </section>
     </div>
   );
-}
+};
 
 export default ConferencePage;
