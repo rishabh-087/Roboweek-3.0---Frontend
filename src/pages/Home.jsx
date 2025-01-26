@@ -6,11 +6,9 @@ import About from './AboutUs';
 import Sponsors from './Sponsors';
 // import Conference from '../components/Conference';
 // import logo from '../assets/Heading.png';
-import squidFont from '../../public/assets/fonts/GameOfSquids.ttf'; // Assuming you have a CSS file to apply the font
 import Prizes from '../components/Prizes';
 import Contact from '../components/contact'
-import logo from '../assets/logo transparent.svg';
-import SocietyLogo from '../../public/assets/images/images-removebg-preview.png'
+import logo from '../assets/logoRoboweek.png';
 
 const Home = () => {
 
@@ -24,12 +22,11 @@ const Home = () => {
       {/* Hero Section */}
 
         <section className='relative w-full lg:min-h-screen min-h-[70vh] flex flex-col justify-center items-center '>
-      <img src={logo} alt="" className='lg:absolute lg:top-[-20px] lg:right-[-55px]  w-[350px] '/>
-      {/* <img src={SocietyLogo} alt="" className='lg:absolute lg:top-[7px] lg:right-[10px] rounded-3xl w-[100px] bg-white '/> */}
+      <img src={logo} alt="" className='lg:absolute lg:top-[-10px] lg:right-[30px] absolute scale-0 lg:scale-100  lg:w-[150px] '/>
         <div className='flex flex-col justify-center items-center space-y-8 gap-205'>
           <h1 className='relative z-[100] text-white/80 font-squidFont lg:text-[8vw] lg:leading-[8vw] leading-[14vw] text-[14vw] text-center '>ROBOWEEK 3.0</h1>
 
-          <h2 className='font-squidFont text-white text-3xl'>MYRAID OF iNNOVATION</h2>
+          <h2 className='font-squidFont text-white text-2xl lg:text-3xl'>MYRAID OF iNNOVATION</h2>
 
             <CountdownTimer />
           </div>

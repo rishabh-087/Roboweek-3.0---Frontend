@@ -12,7 +12,7 @@ const Team = () => {
           transition={{ duration: 0.2 }}
           className="text-center mb-16 backdrop-blur-lg bg-black/10 p-8 rounded-2xl border border-pink-500/50"
         >
-          <h1 className="text-6xl font-bold text-white mb-4">Our <span className="text-pink-400">Team</span></h1>
+          <h1 className="text-6xl font-squidFont font-bold text-white mb-4">Our <span className="text-pink-400">Team</span></h1>
           <p className="text-xl text-gray-300">Meet the minds behind RoboWeek 3.0</p>
         </motion.div>
 
@@ -32,10 +32,10 @@ const Team = () => {
                   <img
                     src={member.ProfilePicture}
                     alt={member.Name}
-                    className="w-full h-3/4 object-contain object-center"
+                    className="w-full h-3/4 object-cover  p-5 object-center"
                   />
                   <div className="p-4 text-center">
-                    <h3 className="text-xl font-bold text-white mb-2">{member.Name}</h3>
+                    <h3 className="text-xl font-bold text-white mb-2">{member.Name.toUpperCase()}</h3>
                     <div className="text-pink-400 font-semibold">{member.Post}</div>
                   </div>
                 </div>
@@ -93,7 +93,7 @@ const Team = () => {
           ))}
         </div>
 
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -108,7 +108,7 @@ const Team = () => {
           <div className="text-center">
             <Button text={"Contact Us"} textSize="text-2xl" iconLink={<i className="ri-mail-line text-3xl"></i>} />
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </div>
   );
