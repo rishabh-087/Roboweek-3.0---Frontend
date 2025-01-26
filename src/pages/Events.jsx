@@ -6,11 +6,7 @@ import pathfinder from '../assets/pathfinder.png';
 import bowlBotDerby from '../assets/BowlBotDerby.png';
 import mechaMayhem from '../assets/MECHA MAYHEM (1).png';
 import spectrumSprint from '../assets/2.png';
-// import aiRoboticsWorkshop from '../assets/ai-robotics-workshop.jpg';
-// import startupWorkshop from '../assets/startup-workshop.jpg';
-// import bowlBotDerby from '../images/bowl-bot-derby.jpg';
-// import mechaMayhem from '../images/mecha-mayhem.jpg';
-// import spectrumSprint from '../images/spectrum-sprint.jpg';
+
 const Events = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -78,47 +74,71 @@ const Events = () => {
       image: spectrumSprint, 
     },
     {
-      title: "Workshop on Artificial Intelligence and Robotics: Transforming Academia to Industries",
+      title: "✨ Workshop to be revealed",
       type: "workshop",
-      date: "Apr XX, XXXX",
-      description: "This workshop focuses on equipping graduate students and startups with practical insights into how AI and robotics are transforming industries. It will cover industry use cases, startup strategies, and pathways to bridge theoretical knowledge with industrial applications.",
-      categories: ["AI", "Robotics", "Industry Applications", "Innovation"],
+      date: "To be revealed",
+      description: "Exciting details about this workshop will be shared soon. Stay tuned for updates!",
+      categories: ["Coming Soon"],
       details: {
         venue: "NIT Hamirpur",
-        time: "10:00 AM - 4:00 PM",
+        time: "To be revealed",
         prize: "Participation Certificate",
-        teamSize: "1-2 members",
-        requirements: ["Basic knowledge of AI and robotics", "Laptop required"],
-        rules: [
-          "No late entries allowed",
-          "Follow the instructor's instructions"
-        ]
+        teamSize: "To be announced",
+        requirements: ["No special requirements at this time."],
+        rules: ["No late entries allowed.", "Follow the session guidelines."]
       },
-      rulebookLink: null,
-      image: [],
+      rulebookLink: null
     },
     {
-      title: "Workshop on Entrepreneurship of the Golden Era of Startups",
+      title: "✨ Workshop to be revealed",
       type: "workshop",
-      date: "Apr XX, XXXX",
-      description: "This workshop will equip graduate students and aspiring entrepreneurs with the knowledge and tools to thrive in the current booming startup ecosystem. It emphasizes fostering innovation, leveraging emerging technologies, and building sustainable business models in today's dynamic environment.",
-      categories: ["Entrepreneurship", "Startups", "Innovation", "Business Models"],
+      date: "To be revealed",
+      description: "Exciting details about this workshop will be shared soon. Stay tuned for updates!",
+      categories: ["Coming Soon"],
       details: {
         venue: "NIT Hamirpur",
-        time: "10:00 AM - 4:00 PM",
+        time: "To be revealed",
         prize: "Participation Certificate",
-        teamSize: "1-2 members",
-        requirements: ["Basic knowledge of entrepreneurship", "Laptop required"],
-        rules: [
-          "No late entries allowed",
-          "Follow the instructor's instructions"
-        ]
+        teamSize: "To be announced",
+        requirements: ["No special requirements at this time."],
+        rules: ["No late entries allowed.", "Follow the session guidelines."]
       },
-      rulebookLink: null,
-      image: [], 
+      rulebookLink: null
+    },
+    {
+      title: "✨ Talk to be revealed",
+      type: "talk",
+      date: "To be revealed",
+      description: "Get ready for an inspiring talk! Details coming soon.",
+      categories: ["Coming Soon"],
+      details: {
+        venue: "NIT Hamirpur",
+        time: "To be revealed",
+        prize: "Certificate of Attendance",
+        teamSize: "Individual",
+        requirements: ["No special requirements at this time."],
+        rules: ["Registration required", "Be on time"]
+      },
+      rulebookLink: null
+    },
+    {
+      title: "✨ Talk to be revealed",
+      type: "talk",
+      date: "To be revealed",
+      description: "An exciting speaker will be announced soon. Stay tuned!",
+      categories: ["Coming Soon"],
+      details: {
+        venue: "NIT Hamirpur",
+        time: "To be revealed",
+        prize: "Certificate of Attendance",
+        teamSize: "Individual",
+        requirements: ["No special requirements at this time."],
+        rules: ["Registration required", "Be on time"]
+      },
+      rulebookLink: null
     }
   ];
-
+    
   const categories = [
     { id: 'all', label: 'All Events' },
     { id: 'competition', label: 'Competitions' },
@@ -184,7 +204,13 @@ const Events = () => {
               onClick={() => setSelectedEvent(event)}
               className="backdrop-blur-lg bg-black/20 rounded-xl border border-pink-500/30 overflow-hidden hover:border-pink-500 transition-all duration-300 cursor-pointer p-4"
             >
-              <img src={event.image} alt={event.title} className="w-3/4 h-auto object-cover object-top mx-auto" /> {/* Made the image smaller */}
+              {event.image && (
+                <img 
+                  src={event.image} 
+                  alt={event.title} 
+                  className="w-3/4 h-auto object-cover object-top mx-auto"
+                />
+              )}
               <div className="p-4">
                 <h3 className="text-xl font-bold text-pink-400 mb-2">{event.title}</h3>
                 <p className="text-gray-300 mb-4">{event.description}</p>
@@ -212,13 +238,15 @@ const Events = () => {
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.95, opacity: 0 }}
                 onClick={(e) => e.stopPropagation()}
-                className="bg-black/90 border border-pink-500/30 rounded-xl p-8  overflow-y-auto"
+                className="bg-black/90 border border-pink-500/30 rounded-xl p-8 overflow-y-auto"
               >
-                <img
-                  src={selectedEvent.image}
-                  alt={selectedEvent.title}
-                  className="w-full h-72 object-cover rounded-xl mb-6"
-                />
+                {selectedEvent.image && (
+                  <img
+                    src={selectedEvent.image}
+                    alt={selectedEvent.title}
+                    className="w-full h-72 object-cover rounded-xl mb-6"
+                  />
+                )}
                 <h2 className="text-3xl font-bold text-pink-400 mb-4">{selectedEvent.title}</h2>
                 <div className="space-y-6">
                   <div className="grid grid-cols-2 gap-4 text-gray-300">
@@ -229,6 +257,28 @@ const Events = () => {
                       <p><span className="text-pink-400">Prize:</span> {selectedEvent.details.prize}</p>
                     )}
                   </div>
+
+                  {selectedEvent.details.requirements && (
+                    <div className="mt-4">
+                      <h3 className="text-xl font-semibold text-pink-400 mb-2">Requirements</h3>
+                      <ul className="list-disc pl-5 text-gray-300">
+                        {selectedEvent.details.requirements.map((req, index) => (
+                          <li key={index}>{req}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {selectedEvent.details.rules && (
+                    <div className="mt-4">
+                      <h3 className="text-xl font-semibold text-pink-400 mb-2">Rules</h3>
+                      <ul className="list-disc pl-5 text-gray-300">
+                        {selectedEvent.details.rules.map((rule, index) => (
+                          <li key={index}>{rule}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
 
                   {selectedEvent.rulebookLink && (
                     <div className="mt-4">
