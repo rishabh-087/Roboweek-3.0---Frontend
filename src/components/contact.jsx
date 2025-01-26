@@ -34,6 +34,14 @@ const Contact = () => {
                 <p className="text-gray-300 mt-2">Our robot team is ready to assist.</p>
                 <a href="mailto:robonith@nith.ac.in" className="text-pink-400 hover:text-pink-300 mt-1 block">
                 robonith@nith.ac.in
+                </a><a href="mailto:robonith@nith.ac.in" className="text-pink-400 hover:text-pink-300 mt-1 block">
+                  +91 8957895881
+                </a><a href="mailto:robonith@nith.ac.in" className="text-pink-400 hover:text-pink-300 mt-1 block">
+                <h3>For General Queries : <a href="mailto:robonith@nith.ac.in" className=" underline text-white hover:text-pink-300 mt-1 block">
+                +91 9031909034
+                </a></h3><a href="mailto:robonith@nith.ac.in" className="inline underline text-white hover:text-pink-300 mt-1 block">
+                +91 8299284936
+                </a>
                 </a>
               </div>
               <div>
