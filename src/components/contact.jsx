@@ -30,17 +30,17 @@ const Contact = () => {
           <div className="p-8 border-r border-pink-500/50">
             <div className="space-y-8">
               <div>
-                <h3 className="text-2xl font-bold text-pink-400 font-squidFont">Chat to us</h3>
+                <h3 className="text-2xl font-bold text-pink-400 font-squidFont">Chat with us</h3>
                 <p className="text-gray-300 mt-2">Our robot team is ready to assist.</p>
                 <a href="mailto:robonith@nith.ac.in" className="text-pink-400 hover:text-pink-300 mt-1 block">
                 robonith@nith.ac.in
                 </a><a href="mailto:robonith@nith.ac.in" className="text-pink-400 hover:text-pink-300 mt-1 block">
-                  +91 8957895881
+                  Milind Gupta : +91 8957895881
                 </a><a href="mailto:robonith@nith.ac.in" className="text-pink-400 hover:text-pink-300 mt-1 block">
-                <h3>For General Queries : <a href="mailto:robonith@nith.ac.in" className=" underline text-white hover:text-pink-300 mt-1 block">
-                +91 9031909034
-                </a></h3><a href="mailto:robonith@nith.ac.in" className="inline underline text-white hover:text-pink-300 mt-1 block">
-                +91 8299284936
+                <h3>For General Queries : <a href="mailto:robonith@nith.ac.in" className="  text-white hover:text-pink-300 mt-1 block">
+                Purushottam Singh : +91 9031909034
+                </a></h3><a href="mailto:robonith@nith.ac.in" className="  text-white hover:text-pink-300 mt-1 block">
+                Utkarsh Agrawaal : +91 8299284936
                 </a>
                 </a>
               </div>
