@@ -1,6 +1,8 @@
-import { useState } from 'react'; 
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import Button from './Button';
+import { useAuth } from '../context/AuthContext';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,8 +18,6 @@ const Navbar = () => {
     { name: 'Contact', href: '#contact', icon: 'ri-mail-line' },
   ];
 
-  // This function scrolls to the contact section  
-
   const handleScrollToContact = (event) => {
     event.preventDefault();
     const contactSection = document.getElementById('contact');
@@ -25,8 +25,6 @@ const Navbar = () => {
       contactSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
-
-  // When You click on the Links it Takes you to the top of the page 
 
   const handleNavigation = (href, event) => {
     event.preventDefault();
@@ -85,12 +83,12 @@ const Navbar = () => {
         </div>
       </nav>
 
-      <div className="z-[1000] md:hidden fixed backdrop-blur-[5px] bottom-0 left-0 right-0 bg-black/20 border-t border-pink-500/30 p-4 flex justify-around">
+      <div className="z-[1000] md:hidden fixed backdrop-blur-[5px] bottom-0 left-0 right-0 bg-black/20 border-t border-pink-500/30 p-4 flex justify-around z-50">
         {navigation.map((item) => (
           <Link
             key={item.name}
             to={item.name === 'Contact' ? '#' : item.href}
-            onClick={(e) => item.name === 'Contact' ? handleScrollToContact(e) : navigate(item.href, e)}
+            onClick={(e) => item.name === 'Contact' ? handleScrollToContact(e) : handleNavigation(item.href, e)}
             className="flex flex-col items-center text-gray-300 hover:text-pink-400 transition-colors duration-300"
           >
             <i className={`${item.icon} text-2xl`}></i>

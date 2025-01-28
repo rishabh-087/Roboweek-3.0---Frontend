@@ -20,7 +20,8 @@ const Home = () => {
     <div className="min-h-screen overflow-hidden">
 
       {/* Hero Section */}
-
+      <div className="hero">
+        
         <section className='relative w-full lg:min-h-screen min-h-[70vh] flex flex-col justify-center items-center '>
          <img src={logo} alt="" className=' lg:absolute lg:top-[25px] lg:right-[30px] absolute  top-2 p-1 backdrop-blur-sm w-[100px] border border-white/20 rounded-full  lg:scale-100  lg:w-[150px] '/>
         <div className='flex flex-col justify-center items-center space-y-8 gap-205'>
@@ -36,6 +37,7 @@ const Home = () => {
             </Link>
           </div>
         </section>
+</div>
 
         {/* Features Section */}
       <section className="py-20 z-1000">
